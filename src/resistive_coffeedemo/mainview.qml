@@ -1,27 +1,22 @@
-import QtQuick 1.1
+import QtQuick 2.0
 import "../components"
 import "js/dataModel.js" as Db
 
 
 Rectangle {
-    width: 480
-    height: 272
+    width: 640
+    height: 480
     id: mainView
-    color: "#2D2D2D"
+    color: "#666666"
     signal message(string msg)
-
-    gradient: Gradient {
-        GradientStop {position: 0.0; color: "#666666"}
-        GradientStop {position: 1.0; color: "#EEEEEE"}
-    }
 
 
     CoffeeCarousel {
         id: imagecarousel1
         x: 0
         y: 40
-        width: 480
-        height: 180
+        width: 640
+        height: 292
 
         onCurrentIndexChanged: {
             if (imagecarousel1.currentIndex >= 0)
@@ -33,8 +28,8 @@ Rectangle {
 
     ImageButton {
         id: btnSettings
-        x: 27
-        y: 191
+        x: 102
+        y: 359
         width: 76
         height: 64
         text: ""
@@ -49,8 +44,8 @@ Rectangle {
     ImageButton {
         id: btnRinse
         objectName: "btnRinse"
-        x: 98
-        y: 191
+        x: 173
+        y: 359
         text: ""
         width: 76
         height: 64
@@ -64,8 +59,8 @@ Rectangle {
 
     ImageButton {
         id: btnBrew
-        x: 168
-        y: 191
+        x: 243
+        y: 359
         text: ""
         width: 76
         height: 64
@@ -80,8 +75,8 @@ Rectangle {
 
     ImageButton {
         id: btnEdit
-        x: 238
-        y: 191
+        x: 313
+        y: 359
         width: 76
         height: 64
         text: ""
@@ -94,8 +89,8 @@ Rectangle {
 
     ImageButton {
         id: btnAdd
-        x: 308
-        y: 191
+        x: 383
+        y: 359
         width: 76
         height: 64
         text: ""
@@ -108,8 +103,8 @@ Rectangle {
 
     ImageButton {
         id: btnQuit
-        x: 378
-        y: 191
+        x: 453
+        y: 359
         width: 76
         height: 64
         text: ""
@@ -159,7 +154,8 @@ Rectangle {
         for (var i=0; i < rows.length; i++)
         {
             var data = rows[i];
-            Db.dataList.append({recipeId: data[0], recipeName: data[1], volume: data[2], fillPause: data[3], extractionTime: data[4], turbulenceOn: data[5], turbulenceOff: data[6], temp: data[7], machineRecipe: data[8] });
+
+            Db.dataList.append({recipeId: parseInt(data[0]), recipeName: data[1], volume: parseFloat(data[2]), fillPause: parseFloat(data[3]), extractionTime: parseFloat(data[4]), turbulenceOn: parseFloat(data[5]), turbulenceOff: parseFloat(data[6]), temp: parseFloat(data[7]), machineRecipe: parseInt(data[8]) });
         }
     }
 
@@ -186,7 +182,7 @@ Rectangle {
         if (r)
         {
             createRecipeTable();
-            if (getRecipeCount() === 0)
+            if (parseInt(getRecipeCount()) === 0)
             {
                 insertRecipes();
             }

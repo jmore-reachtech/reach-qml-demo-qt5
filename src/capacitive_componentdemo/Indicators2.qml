@@ -1,34 +1,30 @@
-import QtQuick 1.1
+import QtQuick 2.0
 import "../components"
 
 Rectangle {
     id: indicator2
     objectName: "indicator2"
-    width: 480
-    height: 272
+    width: 640
+    height: 480
+    color: "#666666"
 
     signal message(string msg)
-
-    gradient: Gradient {
-        GradientStop {position: 0.0; color: "#666666"}
-        GradientStop {position: 1.0; color: "#EEEEEE"}
-    }
 
     Text {
         id: txtTitle
         x: 0
-        y: 8
-        width: 480
+        y: 71
+        width: 640
         height: 25
         text: qsTr("Indicators")
         horizontalAlignment: Text.AlignHCenter
         font.bold: false
-        font.pixelSize: 21
+        font.pixelSize: 24
     }
 
     Image{
-        x: 21
-        y: 15
+        x: 40
+        y: 139
         source: "images/therm_base.png"
 
         VerticalLevelIndicator {
@@ -63,7 +59,7 @@ Rectangle {
                     led_light1.on = false;
                 }
 
-                panel_read_out1.text = (value * scale).toFixed(1).toString() + symbol;
+                panel_read_out1.text = (value * scale).toFixed(1).toString().concat(" ").concat(symbol);
             }
         }
     }
@@ -71,8 +67,8 @@ Rectangle {
 
     LEDLight {
         id: led_light1
-        x: 170
-        y: 167
+        x: 178
+        y: 224
         width: 58
         height: 58
         on: false
@@ -89,8 +85,8 @@ Rectangle {
 
     PanelReadOut {
         id: panel_read_out1
-        x: 258
-        y: 176
+        x: 312
+        y: 313
         width: 116
         height: 76
         text: ""
@@ -103,8 +99,8 @@ Rectangle {
 
     Image {
         id: image1
-        x: 126
-        y: 40
+        x: 283
+        y: 139
         width: 340
         height: 124
         source: "images/therm_horizbase.png"
@@ -135,7 +131,7 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        var src = "import QtQuick 1.1; Timer {id: timer1; interval: 1000; running: true; repeat: true; onTriggered:{vertical3.value = getRandomInt(vertical3.minValue, vertical3.maxValue-2); horizontal1.value = vertical3.value; } }";
+        var src = "import QtQuick 2.0; Timer {id: timer1; interval: 1000; running: true; repeat: true; onTriggered:{vertical3.value = getRandomInt(vertical3.minValue, vertical3.maxValue-2); horizontal1.value = vertical3.value; } }";
         var timer = Qt.createQmlObject(src, indicator2, "timerObject");
 
     }

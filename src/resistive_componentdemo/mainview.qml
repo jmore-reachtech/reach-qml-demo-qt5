@@ -7,18 +7,7 @@ Rectangle {
     width: 640
     height: 480
     property int page: 0
-
-    gradient: Gradient {
-        GradientStop {
-            position: 0.16
-            color: "#afacac"
-        }
-
-        GradientStop {
-            position: 1
-            color: "#000000"
-        }
-    }
+    color: "#666666"
 
     signal message(string msg)
 
@@ -59,8 +48,8 @@ Rectangle {
 
     ImageButton {
         id: image_button1
-        x: 4
-        y: 231
+        x: 24
+        y: 392
         width: 48
         height: 40
         text: ""
@@ -71,6 +60,7 @@ Rectangle {
         font.bold: false
         font.family: "Arial"
         smooth: true
+        visible: root.page > 0
 
         onButtonClick: {
             root.page -= 1;
@@ -82,8 +72,8 @@ Rectangle {
 
     ImageButton {
         id: image_button2
-        x: 427
-        y: 231
+        x: 563
+        y: 392
         width: 48
         height: 40
         text: ""
@@ -94,6 +84,7 @@ Rectangle {
         imageDown: "images/right-arrow_down.png"
         font.bold: false
         font.family: "Arial"
+        visible: root.page < pagesList.length-1
 
         onButtonClick: {
             root.page += 1;

@@ -20,7 +20,7 @@ Image {
     property real increment: 1
     property int precision: 0
     property bool autoRepeat: true
-    property int autoRepeatInterval: 50
+    property int autoRepeatInterval: 200
     property alias leftImageUp: btnLeft.imageUp
     property alias leftImageDown: btnLeft.imageDown
     property alias rightImageUp: btnRight.imageUp
@@ -49,7 +49,7 @@ Image {
         autoRepeatInterval: spinner.autoRepeatInterval
         imageUp: "../images/left_arrow_spin.png"
         imageDown: "../images/left_arrow_spin_off.png"
-        onButtonClick: {
+        onButtonPress: {
             value -= increment;
             if (value < min)
             {
@@ -76,7 +76,7 @@ Image {
         text: ""
         imageUp: "../images/right_arrow_spin.png"
         imageDown: "../images/right_arrow_spin_off.png"
-        onButtonClick: {
+        onButtonPress: {
             value += increment;
             if (value > max)
             {

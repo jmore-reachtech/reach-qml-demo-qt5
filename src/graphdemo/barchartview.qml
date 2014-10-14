@@ -3,20 +3,18 @@ import "../components"
 
 Rectangle {
     id: root
-    width: 480
-    height: 272
+    width: 640
+    height: 480
     color: "#eeeeee"
     property int test: 0
 
     signal message(string msg)
 
-
-
     ImageButton {
         id: image_button1
-        x: 20
-        y: 219
-        width: 98
+        x: 122
+        y: 361
+        width: 105
         height: 31
         text: "Change Data"
         imageUp: "../images/internal_button_up.bmp"
@@ -33,7 +31,7 @@ Rectangle {
                  var testData = eval('(' + d + ')');
                  chart.data = testData;
                  chart.scaleFontSize += 2;
-                 chart.draw();
+                 chart.requestPaint();
                  test += 1;
             }
             else
@@ -41,9 +39,8 @@ Rectangle {
                 var d1 = "{labels : [\"Jan\",\"Feb\",\"March\",\"April\",\"May\",\"June\",\"July\"], datasets : [{text: \"Data 1\", fillColor : \"rgba(220,220,220,0.5)\",strokeColor : \"rgba(220,220,220,1)\",data : [65,59,90,81,56,55,40]},{text: \"Data 2\", fillColor : \"rgba(151,187,205,0.5)\",strokeColor : \"rgba(151,187,205,1)\",data : [28,48,40,19,96,27,100]}]}";
                 var testData1 = eval('(' + d1 + ')');
                 chart.data = testData1;
-
                 chart.scaleFontSize -= 2;
-                chart.draw();
+                chart.requestPaint();
                 test -= 1;
             }
 
@@ -52,9 +49,9 @@ Rectangle {
 
     ImageButton {
         id: image_button3
-        x: 130
-        y: 219
-        width: 60
+        x: 253
+        y: 361
+        width: 80
         height: 31
         text: "Back"
         imageUp: "../images/internal_button_up.bmp"
@@ -69,10 +66,10 @@ Rectangle {
 
     BarChart {
         id: chart
-        x: 20
-        y: 17
+        x: 100
+        y: 79
         width: 440
-        height: 180
+        height: 262
         scaleShowGridLines: true
         showLegend: true
         scaleLineWidth: 1

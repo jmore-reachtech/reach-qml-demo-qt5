@@ -1,25 +1,14 @@
-import QtQuick 1.1
+import QtQuick 2.0
 import "../components"
 
 Rectangle {
     id: root
     objectName: "root"
-    width: 480
-    height: 272
+    width: 640
+    height: 480
     property int page: 0
     property string swipe
-
-    gradient: Gradient {
-        GradientStop {
-            position: 0.16
-            color: "#afacac"
-        }
-
-        GradientStop {
-            position: 1
-            color: "#000000"
-        }
-    }
+    color: "#666666"
 
     signal message(string msg)
 
@@ -56,8 +45,9 @@ Rectangle {
     // swipe detection code
     MouseArea {
         id: mouseArea
-        anchors.fill: parent;
-
+        width: parent.width
+        height: parent.height
+        z: 100
         property int oldX: 0
         property int oldY: 0
 
@@ -100,7 +90,8 @@ Rectangle {
             id: loader
             property string pageName: modelData
             property bool beenLoaded: false
-            anchors.fill: parent
+            width: parent.width
+            height: parent.height
             visible: (currentPage === modelData);
             //source: "%1.qml".arg(modelData)
             onVisibleChanged: {
@@ -116,8 +107,10 @@ Rectangle {
 
     Rectangle {
         id: rectPager
+        x: 0
+        y: 447
         width: root.width
-        height: 14
+        height: 33
         color: "transparent"
         anchors.bottom: root.bottom
 
@@ -160,9 +153,9 @@ Rectangle {
         {
             var src = "";
             if ( i == root.page)
-                src = "import QtQuick 1.1; Rectangle{color: \"white\"; border.width: 1; border.color: \"black\";  width: 8; height: 8; radius: width/2; smooth: true}"
+                src = "import QtQuick 2.0; Rectangle{color: \"white\"; border.width: 1; border.color: \"black\";  width: 12; height: 12; radius: width/2; smooth: true}"
             else
-                src = "import QtQuick 1.1; Rectangle{color: \"#666666\"; width: 8; height: 8; border.width: 1; border.color: \"black\"; radius: width/2; smooth: true}"
+                src = "import QtQuick 2.0; Rectangle{color: \"#666666\"; width: 12; height: 12; border.width: 1; border.color: \"black\"; radius: width/2; smooth: true}"
 
             var rect = Qt.createQmlObject(src, rowPager, "rectPageIndicator" + i.toString());
         }

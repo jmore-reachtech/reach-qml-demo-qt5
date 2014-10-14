@@ -1,8 +1,8 @@
-import QtQuick 1.1
+import QtQuick 2.0
 
 Rectangle {
-    width: 480
-    height: 180
+    width: 640
+    height: 292
     color: "transparent"
     property ListModel items: ListModel {}
     property int currentIndex: view.currentIndex
@@ -65,7 +65,7 @@ Rectangle {
                 //anchors.horizontalCenter: delegateText.horizontalCenter
                 width: 200; height:119
                 source: "images/coffee_cup_small.png"
-                scale: 4. * y / view.height * 6. / items.count
+                scale: 2.3 * y / view.height * 6.0 / items.count
                 z: y
                 opacity: scale / 1.3
                 asynchronous: true

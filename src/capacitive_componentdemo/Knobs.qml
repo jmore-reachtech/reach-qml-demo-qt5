@@ -1,35 +1,30 @@
-import QtQuick 1.1
+import QtQuick 2.0
 import "../components"
 
 Rectangle {
     id: root
     objectName: "root"
-    width: 480
-    height: 272
+    width: 640
+    height: 480
     color: "#666666"
     signal message(string msg)
-
-    gradient: Gradient {
-        GradientStop {position: 0.0; color: "#666666"}
-        GradientStop {position: 1.0; color: "#EEEEEE"}
-    }
 
     Text {
         id: txtTitle
         x: 0
-        y: 8
-        width: 480
+        y: 71
+        width: 640
         height: 25
         text: qsTr("Dials")
         horizontalAlignment: Text.AlignHCenter
         font.bold: false
-        font.pixelSize: 21
+        font.pixelSize: 24
     }
 
     Knob {
         id: knob1
-        x: 8
-        y: 46
+        x: 88
+        y: 150
         width: 180
         height: 180
         hintBorderColor: "#000000"
@@ -68,8 +63,8 @@ Rectangle {
 
     Knob {
         id: knob2
-        x: 290
-        y: 41
+        x: 370
+        y: 145
         width: 190
         height: 190
         hintBorderColor: "#000000"
@@ -149,8 +144,8 @@ Rectangle {
 
     LineEdit {
         id: text_input1
-        x: 210
-        y: 123
+        x: 290
+        y: 227
         width: 61
         height: 26
         text: qsTr("")

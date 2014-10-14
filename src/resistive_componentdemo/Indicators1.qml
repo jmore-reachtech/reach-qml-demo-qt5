@@ -4,32 +4,28 @@ import "../components"
 Rectangle {
     id: indicator1
     objectName: "indicator1"
-    width: 480
-    height: 272
+    width: 640
+    height: 480
+    color: "#666666"
 
     signal message(string msg)
-
-    gradient: Gradient {
-        GradientStop {position: 0.0; color: "#666666"}
-        GradientStop {position: 1.0; color: "#EEEEEE"}
-    }
 
     Text {
         id: txtTitle
         x: 0
-        y: 8
-        width: 480
+        y: 71
+        width: 640
         height: 25
         text: qsTr("Indicators")
         horizontalAlignment: Text.AlignHCenter
         font.bold: false
-        font.pixelSize: 21
+        font.pixelSize: 24
     }
 
     HorizontalLevelIndicator {
         id: horizontal1
-        x: 268
-        y: 46
+        x: 366
+        y: 152
         width: 200
         height: 20
         hintFontBold: true
@@ -55,8 +51,8 @@ Rectangle {
     }
 
     Image{
-        x: 202
-        y: 66
+        x: 265
+        y: 161
         source: "images/level_base.png"
         VerticalLevelIndicator {
             id: vertical1
@@ -88,8 +84,8 @@ Rectangle {
     }
 
     Image{
-        x: 50
-        y: 37
+        x: 75
+        y: 152
         source: "images/battery_base.png"
 
         VerticalLevelIndicator {
@@ -116,8 +112,8 @@ Rectangle {
     }
 
     ImageSequencer{
-        x: 284
-        y: 79
+        x: 382
+        y: 183
         timerDuration: 1000
         imageExtension: ".png"
         property int totalImages: 10

@@ -1,35 +1,30 @@
-import QtQuick 1.1
+import QtQuick 2.0
 import "../components"
 
 Rectangle {
     id: root
     objectName: "root"
-    width: 480
-    height: 272
+    width: 640
+    height: 480
     color: "#666666"
     signal message(string msg)
-
-    gradient: Gradient {
-        GradientStop {position: 0.0; color: "#666666"}
-        GradientStop {position: 1.0; color: "#EEEEEE"}
-    }
 
     Text {
         id: txtTitle
         x: 0
-        y: 8
-        width: 480
+        y: 71
+        width: 640
         height: 25
         text: qsTr("Data Entry")
         horizontalAlignment: Text.AlignHCenter
         font.bold: false
-        font.pixelSize: 21
+        font.pixelSize: 24
     }
 
     AlphaField {
         id: tbName
-        x: 63
-        y: 39
+        x: 169
+        y: 122
         width: 302
         height: 34
         labelFontBold: false
@@ -56,8 +51,8 @@ Rectangle {
 
     NumericField {
         id: tbAge
-        x: 63
-        y: 75
+        x: 169
+        y: 173
         width: 180
         normalKeyIcon: "images/key1_off.png"
         pressedKeyIcon: "images/key1_on.png"
@@ -82,12 +77,12 @@ Rectangle {
 
     VerticalRadioButtonList {
         id: rbProduct
-        x: 63
-        y: 132
-        spacing: 4
+        x: 169
+        y: 244
+        spacing: 5
         imageHeight: 24
         imageWidth: 24
-        itemSpacing: 3
+        itemSpacing: 8
         font.pixelSize: 14
         textColor: "#000000"
         font.family: "Arial"
@@ -111,28 +106,28 @@ Rectangle {
 
     Text {
         id: text1
-        x: 61
-        y: 110
+        x: 167
+        y: 220
         text: qsTr("Product Code")
         font.pixelSize: 14
     }
 
     Text {
         id: text2
-        x: 229
-        y: 110
+        x: 335
+        y: 220
         text: qsTr("Where did you buy this product?")
         font.pixelSize: 14
     }
 
     VerticalCheckBoxList {
         id: clStore
-        x: 229
-        y: 132
+        x: 335
+        y: 244
         width: 74
         height: 91
         spacing: 6
-        itemSpacing: 4
+        itemSpacing: 9
         imageWidth: 24
         imageHeight: 24
         font.pixelSize: 14
@@ -162,8 +157,8 @@ Rectangle {
     }
 
     ImageButton{
-        x: 61
-        y: 216
+        x: 169
+        y: 354
         width: 64
         height: 33
         text: "Save"

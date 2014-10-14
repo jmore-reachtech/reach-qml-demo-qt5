@@ -1,32 +1,27 @@
-import QtQuick 1.1
+import QtQuick 2.0
 import "../components"
 
 Rectangle {
     id: button1
     objectName: "button1"
-    width: 480
-    height: 272
+    width: 640
+    height: 480
     color: "#666666"
     signal message(string msg)
 
-    gradient: Gradient {
-        GradientStop {position: 0.0; color: "#666666"}
-        GradientStop {position: 1.0; color: "#EEEEEE"}
-    }
-
     Text {
         id: txtTitle
-        x: 139
-        y: 8
+        x: 190
+        y: 71
         text: qsTr("Buttons and Switches")
         font.bold: false
-        font.pixelSize: 21
+        font.pixelSize: 24
     }
 
     ImageButton {
         id: image_button1
-        x: 239
-        y: 70
+        x: 328
+        y: 171
         width: 102
         height: 102
         text: ""
@@ -45,8 +40,8 @@ Rectangle {
 
     Switch {
         id: switch1
-        x: 46
-        y: 56
+        x: 135
+        y: 157
         width: 49
         height: 135
         on: false
@@ -70,8 +65,8 @@ Rectangle {
 
     Switch {
         id: switch2
-        x: 129
-        y: 86
+        x: 218
+        y: 187
         width: 70
         height: 70
         on: false
@@ -95,8 +90,8 @@ Rectangle {
 
     VerticalSwitchGroup {
         id: switch_group2
-        x: 377
-        y: 56
+        x: 466
+        y: 157
         height: 2
         spacing: 4
         font.underline: false
@@ -141,8 +136,8 @@ Rectangle {
 
     ImageButton {
         id: quitButton
-        x: 46
-        y: 209
+        x: 136
+        y: 354
         width: 48
         height: 48
         text: ""
@@ -157,8 +152,8 @@ Rectangle {
             GradientStop {position: 0.0; color: "#666666"}
             GradientStop {position: 1.0; color: "#EEEEEE"}
         }
-        width: 480
-        height: 272
+        width: 640
+        height: 480
         opacity: 0.2
 
         Rectangle{
@@ -240,7 +235,7 @@ Rectangle {
         showAnim.from = 0.2;
         showAnim.to = 1.0;
         showAnim.start();
-        var src1 = "import QtQuick 1.1; Timer {id: timer1; interval: 3000; running: false; repeat: false; onTriggered:{rectOpaque.visible = false;} }";
+        var src1 = "import QtQuick 2.0; Timer {id: timer1; interval: 3000; running: false; repeat: false; onTriggered:{rectOpaque.visible = false;} }";
         var timer1 = Qt.createQmlObject(src1, button1, "timerObject1");
         timer1.start();
 

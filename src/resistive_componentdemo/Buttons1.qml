@@ -4,29 +4,24 @@ import "../components"
 Rectangle {
     id: button1
     objectName: "button1"
-    width: 480
-    height: 272
+    width: 640
+    height: 480
     color: "#666666"
     signal message(string msg)
 
-    gradient: Gradient {
-        GradientStop {position: 0.0; color: "#666666"}
-        GradientStop {position: 1.0; color: "#EEEEEE"}
-    }
-
     Text {
         id: txtTitle
-        x: 139
-        y: 8
+        x: 190
+        y: 71
         text: qsTr("Buttons and Switches")
         font.bold: false
-        font.pixelSize: 21
+        font.pixelSize: 24
     }
 
     ImageButton {
         id: image_button1
-        x: 239
-        y: 70
+        x: 328
+        y: 171
         width: 102
         height: 102
         text: ""
@@ -42,10 +37,11 @@ Rectangle {
         }
     }
 
+
     Switch {
         id: switch1
-        x: 46
-        y: 56
+        x: 135
+        y: 157
         width: 49
         height: 135
         on: false
@@ -69,8 +65,8 @@ Rectangle {
 
     Switch {
         id: switch2
-        x: 129
-        y: 86
+        x: 218
+        y: 187
         width: 70
         height: 70
         on: false
@@ -94,8 +90,8 @@ Rectangle {
 
     VerticalSwitchGroup {
         id: switch_group2
-        x: 377
-        y: 56
+        x: 466
+        y: 157
         height: 2
         spacing: 4
         font.underline: false
@@ -140,8 +136,8 @@ Rectangle {
 
     ImageButton {
         id: quitButton
-        x: 216
-        y: 206
+        x: 296
+        y: 388
         width: 48
         height: 48
         text: ""
@@ -149,6 +145,7 @@ Rectangle {
         imageUp: "images/quit_up.png"
         onButtonClick: parent.parent.parent.message("../src/mainmenu.qml");
     }
+
 
     Component.onCompleted: {
 

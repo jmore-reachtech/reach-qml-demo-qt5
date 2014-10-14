@@ -1,26 +1,21 @@
-import QtQuick 1.1
+import QtQuick 2.0
 import "../components"
 import "js/dataModel.js" as Db
 
 Rectangle {
-    width: 480
-    height: 272
+    width: 640
+    height: 480
     id: root
-    color: "#2D2D2D"
+    color: "#666666"
     property string errorMessage: ""
     property int count
 
     signal message(string msg)
 
-    gradient: Gradient {
-        GradientStop {position: 0.0; color: "#666666"}
-        GradientStop {position: 1.0; color: "#EEEEEE"}
-    }
-
     AlphaField {
         id: tbName
-        x: 13
-        y: 20
+        x: 104
+        y: 94
         width: 362
         height: 34
         keyboardBackGroundImage: "images/keyboardbg.png"
@@ -37,7 +32,7 @@ Rectangle {
         labelColor: "#f7f6f6"
         inputFontPixelSize: 18
         keyboardAnimationSpeed: 100
-        inputFontFamily: "Arial"
+        inputFontFamily: "DejaVu Sans"
         labelFontFamily: "Arial"
         labelFontPixelSize: 18
         labelText: "Name"
@@ -46,8 +41,8 @@ Rectangle {
 
     Text {
         id: txtMsg
-        x: 390
-        y: 28
+        x: 481
+        y: 102
         color: "Red"
         text: qsTr("*")
         font.family: "DejaVu Serif"
@@ -57,8 +52,8 @@ Rectangle {
 
     Text {
         id: txtVolume
-        x: 12
-        y: 66
+        x: 103
+        y: 145
         color: "#f7f6f6"
         text: qsTr("Volume")
         font.pixelSize: 18
@@ -66,8 +61,8 @@ Rectangle {
 
     NumericSelector {
         id: volume
-        x: 13
-        y: 89
+        x: 104
+        y: 168
         height: 40
         width: 130
         max: 16
@@ -77,8 +72,8 @@ Rectangle {
 
     Text {
         id: txtTemp
-        x: 10
-        y: 137
+        x: 103
+        y: 231
         color: "#f7f6f6"
         text: qsTr("Temperature")
         font.pixelSize: 18
@@ -86,8 +81,8 @@ Rectangle {
 
     NumericSelector {
         id: temp
-        x: 13
-        y: 161
+        x: 106
+        y: 255
         height: 40
         width: 130
         max: 208
@@ -99,8 +94,8 @@ Rectangle {
 
     Text {
         id: txtFillPause
-        x: 158
-        y: 67
+        x: 249
+        y: 146
         color: "#f7f6f6"
         text: qsTr("Fill Pause")
         font.pixelSize: 18
@@ -108,8 +103,8 @@ Rectangle {
 
     NumericSelector {
         id: fillPause
-        x: 158
-        y: 89
+        x: 249
+        y: 168
         height: 40
         width: 150
         max: 25.0
@@ -121,8 +116,8 @@ Rectangle {
 
     Text {
         id: txtExtractionTime
-        x: 158
-        y: 137
+        x: 251
+        y: 231
         color: "#f7f6f6"
         text: qsTr("Extraction Time")
         font.pixelSize: 18
@@ -130,8 +125,8 @@ Rectangle {
 
     NumericSelector {
         id: extractionTime
-        x: 158
-        y: 161
+        x: 251
+        y: 255
         height: 40
         width: 150
         max: 180
@@ -143,8 +138,8 @@ Rectangle {
 
     Text {
         id: txtTurbulenceOn
-        x: 322
-        y: 66
+        x: 413
+        y: 145
         color: "#f7f6f6"
         text: qsTr("Turbulence On")
         font.pixelSize: 18
@@ -152,8 +147,8 @@ Rectangle {
 
     NumericSelector {
         id: turbulenceOn
-        x: 322
-        y: 89
+        x: 413
+        y: 168
         height: 40
         width: 140
         max: 45
@@ -165,8 +160,8 @@ Rectangle {
 
     Text {
         id: txtTurbulenceOff
-        x: 322
-        y: 137
+        x: 415
+        y: 231
         color: "#f7f6f6"
         text: qsTr("Turbulence Off")
         font.pixelSize: 18
@@ -174,8 +169,8 @@ Rectangle {
 
     NumericSelector {
         id: turbulenceOff
-        x: 322
-        y: 161
+        x: 415
+        y: 255
         height: 40
         width: 140
         max: 40
@@ -191,8 +186,8 @@ Rectangle {
 
     ImageButton {
         id: btnSave
-        x: 166
-        y: 206
+        x: 252
+        y: 325
         width: 76
         height: 64
         text: ""
@@ -220,7 +215,7 @@ Rectangle {
                 db.closeDB();
 
                 if (res > 0)
-                {
+                {           
                     //Add an item to Db.datalist
                     Db.dataList.append({recipeId: recipeId, recipeName: tbName.inputText, volume: volume.value, fillPause: fillPause.value,
                                        extractionTime: extractionTime.value, turbulenceOn: turbulenceOn.value, turbulenceOff: turbulenceOff.value,
@@ -231,7 +226,7 @@ Rectangle {
                 else
                 {
                     //Show error here
-                    tbName.visible = false;
+                    tbName.visible = false;           
                     txtMsg.visible = false;
                     errorMessage = error;
                     errorWindow.visible = true;
@@ -248,8 +243,8 @@ Rectangle {
 
     ImageButton {
         id: btnCancel
-        x: 236
-        y: 206
+        x: 332
+        y: 325
         width: 76
         height: 64
         text: ""
@@ -300,7 +295,7 @@ Rectangle {
             id: txtError
             width: parent.width
             height: 95
-            text: "An error occurred: \n" + errorMessage
+            text: "An error occurred: Duplicate entry.  TRy another name\n"
             wrapMode: Text.WordWrap
             font.pixelSize: 18
             horizontalAlignment: Text.AlignHCenter
@@ -330,6 +325,19 @@ Rectangle {
 
     }
 
+    Text {
+        id: text1
+        x: 0
+        y: 49
+        width: 640
+        height: 24
+        color: "#ffffff"
+        text: qsTr("Add a Coffee Recipe")
+        font.bold: false
+        horizontalAlignment: Text.AlignHCenter
+        font.pixelSize: 20
+    }
+
     Component.onCompleted: {
         volume.value = 8;
         temp.value = 200;
@@ -345,3 +353,6 @@ Rectangle {
     }
 
 }
+
+
+

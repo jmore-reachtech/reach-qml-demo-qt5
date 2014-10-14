@@ -43,7 +43,10 @@ Rectangle {
             image: "images/system-icon.png"; iconheight:64; iconwidth: 76; form: "systemdemo/mainview.qml"; icontext: "System Plugin\n      Demo"
         }
         ListElement {
-            image: "images/upgrade-icon.png"; iconheight:72; iconwidth: 77; form: "upgradedemo/mainview.qml"; icontext: "Upgrade"
+            image: "images/video-icon.png"; iconheight:77; iconwidth: 76; form: "videodemo/mainview.qml"; icontext: "Video Demo"
+        }
+        ListElement {
+            image: "images/upgrade-icon.png"; iconheight:72; iconwidth: 77; form: "videodemo/mainview.qml"; icontext: "Upgrade Demo"
         }
     }
 

@@ -1,34 +1,33 @@
-import QtQuick 1.1
+import QtQuick 2.0
 import "../components"
 
 Rectangle {
     id: root
     objectName: "root"
-    width: 480
-    height: 272
+    width: 640
+    height: 480
     signal message(string msg)
 
     Image{
         source: "images/meterdemobgd.png"
+        anchors.fill: parent
 
         Text {
             id: txtTitle
             x: 0
-            y: 8
-            width: 480
+            y: 71
+            width: 640
             height: 25
             text: qsTr("Meters")
             horizontalAlignment: Text.AlignHCenter
             font.bold: false
-            font.pixelSize: 21
-
-
+            font.pixelSize: 24
         }
 
         Speedometer {
             id: spedometer2
-            x: 261
-            y: 55
+            x: 334
+            y: 146
             width: 215
             height: 217
             minAngle: -112
@@ -54,8 +53,8 @@ Rectangle {
 
         Speedometer {
             id: spedometer1
-            x: 6
-            y: 27
+            x: 79
+            y: 118
             width: 244
             height: 245
             minAngle: -126
@@ -97,8 +96,8 @@ Rectangle {
 
     HorizontalSlider {
         id: slider___horizontal1
-        x: 288
-        y: 31
+        x: 230
+        y: 388
         width: 180
         height: 22
         xMax: 158

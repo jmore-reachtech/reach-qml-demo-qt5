@@ -4,18 +4,24 @@ import "js/dataModel.js" as Db
 
 
 Rectangle {
-    width: 480
-    height: 272
+    width: 640
+    height: 480
     id: root
-    color: "#666666"
+    color: "#2D2D2D"
 
     signal message(string msg)
+
+    gradient: Gradient {
+        GradientStop {position: 0.0; color: "#666666"}
+        GradientStop {position: 1.0; color: "#EEEEEE"}
+    }
 
     Text {
         id: textTitle
         x: 0
-        y: 41
-        width: 480
+        y: 99
+        width: 640
+        height: 22
         color: "#ffffff"
         text: ""
         font.underline: false
@@ -28,10 +34,10 @@ Rectangle {
 
     ProgressBar{
         id: progress
-        x: 50
-        y: 125
-        width: 381
-        height: 23
+        x: 58
+        y: 222
+        width: 526
+        height: 37
 
     }
 
@@ -51,8 +57,8 @@ Rectangle {
 
     ImageButton {
         id: btnCancel
-        x: 208
-        y: 202
+        x: 283
+        y: 314
         width: 76
         height: 64
         text: ""

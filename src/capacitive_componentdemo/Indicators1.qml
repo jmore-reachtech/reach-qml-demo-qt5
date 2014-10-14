@@ -1,35 +1,31 @@
-import QtQuick 1.1
+import QtQuick 2.0
 import "../components"
 
 Rectangle {
     id: indicator1
     objectName: "indicator1"
-    width: 480
-    height: 272
+    width: 640
+    height: 480
+    color: "#666666"
 
     signal message(string msg)
-
-    gradient: Gradient {
-        GradientStop {position: 0.0; color: "#666666"}
-        GradientStop {position: 1.0; color: "#EEEEEE"}
-    }
 
     Text {
         id: txtTitle
         x: 0
-        y: 8
-        width: 480
+        y: 71
+        width: 640
         height: 25
         text: qsTr("Indicators")
         horizontalAlignment: Text.AlignHCenter
         font.bold: false
-        font.pixelSize: 21
+        font.pixelSize: 24
     }
 
     HorizontalLevelIndicator {
         id: horizontal1
-        x: 250
-        y: 53
+        x: 366
+        y: 152
         width: 200
         height: 20
         hintFontBold: true
@@ -55,8 +51,8 @@ Rectangle {
     }
 
     Image{
-        x: 182
-        y: 59
+        x: 265
+        y: 161
         source: "images/level_base.png"
         VerticalLevelIndicator {
             id: vertical1
@@ -88,8 +84,8 @@ Rectangle {
     }
 
     Image{
-        x: 23
-        y: 36
+        x: 75
+        y: 152
         source: "images/battery_base.png"
 
         VerticalLevelIndicator {
@@ -116,8 +112,8 @@ Rectangle {
     }
 
     ImageSequencer{
-        x: 265
-        y: 79
+        x: 382
+        y: 183
         timerDuration: 1000
         imageExtension: ".png"
         property int totalImages: 10
@@ -128,7 +124,7 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        var src = "import QtQuick 1.1; Timer {id: timer1; interval: 200; running: true; repeat: true; onTriggered:{horizontal1.value += 1; if (horizontal1.value === horizontal1.maxValue) horizontal1.value = 0; vertical1.value = Math.floor(Math.random()*(vertical1.maxValue+1)); vertical2.value = getRandomInt(40, vertical2.maxValue); } }";
+        var src = "import QtQuick 2.0; Timer {id: timer1; interval: 200; running: true; repeat: true; onTriggered:{horizontal1.value += 1; if (horizontal1.value === horizontal1.maxValue) horizontal1.value = 0; vertical1.value = Math.floor(Math.random()*(vertical1.maxValue+1)); vertical2.value = getRandomInt(40, vertical2.maxValue); } }";
         var timer = Qt.createQmlObject(src, indicator1, "timerObject");
     }
 }

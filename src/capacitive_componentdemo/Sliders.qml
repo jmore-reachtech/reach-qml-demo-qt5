@@ -1,32 +1,27 @@
-import QtQuick 1.1
+import QtQuick 2.0
 import "../components"
 
 Rectangle {
-    width: 480
-    height: 272
-
+    width: 640
+    height: 480
+    color: "#666666"
     signal message(string msg)
-
-    gradient: Gradient {
-        GradientStop {position: 0.0; color: "#666666"}
-        GradientStop {position: 1.0; color: "#EEEEEE"}
-    }
 
     Text {
         id: txtTitle
         x: 0
-        y: 8
-        width: 480
+        y: 71
+        width: 640
         height: 25
         text: qsTr("Sliders")
         horizontalAlignment: Text.AlignHCenter
         font.bold: false
-        font.pixelSize: 21
+        font.pixelSize: 24
     }
 
     Rectangle{
-        x: 17
-        y: 153
+        x: 54
+        y: 292
         color: "transparent"
         width: 214
         height: 77
@@ -61,8 +56,8 @@ Rectangle {
     }
 
     Rectangle{
-        x: 12
-        y: 75
+        x: 45
+        y: 147
         color: "transparent"
         width: 326
         height: 72
@@ -115,8 +110,8 @@ Rectangle {
 
     VerticalSlider {
         id: slider___vertical2
-        x: 413
-        y: 6
+        x: 535
+        y: 136
         width: 23
         height: 260
         hintBorderColor: "#000000"
@@ -143,8 +138,8 @@ Rectangle {
 
     VerticalSlider {
         id: slider___vertical1
-        x: 335
-        y: 46
+        x: 423
+        y: 174
         width: 48
         height: 184
         hintBorderColor: "#000000"

@@ -1,31 +1,26 @@
-import QtQuick 1.1
+import QtQuick 2.0
 import "../components"
 
 Rectangle {
     id: root
     objectName: "root"
-    width: 480
-    height: 272
+    width: 640
+    height: 480
     color: "#666666"
     signal message(string msg)
 
-    gradient: Gradient {
-        GradientStop {position: 0.0; color: "#666666"}
-        GradientStop {position: 1.0; color: "#EEEEEE"}
-    }
-
     Text {
         id: txtTitle
-        x: 139
-        y: 8
+        x: 190
+        y: 71
         text: qsTr("Buttons and Switches")
         font.bold: false
-        font.pixelSize: 21
+        font.pixelSize: 24
     }
 
     Rectangle{
-        x: 35
-        y: 45
+        x: 139
+        y: 144
         width: 183
         height: 94
         color: "transparent"
@@ -49,8 +44,8 @@ Rectangle {
 
     HorizontalSwitchGroup {
         id: switch_group___horizontal1
-        x: 61
-        y: 158
+        x: 130
+        y: 304
         width: 8
         font.pixelSize: 16
         spacing: 5
@@ -94,8 +89,8 @@ Rectangle {
 
     ImageButton {
         id: image_button1
-        x: 302
-        y: 120
+        x: 371
+        y: 272
         width: 122
         height: 123
         text: ""
@@ -110,8 +105,8 @@ Rectangle {
     }
 
     Rectangle{
-        x: 271
-        y:45
+        x: 359
+        y:153
         width: 145
         height: 76
         color: "transparent"

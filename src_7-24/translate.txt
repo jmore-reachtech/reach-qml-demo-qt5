@@ -1,0 +1,25 @@
+G:recipeId=%d,T:E1=%d
+G:volume=%d,T:E2=%d
+G:fillPause=%d,T:E3=%d
+G:extractionTime=%d,T:E4=%d
+G:turbulenceOn=%d,T:E5=%d
+G:turbulenceOff=%d,T:E6=%d
+G:temp=%d,T:E7=%d
+G:rinse=%d,T:E99=%d
+M:E0=%s,T:root.m_Name=%s
+M:E2=%s,T:root.m_Volume=%s
+M:E3=%s,T:root.m_FillPause=%s
+M:E4=%s,T:root.m_ExtractionTime=%s
+M:E5=%s,T:root.m_TurbulenceOn=%s
+M:E6=%s,T:root.m_TurbulenceOff=%s
+M:E7=%s,T:root.m_Temp=%s
+M:E100=%s,T:root.m_Index=%s
+G:txt.value=%d,T:dial=%d
+M:r2=%d,T:txt.value=%d
+
+
+
+# default messages
+# these are used if there is not match
+M:%s,T:txtDebug.text=%s
+G:%s,T:e1

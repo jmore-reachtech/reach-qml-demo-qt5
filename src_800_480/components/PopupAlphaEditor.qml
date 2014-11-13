@@ -140,7 +140,7 @@ Item {
                anchors.topMargin: 2
                normalKeyIcon: popupEditor.normalKeyIcon
                pressedlKeyIcon: popupEditor.pressedKeyIcon
-               keySpacing: 4
+               keySpacing: 8
                keyWidth: popupEditor.keyWidth
                keyHeight: popupEditor.keyHeight
                popupEditor: parent.parent.parent

@@ -12,7 +12,7 @@ Rectangle {
     Text {
         id: txtTitle
         x: 80
-        y: 83
+        y: 63
         width: 640
         height: 25
         text: qsTr("Data Entry")
@@ -24,27 +24,27 @@ Rectangle {
     AlphaField {
         id: tbName
         x: 249
-        y: 134
+        y: 114
         width: 302
         height: 34
         labelFontBold: false
         keyboardBackGroundImage: "images/keyboardbg.png"
         normalKeyIcon: "images/key1_off.png"
         pressedKeyIcon: "images/key1_on.png"
-        fieldSpacing: 7
+        fieldSpacing: 6
         inputText: ""
         keyTextColor: "#000000"
         keyTextBold: false
-        keyHeight: 44
-        keyWidth: 42
-        keyTextFontSize: 14
+        keyHeight: 48
+        keyWidth: 46
+        keyTextFontSize: 18
         inputColor: "#ffffff"
         labelColor: "#000000"
-        inputFontPixelSize: 14
+        inputFontPixelSize: 20
         keyboardAnimationSpeed: 100
         inputFontFamily: "Arial"
         labelFontFamily: "Arial"
-        labelFontPixelSize: 14
+        labelFontPixelSize: 18
         labelText: "Name"
         z: 30
     }
@@ -52,7 +52,7 @@ Rectangle {
     NumericField {
         id: tbAge
         x: 249
-        y: 185
+        y: 165
         width: 180
         normalKeyIcon: "images/key1_off.png"
         pressedKeyIcon: "images/key1_on.png"
@@ -62,28 +62,28 @@ Rectangle {
         inputText: ""
         keyTextColor: "#000000"
         keyTextBold: false
-        keyTextFontSize: 14
-        keyWidth: 44
-        keyHeight: 42
+        keyTextFontSize: 18
+        keyWidth: 46
+        keyHeight: 48
         inputColor: "#ffffff"
         labelColor: "#000000"
-        inputFontPixelSize: 14
+        inputFontPixelSize: 20
         keyboardAnimationSpeed: 100
         inputFontFamily: "Arial"
         labelFontFamily: "Arial"
-        labelFontPixelSize: 14
+        labelFontPixelSize: 18
         labelText: "Age"
     }
 
     VerticalRadioButtonList {
         id: rbProduct
         x: 249
-        y: 256
+        y: 236
         spacing: 5
-        imageHeight: 24
-        imageWidth: 24
+        imageHeight: 36
+        imageWidth: 36
         itemSpacing: 8
-        font.pixelSize: 14
+        font.pixelSize: 18
         textColor: "#000000"
         font.family: "Arial"
         font.bold: false
@@ -107,30 +107,30 @@ Rectangle {
     Text {
         id: text1
         x: 247
-        y: 232
+        y: 202
         text: qsTr("Product Code")
-        font.pixelSize: 14
+        font.pixelSize: 18
     }
 
     Text {
         id: text2
         x: 415
-        y: 232
+        y: 202
         text: qsTr("Where did you buy this product?")
-        font.pixelSize: 14
+        font.pixelSize: 18
     }
 
     VerticalCheckBoxList {
         id: clStore
         x: 415
-        y: 256
+        y: 236
         width: 74
         height: 91
         spacing: 6
         itemSpacing: 9
-        imageWidth: 24
-        imageHeight: 24
-        font.pixelSize: 14
+        imageWidth: 36
+        imageHeight: 36
+        font.pixelSize: 18
         textColor: "#000000"
         font.family: "Arial"
         font.bold: false
@@ -159,8 +159,9 @@ Rectangle {
     ImageButton{
         x: 249
         y: 366
-        width: 64
-        height: 33
+        width: 74
+        height: 40
+        font.pixelSize: 18
         text: "Save"
         imageUp: "images/internal_button_up.bmp"
         imageDown: "images/internal_button_dn.bmp"

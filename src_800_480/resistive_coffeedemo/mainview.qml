@@ -2,6 +2,7 @@ import QtQuick 2.0
 import "../components"
 import "js/dataModel.js" as Db
 
+
 Rectangle {
     width: 800
     height: 480
@@ -27,8 +28,8 @@ Rectangle {
 
     ImageButton {
         id: btnSettings
-        x: 180
-        y: 360
+        x: 183
+        y: 354
         width: 76
         height: 64
         text: ""
@@ -43,8 +44,8 @@ Rectangle {
     ImageButton {
         id: btnRinse
         objectName: "btnRinse"
-        x: 251
-        y: 360
+        x: 254
+        y: 354
         text: ""
         width: 76
         height: 64
@@ -58,8 +59,8 @@ Rectangle {
 
     ImageButton {
         id: btnBrew
-        x: 321
-        y: 360
+        x: 324
+        y: 354
         text: ""
         width: 76
         height: 64
@@ -74,8 +75,8 @@ Rectangle {
 
     ImageButton {
         id: btnEdit
-        x: 391
-        y: 360
+        x: 394
+        y: 354
         width: 76
         height: 64
         text: ""
@@ -83,29 +84,27 @@ Rectangle {
         imageDown: "images/btnEditOff.png"
         onButtonClick: {
             Db.currentIndex = imagecarousel1.currentIndex;
-            load.source = "recipeview.qml";
-        }
+            load.source = "recipeview.qml";        }
     }
 
     ImageButton {
         id: btnAdd
-        x: 461
-        y: 360
+        x: 464
+        y: 354
         width: 76
         height: 64
         text: ""
         imageUp: "images/btnAdd.png"
         imageDown: "images/btnAddOff.png"
-        onButtonClick:
-        {
+        onButtonClick: {
             load.source = "addrecipeview.qml";
         }
     }
 
     ImageButton {
         id: btnQuit
-        x: 531
-        y: 360
+        x: 534
+        y: 354
         width: 76
         height: 64
         text: ""
@@ -115,7 +114,7 @@ Rectangle {
             mainView.message("../src/mainmenu.qml");
         }
     }
-	  
+
     DataModel
     {
         id: items
@@ -141,12 +140,14 @@ Rectangle {
     function insertRecipes()
     {
         db.execSql("insert into recipe (machineRecipe, recipeName, volume, fillPause, extractionTime, turbulenceOn, turbulenceOff, temp) values(1, \"House Special\", 8, 5, 45, 10, 4, 200);");
-        db.execSql("insert into recipe (machineRecipe, recipeName, volume, fillPause, extractionTime, turbulenceOn, turbulenceOff, temp) values(1, \"Decaf\", 8, 5, 45, 10, 4, 200);");
+        db.execSql("insert into recipe (machineRecipe, recipeName, volume, fillPause, extractionTime, turbulenceOn, turbulenceOff, temp) values(1, \"French Roast\", 8, 5, 45, 10, 4, 200);");
         db.execSql("insert into recipe (machineRecipe, recipeName, volume, fillPause, extractionTime, turbulenceOn, turbulenceOff, temp) values(1, \"Decaf\", 8, 5, 45, 10, 4, 200);");
         db.execSql("insert into recipe (machineRecipe, recipeName, volume, fillPause, extractionTime, turbulenceOn, turbulenceOff, temp) values(1, \"Columbia\", 8, 5, 45, 10, 4, 200);");
         db.execSql("insert into recipe (machineRecipe, recipeName, volume, fillPause, extractionTime, turbulenceOn, turbulenceOff, temp) values(1, \"Costa Rica\", 8, 5, 45, 10, 4, 200);");
         db.execSql("insert into recipe (machineRecipe, recipeName, volume, fillPause, extractionTime, turbulenceOn, turbulenceOff, temp) values(1, \"Ethiopia\", 8, 5, 45, 10, 4, 200);");
         db.execSql("insert into recipe (machineRecipe, recipeName, volume, fillPause, extractionTime, turbulenceOn, turbulenceOff, temp) values(1, \"Kona\", 8, 5, 45, 10, 4, 200);");
+        db.execSql("insert into recipe (machineRecipe, recipeName, volume, fillPause, extractionTime, turbulenceOn, turbulenceOff, temp) values(1, \"Maui\", 5, 45, 10, 4, 200);");
+        db.execSql("insert into recipe (machineRecipe, recipeName, volume, fillPause, extractionTime, turbulenceOn, turbulenceOff, temp) values(1, \"Bolivia\", 5, 45, 10, 4, 200);");
     }
 
     function loadRecipes()
@@ -210,6 +211,5 @@ Rectangle {
         imagecarousel1.items = Db.dataList;
         imagecarousel1.setCurrentIndex(Db.currentIndex);
     }
-
 
 }

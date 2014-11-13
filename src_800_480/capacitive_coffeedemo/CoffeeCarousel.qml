@@ -5,6 +5,8 @@ Item {
     height: 292
     property ListModel items: ListModel {}
     property int currentIndex: view.currentIndex
+    property int mouseXdist: 10
+    property int x_pos
 
     PathView {
         id: view
@@ -15,6 +17,38 @@ Item {
         model: items
         delegate: del
         path: p
+
+        MouseArea {
+             anchors.fill: parent
+             onPressed: {
+                 x_pos = mouse.x
+             }
+
+             onReleased: {
+                 // if its just a press and release at the same approx location
+                 // then use that location to inc or dec
+                 if ( ( (mouse.x >= x_pos) && ((mouse.x - x_pos) < mouseXdist) ) ||
+                      ( (mouse.x < x_pos) && ((x_pos - mouse.x) < mouseXdist) ) )  {
+
+                     if (mouse.x > parent.width/2) {
+                        view.decrementCurrentIndex()
+                    }
+                    else {
+                        view.incrementCurrentIndex()
+                    }
+                 }
+                 else {
+                     if( mouse.x > x_pos ) {
+                        view.incrementCurrentIndex()
+                     }
+                     else {
+                         view.decrementCurrentIndex()
+                     }
+                 }
+
+             }
+         }
+
     }
 
     function setCurrentIndex(val)
@@ -30,7 +64,7 @@ Item {
                 width: 200; height:119
                 smooth: true
                 source: "images/coffee_cup_small.png"
-                scale: 2.3 * y / view.height * 6.0 / items.count
+                scale: 2.5 * y / view.height * 6.0 / items.count
                 z: y
                 opacity: scale / 1.3
                 asynchronous: true

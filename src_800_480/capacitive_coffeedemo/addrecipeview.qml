@@ -17,20 +17,20 @@ Rectangle {
         x: 188
         y: 87
         width: 362
-        height: 34
+        height: 40
         keyboardBackGroundImage: "images/keyboardbg.png"
         normalKeyIcon: "images/key1_off.png"
         pressedKeyIcon: "images/key1_on.png"
-        fieldSpacing: 16
+        fieldSpacing: 8
         inputText: ""
+        inputFontPixelSize: 20
         keyTextColor: "#000000"
         keyTextBold: false
-        keyHeight: 44
-        keyWidth: 42
-        keyTextFontSize: 14
+        keyHeight: 48
+        keyWidth: 46
+        keyTextFontSize: 18
         inputColor: "#ffffff"
         labelColor: "#f7f6f6"
-        inputFontPixelSize: 18
         keyboardAnimationSpeed: 100
         inputFontFamily: "DejaVu Sans"
         labelFontFamily: "Arial"
@@ -42,11 +42,11 @@ Rectangle {
     Text {
         id: txtMsg
         x: 565
-        y: 95
+        y: 98
         color: "Red"
         text: qsTr("*")
         font.family: "DejaVu Serif"
-        font.pixelSize: 14
+        font.pixelSize: 18
         z: 30
     }
 

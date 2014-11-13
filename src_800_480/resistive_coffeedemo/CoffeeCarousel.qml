@@ -65,7 +65,7 @@ Rectangle {
                 //anchors.horizontalCenter: delegateText.horizontalCenter
                 width: 200; height:119
                 source: "images/coffee_cup_small.png"
-                scale: 2.3 * y / view.height * 6.0 / items.count
+                scale: 2.5 * y / view.height * 6.0 / items.count
                 z: y
                 opacity: scale / 1.3
                 asynchronous: true

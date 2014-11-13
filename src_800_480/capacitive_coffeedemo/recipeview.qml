@@ -23,16 +23,16 @@ Rectangle {
         keyboardBackGroundImage: "images/keyboardbg.png"
         normalKeyIcon: "images/key1_off.png"
         pressedKeyIcon: "images/key1_on.png"
-        fieldSpacing: 16
+        fieldSpacing: 8
         inputText: ""
         keyTextColor: "#000000"
         keyTextBold: false
-        keyHeight: 44
-        keyWidth: 42
-        keyTextFontSize: 14
+        keyHeight: 48
+        keyWidth: 46
+        keyTextFontSize: 18
         inputColor: "#ffffff"
         labelColor: "#f7f6f6"
-        inputFontPixelSize: 18
+        inputFontPixelSize: 20
         keyboardAnimationSpeed: 100
         inputFontFamily: "Arial"
         labelFontFamily: "Arial"

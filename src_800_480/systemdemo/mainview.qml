@@ -23,14 +23,14 @@ Rectangle {
     Text {
         id: txtTitle
         x: 0
-        y: 41
+        y: 81
         width: 800
         height: 25
         text: qsTr("System Plugin Demo")
         anchors.horizontalCenterOffset: 0
         horizontalAlignment: Text.AlignHCenter
         font.bold: false
-        font.pixelSize: 21
+        font.pixelSize: 24
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
@@ -38,31 +38,31 @@ Rectangle {
     Text {
         id: text4
         x: 325
-        y: 131
+        y: 171
         width: 119
         height: 14
         color: "#ffffff"
         text: qsTr("Disable Backlight")
-        font.pixelSize: 16
+        font.pixelSize: 18
         font.bold: false
     }
 
     Text {
         id: text5
         x: 325
-        y: 208
+        y: 248
         width: 119
         height: 14
         color: "#ffffff"
         text: qsTr("Backlight Brightness")
-        font.pixelSize: 16
+        font.pixelSize: 18
         font.bold: false
     }
 
     NumericSelector {
         id: brightness
         x: 325
-        y: 235
+        y: 275
         width: 119
         height: 38
         value: 7
@@ -86,7 +86,7 @@ Rectangle {
     Text {
         id: textMsg
         x: 0
-        y: 366
+        y: 406
         visible: true
         width: 800
         height: 17
@@ -94,19 +94,19 @@ Rectangle {
         text: qsTr("Data was saved!")
         font.bold: false
         horizontalAlignment: Text.AlignHCenter
-        font.pixelSize: 16
+        font.pixelSize: 18
     }
 
     ImageButton {
         id: btnSubmit
         x: 325
-        y: 300
-        width: 60
-        height: 35
+        y: 340
+        width: 76
+        height: 40
         text: "Submit"
         imageUp: "../images/internal_button_up.bmp"
         textColor: "#000000"
-        font.pixelSize: 14
+        font.pixelSize: 18
         imageDown: "../images/internal_button_dn.bmp"
         font.family: "DejaVu Sans"
         font.bold: false
@@ -124,11 +124,11 @@ Rectangle {
     ImageButton {
             id: quitButton
             x: 410
-            y: 300
-            width: 60
-            height: 35
+            y: 340
+            width: 64
+            height: 40
             text: "Back"
-			font.pixelSize: 14
+            font.pixelSize: 18
 			font.family: "DejaVu Sans"
             imageDown: "../images/internal_button_dn.bmp"
             imageUp: "../images/internal_button_up.bmp"
@@ -138,11 +138,11 @@ Rectangle {
     ImageButton {
             id: disableBacklightButton
             x: 325
-            y: 159
-            width: 107
-            height: 34
+            y: 199
+            width: 124
+            height: 40
             text: "3 second test"
-            font.pixelSize: 14
+            font.pixelSize: 18
             imageDown: "../images/internal_button_dn.bmp"
             imageUp: "../images/internal_button_up.bmp"
             onButtonClick: {
@@ -160,12 +160,12 @@ Rectangle {
 	Text {
         id: txtTime
         x: 0
-        y: 90
+        y: 130
         width: 800
         height: 19
         text: ""
         horizontalAlignment: Text.AlignHCenter
-        font.pixelSize: 16
+        font.pixelSize: 18
         color: "Yellow"
     }
 	

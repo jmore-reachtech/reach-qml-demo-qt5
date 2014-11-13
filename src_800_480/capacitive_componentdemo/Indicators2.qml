@@ -72,7 +72,7 @@ Rectangle {
         width: 58
         height: 58
         on: false
-        font.pixelSize: 12
+        font.pixelSize: 18
         textColor: "#000000"
         textPosition: "bottom"
         label: "  Temp\nWarning"

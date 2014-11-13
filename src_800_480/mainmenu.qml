@@ -148,7 +148,7 @@ Rectangle {
         BorderImage {
             id: border_image1
             x: 13
-            y: 142
+            y: 162
             width: 50
             height: 48
             source: "images/uparrow.png"
@@ -156,8 +156,8 @@ Rectangle {
 
         BorderImage {
             id: border_image2
-            x: 14
-            y: 260
+            x: 13
+            y: 280
             width: 50
             height: 48
             source: "images/down_arrow.png"
@@ -165,12 +165,12 @@ Rectangle {
 
         Text {
             id: text1
-            x: 15
-            y: 216
+            x: 13
+            y: 234
             color: "#ffffff"
             text: qsTr("Swipe")
             rotation: -90
-            font.pixelSize: 16
+            font.pixelSize: 18
         }
 
         ImageButton {

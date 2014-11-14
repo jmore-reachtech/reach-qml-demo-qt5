@@ -6,18 +6,13 @@ Rectangle {
     width: 640
     height: 480
     id: root
-    color: "#2D2D2D"
+    color: "#666666"
     z: 200
     property string errorMessage: "";
     property bool keyBoardLoaded: false
     property int recipeId
 
     signal message(string msg)
-
-    gradient: Gradient {
-        GradientStop {position: 0.0; color: "#666666"}
-        GradientStop {position: 1.0; color: "#EEEEEE"}
-    }
 
     AlphaField {
         id: tbName

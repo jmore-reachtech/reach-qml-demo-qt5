@@ -184,7 +184,7 @@ Rectangle {
                 anchors.verticalCenter: parent.verticalCenter
                 horizontalAlignment: Text.AlignHCenter
                 font.bold: true
-                font.pixelSize: 12
+                font.pixelSize: 14
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 

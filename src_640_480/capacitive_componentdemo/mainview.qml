@@ -8,8 +8,8 @@ Rectangle {
     height: 480
     property int page: 0
     property string swipe
-    color: "#666666"
 
+    color: "#666666"
     signal message(string msg)
 
     // Put the name of the QML files containing your pages (without the '.qml')
@@ -45,9 +45,8 @@ Rectangle {
     // swipe detection code
     MouseArea {
         id: mouseArea
-        width: parent.width
-        height: parent.height
-        z: 100
+        anchors.fill: parent;
+
         property int oldX: 0
         property int oldY: 0
 
@@ -90,8 +89,7 @@ Rectangle {
             id: loader
             property string pageName: modelData
             property bool beenLoaded: false
-            width: parent.width
-            height: parent.height
+            anchors.fill: parent
             visible: (currentPage === modelData);
             //source: "%1.qml".arg(modelData)
             onVisibleChanged: {
@@ -107,16 +105,14 @@ Rectangle {
 
     Rectangle {
         id: rectPager
-        x: 0
-        y: 447
         width: root.width
-        height: 33
+        height: 30
         color: "transparent"
         anchors.bottom: root.bottom
 
         Row{
             id: rowPager
-            spacing: 5
+            spacing: 10
             anchors.centerIn: parent
 
         }

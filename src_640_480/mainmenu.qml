@@ -43,32 +43,27 @@ Rectangle {
             image: "images/system-icon.png"; iconheight:64; iconwidth: 76; form: "systemdemo/mainview.qml"; icontext: "System Plugin\n      Demo"
         }
         ListElement {
-            image: "images/video-icon.png"; iconheight:77; iconwidth: 76; form: "videodemo/mainview.qml"; icontext: "Video Demo"
+                   image: "images/video-icon.png"; iconheight:77; iconwidth: 76; form: "videodemo/mainview.qml"; icontext: "Video Demo"
         }
     }
 
     GridView{
         id: menu
-		x: 2
-		y: 2
         property int rows: Math.ceil(menu.count/6)
         property int page: 1
         model: listModel
         currentIndex: -1 // default - no focus
-        width: 600
-        height: 460
+        anchors.fill: parent
         delegate: appDelegate
         cellWidth: 300; cellHeight: 160
         clip: true
         focus: true
-        snapMode: GridView.SnapToRow
+
         onFlickEnded: {
             if (menu.atYBeginning)
                 page = 1;
             else if (menu.atYEnd)
                 page = rows;
-
-
         }
 
         Component {
@@ -109,14 +104,13 @@ Rectangle {
                     }
 
                     MouseArea{
-                        anchors.fill: recIcon
+                        anchors.fill: parent
                         z: 100
 
                         onPressed: {
                             textIcon.color = "yellow";
                             imgIcon.opacity = 0.7;
                             textIcon.opacity = 0.7;
-                            root.message(form)
                             timer1.start();
                         }
 
@@ -149,7 +143,7 @@ Rectangle {
         BorderImage {
             id: border_image1
             x: 13
-            y: 142
+            y: 162
             width: 50
             height: 48
             source: "images/uparrow.png"
@@ -157,8 +151,8 @@ Rectangle {
 
         BorderImage {
             id: border_image2
-            x: 14
-            y: 260
+            x: 13
+            y: 280
             width: 50
             height: 48
             source: "images/down_arrow.png"
@@ -166,8 +160,8 @@ Rectangle {
 
         Text {
             id: text1
-            x: 15
-            y: 216
+            x: 13
+            y: 234
             color: "#ffffff"
             text: qsTr("Swipe")
             rotation: -90
@@ -187,7 +181,6 @@ Rectangle {
             imageDown: "images/down-arrow_down.png"
             font.bold: false
             font.family: "DejaVu Sans"
-            z: 200
 
             onButtonClick: {
                 var index = 0;
@@ -213,14 +206,13 @@ Rectangle {
             imageDown: "images/up-arrow_down.png"
             font.bold: false
             font.family: "Arial"
-            z: 210
 
             onButtonClick: {
                 var index = 0;
                 menu.page -= 1;
                 if (menu.page < 1)
                     menu.page = 1;
-                index = (menu.page - 1) * 4;
+                index = (menu.page - 1) * 6;
                 menu.positionViewAtIndex(index, GridView.Beginning);
             }
         }

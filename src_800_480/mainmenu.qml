@@ -2,17 +2,12 @@ import QtQuick 2.0
 import "components"
 
 Rectangle {
-    width: 800
+    width: 640
     height: 480
     id: root
     objectName: "root"
     color: "#2D2D2D"
     signal message(string msg)
-
-    gradient: Gradient {
-        GradientStop {position: 0.0; color: "#2D2D2D"}
-        GradientStop {position: 1.0; color: "#666666"}
-    }
 
     ListModel {
         id: listModel
@@ -54,13 +49,13 @@ Rectangle {
 
     GridView{
         id: menu
-        property int rows: Math.ceil(menu.count/4)
+        property int rows: Math.ceil(menu.count/6)
         property int page: 1
         model: listModel
         currentIndex: -1 // default - no focus
         anchors.fill: parent
         delegate: appDelegate
-        cellWidth: 400; cellHeight: 240
+        cellWidth: 300; cellHeight: 160
         clip: true
         focus: true
 
@@ -75,7 +70,7 @@ Rectangle {
             id: appDelegate
 
             Item {
-                width: 400; height: 240 // controls the size
+                width: 300; height: 160 // controls the size
                 Rectangle
                 {
                     id: recIcon
@@ -170,12 +165,12 @@ Rectangle {
             color: "#ffffff"
             text: qsTr("Swipe")
             rotation: -90
-            font.pixelSize: 18
+            font.pixelSize: 16
         }
 
         ImageButton {
             id: image_button1
-            x: 740
+            x: 555
             y: 409
             width: 40
             height: 40
@@ -193,14 +188,14 @@ Rectangle {
                 if (menu.page > menu.rows)
                     menu.page = menu.rows;
 
-                index = (menu.page - 1) * 4;
+                index = (menu.page - 1) * 6;
                 menu.positionViewAtIndex(index, GridView.Beginning);
             }
         }
 
         ImageButton {
             id: image_button2
-            x: 740
+            x: 555
             y: 28
             width: 40
             height: 40
@@ -217,7 +212,7 @@ Rectangle {
                 menu.page -= 1;
                 if (menu.page < 1)
                     menu.page = 1;
-                index = (menu.page - 1) * 4;
+                index = (menu.page - 1) * 6;
                 menu.positionViewAtIndex(index, GridView.Beginning);
             }
         }

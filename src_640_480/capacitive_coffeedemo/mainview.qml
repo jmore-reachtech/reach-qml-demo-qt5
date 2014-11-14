@@ -6,14 +6,8 @@ Rectangle {
     width: 640
     height: 480
     id: mainView
-    color: "#2D2D2D"
+    color: "#666666"
     signal message(string msg)
-
-    gradient: Gradient {
-        GradientStop {position: 0.0; color: "#666666"}
-        GradientStop {position: 1.0; color: "#EEEEEE"}
-    }
-
 
     CoffeeCarousel {
         id: imagecarousel1

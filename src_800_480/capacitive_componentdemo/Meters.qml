@@ -96,11 +96,11 @@ Rectangle {
 
     HorizontalSlider {
         id: slider___horizontal1
-        x: 329
-        y: 394
-        width: 180
-        height: 22
-        xMax: 158
+        x: 260
+        y: 388
+        width: 288
+        height: 29
+        xMax: 247
         hintBorderColor: "#000000"
         showHint: false
         maximum: 180
@@ -109,15 +109,15 @@ Rectangle {
         hintBackgroundColor: "#ffffff"
         hintFontColor: "#000000"
         hintFontPixelSize: 16
-        imageTrack: "images/smallsliderbg.png"
+        imageTrack: "images/slider_bg.png"
         minimum: 0
-        imageOverlay: "images/smallsliderfg.png"
+        imageOverlay: "images/slider_fg.png"
         xMin: 0
         value: 0
         handleY: 0
         hintRadius: 9
         hintWidth: 40
-        imageHandle: "images/smallsliderhandle.png"
+        imageHandle: "images/handle.png"
         allowDrag: true
         hintHeight: 40
 
@@ -126,7 +126,6 @@ Rectangle {
             spedometer2.value = 38.23 * spedometer1.value / 100.0;
         }
     }
-
 
 }
 

@@ -14,11 +14,11 @@ Rectangle {
         id: image_button1
         x: 202
         y: 373
-        width: 105
-        height: 31
+        width: 110
+        height: 40
         text: "Change Data"
         imageUp: "../images/internal_button_up.bmp"
-        font.pixelSize: 12
+        font.pixelSize: 14
         textColor: "#000000"
         imageDown: "../images/internal_button_dn.bmp"
         font.bold: false
@@ -52,10 +52,10 @@ Rectangle {
         x: 333
         y: 373
         width: 80
-        height: 31
+        height: 40
         text: "Back"
         imageUp: "../images/internal_button_up.bmp"
-        font.pixelSize: 12
+        font.pixelSize: 14
         textColor: "#000000"
         imageDown: "../images/internal_button_dn.bmp"
         font.bold: false

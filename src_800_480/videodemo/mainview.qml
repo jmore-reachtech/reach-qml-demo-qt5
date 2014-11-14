@@ -37,12 +37,12 @@ Rectangle {
     ImageButton {
         id: btnPause
         x: 94
-        y: 423
-        width: 77
-        height: 31
+        y: 420
+        width: 80
+        height: 40
         text: "Pause"
         imageUp: "../images/internal_button_up.bmp"
-        font.pixelSize: 12
+        font.pixelSize: 18
         textColor: "#000000"
         imageDown: "../images/internal_button_dn.bmp"
         font.bold: false
@@ -59,12 +59,12 @@ Rectangle {
         id: btnPlay
         visible: false
         x: 94
-        y: 423
-        width: 77
-        height: 31
+        y: 420
+        width: 80
+        height: 40
         text: "Play"
         imageUp: "../images/internal_button_up.bmp"
-        font.pixelSize: 12
+        font.pixelSize: 18
         textColor: "#000000"
         imageDown: "../images/internal_button_dn.bmp"
         font.bold: false
@@ -80,12 +80,12 @@ Rectangle {
     ImageButton {
         id: image_button2
         x: 202
-        y: 423
-        width: 77
-        height: 31
+        y: 420
+        width: 80
+        height: 40
         text: "Back"
         imageUp: "../images/internal_button_up.bmp"
-        font.pixelSize: 12
+        font.pixelSize: 18
         textColor: "#000000"
         imageDown: "../images/internal_button_dn.bmp"
         font.bold: false

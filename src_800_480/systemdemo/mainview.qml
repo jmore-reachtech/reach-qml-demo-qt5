@@ -101,7 +101,7 @@ Rectangle {
         id: btnSubmit
         x: 325
         y: 340
-        width: 76
+        width: 80
         height: 40
         text: "Submit"
         imageUp: "../images/internal_button_up.bmp"
@@ -123,7 +123,7 @@ Rectangle {
 
     ImageButton {
             id: quitButton
-            x: 410
+            x: 420
             y: 340
             width: 64
             height: 40
@@ -139,9 +139,10 @@ Rectangle {
             id: disableBacklightButton
             x: 325
             y: 199
-            width: 124
+            width: 150
             height: 40
             text: "3 second test"
+            font.family: "DejaVu Sans"
             font.pixelSize: 18
             imageDown: "../images/internal_button_dn.bmp"
             imageUp: "../images/internal_button_up.bmp"

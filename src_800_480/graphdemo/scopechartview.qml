@@ -30,11 +30,11 @@ Rectangle {
         id: image_button3
         x: 146
         y: 360
-        width: 60
-        height: 30
+        width: 70
+        height: 40
         text: "Back"
         imageUp: "../images/internal_button_up.bmp"
-        font.pixelSize: 12
+        font.pixelSize: 14
         textColor: "#000000"
         imageDown: "../images/internal_button_dn.bmp"
         font.bold: false

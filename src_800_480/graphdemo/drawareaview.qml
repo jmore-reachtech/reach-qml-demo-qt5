@@ -32,11 +32,11 @@ Rectangle {
         id: image_button1
         x: 100
         y: 348
-        width: 60
-        height: 31
+        width: 70
+        height: 40
         text: "Copy"
         imageUp: "../images/internal_button_up.bmp"
-        font.pixelSize: 12
+        font.pixelSize: 14
         textColor: "#000000"
         imageDown: "../images/internal_button_dn.bmp"
         font.bold: false
@@ -57,13 +57,13 @@ Rectangle {
 
     ImageButton {
         id: image_button2
-        x: 180
+        x: 184
         y: 348
-        width: 60
-        height: 31
+        width: 70
+        height: 40
         text: "Clear"
         imageUp: "../images/internal_button_up.bmp"
-        font.pixelSize: 12
+        font.pixelSize: 14
         textColor: "#000000"
         imageDown: "../images/internal_button_dn.bmp"
         font.bold: false
@@ -79,11 +79,11 @@ Rectangle {
         id: image_button3
         x: 267
         y: 348
-        width: 60
-        height: 31
+        width: 70
+        height: 40
         text: "Back"
         imageUp: "../images/internal_button_up.bmp"
-        font.pixelSize: 12
+        font.pixelSize: 14
         textColor: "#000000"
         imageDown: "../images/internal_button_dn.bmp"
         font.bold: false

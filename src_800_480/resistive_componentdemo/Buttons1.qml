@@ -93,7 +93,7 @@ Rectangle {
         x: 546
         y: 175
         height: 2
-        spacing: 4
+        spacing: 10
         font.underline: false
         font.pixelSize: 20
         font.family: "Arial"

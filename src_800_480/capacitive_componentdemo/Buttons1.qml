@@ -40,7 +40,7 @@ Rectangle {
 
     Switch {
         id: switch1
-        x: 215
+        x: 200
         y: 175
         width: 49
         height: 135
@@ -93,7 +93,7 @@ Rectangle {
         x: 546
         y: 175
         height: 2
-        spacing: 4
+        spacing: 10
         font.underline: false
         font.pixelSize: 20
         font.family: "Arial"
@@ -136,7 +136,7 @@ Rectangle {
 
     ImageButton {
         id: quitButton
-        x: 216
+        x: 200
         y: 372
         width: 48
         height: 48

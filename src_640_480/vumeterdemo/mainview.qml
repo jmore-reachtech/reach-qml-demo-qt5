@@ -5,18 +5,7 @@ Rectangle {
     id: root
     width: 640
     height: 480
-    gradient: Gradient {
-        GradientStop {
-            position: 0.16
-            color: "#afacac"
-        }
-
-        GradientStop {
-            position: 1
-            color: "#000000"
-        }
-    }
-
+	color: "#666666"
     signal message(string msg)
 
     VUMeter {

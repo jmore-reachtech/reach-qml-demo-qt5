@@ -11,9 +11,12 @@ Rectangle {
 
     Text {
         id: txtTitle
-        x: 270
+        x: 0
         y: 89
+        width: 800
+        height: 29
         text: qsTr("Buttons and Switches")
+        horizontalAlignment: Text.AlignHCenter
         font.bold: false
         font.pixelSize: 24
     }
@@ -143,15 +146,12 @@ Rectangle {
         text: ""
         imageDown: "images/quit_down.png"
         imageUp: "images/quit_up.png"
-        onButtonClick: parent.parent.parent.message("../src/mainmenu.qml");
+        onButtonClick: parent.parent.parent.parent.parent.message("../src/mainmenu.qml");
     }
 
     Rectangle{
         id: rectOpaque
-        gradient: Gradient {
-            GradientStop {position: 0.0; color: "#666666"}
-            GradientStop {position: 1.0; color: "#EEEEEE"}
-        }
+        color: "#666666"
         width: 800
         height: 480
         opacity: 0.2
@@ -167,7 +167,7 @@ Rectangle {
             opacity: 1.0
             border.color: "#0f0f0e"
             height: 104
-            width: 344
+            width: 354
             smooth: true
             anchors.centerIn: parent
             gradient: Gradient {
@@ -190,7 +190,7 @@ Rectangle {
 
             Image {
                 id: image1
-                x: 0
+                x: 8
                 y: 31
                 width: 50
                 height: 43

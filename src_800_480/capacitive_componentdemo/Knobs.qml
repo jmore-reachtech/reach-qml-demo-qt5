@@ -11,9 +11,9 @@ Rectangle {
 
     Text {
         id: txtTitle
-        x: 80
-        y: 95
-        width: 640
+        x: 0
+        y: 71
+        width: 800
         height: 25
         text: qsTr("Dials")
         horizontalAlignment: Text.AlignHCenter
@@ -21,12 +21,16 @@ Rectangle {
         font.pixelSize: 24
     }
 
+
     Knob {
         id: knob1
-        x: 168
-        y: 174
+        x: 156
+        y: 126
         width: 180
         height: 180
+        anchors.verticalCenterOffset: 0
+        anchors.horizontalCenterOffset: -140
+        anchors.centerIn: parent
         hintBorderColor: "#000000"
         imageNeedleHeight: 108
         imageBase: "images/dialbase.png"
@@ -57,14 +61,15 @@ Rectangle {
             text_input1.text = knob1.knobValue.toFixed(1).toString();
             if (! typeof connection === 'undefined')
                 connection.sendMessage("txt.value=" + text_input1.text);
+            parent.parent.parent.parent.contentHeight = 480;
         }
     }
 
 
     Knob {
         id: knob2
-        x: 450
-        y: 169
+        x: 474
+        y: 150
         width: 190
         height: 190
         hintBorderColor: "#000000"
@@ -139,13 +144,13 @@ Rectangle {
             if (! typeof connection === 'undefined')
                 connection.sendMessage("txt.value=" + text_input1.text);
         }
-    }
 
+    }
 
     LineEdit {
         id: text_input1
         x: 370
-        y: 251
+        y: 227
         width: 61
         height: 26
         text: qsTr("")

@@ -12,9 +12,9 @@ Rectangle {
 
     Text {
         id: txtTitle
-        x: 80
-        y: 82
-        width: 640
+        x: 0
+        y: 71
+        width: 800
         height: 25
         text: qsTr("Indicators")
         horizontalAlignment: Text.AlignHCenter
@@ -23,8 +23,8 @@ Rectangle {
     }
 
     Image{
-        x: 100
-        y: 131
+        x: 106
+        y: 138
         source: "images/therm_base.png"
 
         VerticalLevelIndicator {
@@ -67,12 +67,12 @@ Rectangle {
 
     LEDLight {
         id: led_light1
-        x: 258
-        y: 235
+        x: 244
+        y: 223
         width: 58
         height: 58
         on: false
-        font.pixelSize: 18
+        font.pixelSize: 12
         textColor: "#000000"
         textPosition: "bottom"
         label: "  Temp\nWarning"
@@ -85,8 +85,8 @@ Rectangle {
 
     PanelReadOut {
         id: panel_read_out1
-        x: 392
-        y: 324
+        x: 450
+        y: 307
         width: 116
         height: 76
         text: ""
@@ -99,8 +99,8 @@ Rectangle {
 
     Image {
         id: image1
-        x: 392
-        y: 145
+        x: 349
+        y: 138
         width: 340
         height: 124
         source: "images/therm_horizbase.png"

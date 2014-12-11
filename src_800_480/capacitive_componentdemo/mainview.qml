@@ -1,5 +1,4 @@
 import QtQuick 2.0
-import "../components"
 
 Rectangle {
     id: root
@@ -7,145 +6,95 @@ Rectangle {
     width: 800
     height: 480
     property int page: 0
-    property string swipe
-
-    color: "#666666"
-    signal message(string msg)
-
-    // Put the name of the QML files containing your pages (without the '.qml')
-    property variant pagesList  : [
-      "Buttons1",
-      "Buttons2",
-      "Sliders",
-      "Indicators1",
-      "Indicators2",
-      "DataEntry",
-      "Knobs",
-      "Meters"
-    ];
-
     // Set this property to another file name to change page
     property string  currentPage : "";
 
-    // function to switch view on swipe
-    function onLeftSwipe() {
-        root.page += 1;
-        if (root.page > repeater.count-1)
-            root.page = repeater.count-1;
-        currentPage = repeater.itemAt(root.page).pageName;
+    color: "#666666"
+
+    signal message(string msg)
+
+
+    ListModel{
+        id: pageList
+
+        ListElement{
+            page: "Buttons1"
+        }
+        ListElement{
+            page: "Buttons2"
+        }
+        ListElement{
+            page: "Sliders"
+        }
+        ListElement{
+            page: "Indicators1"
+        }
+        ListElement{
+            page: "Indicators2"
+        }
+        ListElement{
+            page: "DataEntry"
+        }
+        ListElement{
+            page: "Knobs"
+        }
+        ListElement{
+            page: "Meters"
+        }
     }
 
-    function onRightSwipe() {
-        root.page -= 1;
-        if (root.page < 0)
-            root.page = 0;
-        currentPage = repeater.itemAt(root.page).pageName;
-    }
+    ListView {
+        id: view
+        contentHeight: 480
+        width: 800
+        height: 480
+        model: pageList
+        orientation: ListView.Horizontal
+        snapMode: ListView.SnapOneItem;
+        flickDeceleration: 500
 
-    // swipe detection code
-    MouseArea {
-        id: mouseArea
-        anchors.fill: parent;
+        onFlickEnded: {
+            var index = view.contentX/800;
+            root.page = index;
+            updatePageIndicator();
+        }
 
-        property int oldX: 0
-        property int oldY: 0
 
-      onPressed: {
-        oldX = mouseX;
-        oldY = mouseY;
-      }
-
-      onReleased: {
-          var xDiff = oldX - mouseX;
-          var yDiff = oldY - mouseY;
-
-          if(Math.abs(xDiff) > 10 && Math.abs(xDiff) > Math.abs(yDiff) ) {
-              if( oldX > mouseX) {
-                  imgSwipe.x = 0;
-                  imgSwipe.y = root.height - imgSwipe.height - 4;
-                  imgSwipe.source = "images/right_swipe.png";
-                  imgSwipe.visible = true;
-                  root.swipe = "left";
-                  timer1.start();
-              } else {
-                  imgSwipe.x = root.width - imgSwipe.width;
-                  imgSwipe.y = root.height - imgSwipe.height - 4;
-                  imgSwipe.source = "images/left_swipe.png";
-                  imgSwipe.visible = true;
-                  root.swipe = "right";
-                  timer1.start();
-              }
-          } else {
-              if( oldY > mouseY) {/*up*/ }
-              else {/*down*/ }
-          }
-       }
-    }
-
-    Repeater {
-        id: repeater
-        model: pagesList;
-        delegate: Loader {
-            id: loader
-            property string pageName: modelData
-            property bool beenLoaded: false
-            anchors.fill: parent
-            visible: (currentPage === modelData);
-            //source: "%1.qml".arg(modelData)
-            onVisibleChanged: {
-                if (visible && !beenLoaded)
-                {
-                    source = "%1.qml".arg(pageName);
-                    beenLoaded = true;
-                }
+        delegate: Component{
+            Loader {
+                id: loader
+                property string pageName: page
+                property bool beenLoaded: false
+                width: 800
+                height: 480
+                source: "%1.qml".arg(page)
             }
 
         }
+
     }
 
     Rectangle {
         id: rectPager
+        x: 0
+        y: 447
         width: root.width
-        height: 30
+        height: 33
         color: "transparent"
         anchors.bottom: root.bottom
 
         Row{
             id: rowPager
-            spacing: 10
+            spacing: 5
             anchors.centerIn: parent
 
         }
     }
 
 
-    BorderImage {
-        id: imgSwipe
-        x: 41
-        y: 146
-        width: 34
-        height: 28
-        visible: false
-        smooth: true
-        source: "images/right_swipe.png"
-    }
-
-    Timer{
-        id: timer1
-        interval: 100; running: false; repeat: false
-        onTriggered: {
-            imgSwipe.visible = false;
-            if (root.swipe == "left")
-                onLeftSwipe();
-            else
-                onRightSwipe();
-            updatePageIndicator();
-        }
-    }
-
     function createPageIndicator()
     {
-        for (var i=0; i < repeater.count; i++)
+        for (var i=0; i < view.model.count; i++)
         {
             var src = "";
             if ( i == root.page)
@@ -172,4 +121,5 @@ Rectangle {
         currentPage = "Buttons1";
         createPageIndicator();
     }
+
 }

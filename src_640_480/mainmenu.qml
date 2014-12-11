@@ -45,6 +45,12 @@ Rectangle {
         ListElement {
                    image: "images/video-icon.png"; iconheight:77; iconwidth: 76; form: "videodemo/mainview.qml"; icontext: "Video Demo"
         }
+        ListElement {
+                   image: "images/web-icon.png"; iconheight:80; iconwidth: 80; form: "webdemo/mainview.qml"; icontext: "Web Demo"
+        }
+		ListElement {
+                   image: "images/io-icon.png"; iconheight:65; iconwidth: 80; form: "iodemo/mainview.qml"; icontext: "I/O Demo"
+        }
     }
 
     GridView{

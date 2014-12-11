@@ -11,9 +11,11 @@ Rectangle {
 
     Text {
         id: txtTitle
-        x: 270
+        x: 0
         y: 73
+        width: 800
         text: qsTr("Buttons and Switches")
+        horizontalAlignment: Text.AlignHCenter
         font.bold: false
         font.pixelSize: 24
     }
@@ -156,6 +158,7 @@ Rectangle {
             textColor: "Black"
         }
 
-}
+    }
+
 
 }

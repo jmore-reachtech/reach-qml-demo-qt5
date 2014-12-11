@@ -14,9 +14,9 @@ Rectangle {
 
         Text {
             id: txtTitle
-            x: 80
+            x: 0
             y: 71
-            width: 640
+            width: 800
             height: 25
             text: qsTr("Meters")
             horizontalAlignment: Text.AlignHCenter
@@ -26,7 +26,7 @@ Rectangle {
 
         Speedometer {
             id: spedometer2
-            x: 414
+            x: 463
             y: 146
             width: 215
             height: 217
@@ -53,7 +53,7 @@ Rectangle {
 
         Speedometer {
             id: spedometer1
-            x: 159
+            x: 124
             y: 118
             width: 244
             height: 245
@@ -96,11 +96,11 @@ Rectangle {
 
     HorizontalSlider {
         id: slider___horizontal1
-        x: 260
-        y: 388
-        width: 288
-        height: 29
-        xMax: 247
+        x: 326
+        y: 391
+        width: 180
+        height: 22
+        xMax: 158
         hintBorderColor: "#000000"
         showHint: false
         maximum: 180
@@ -109,15 +109,15 @@ Rectangle {
         hintBackgroundColor: "#ffffff"
         hintFontColor: "#000000"
         hintFontPixelSize: 16
-        imageTrack: "images/slider_bg.png"
+        imageTrack: "images/smallsliderbg.png"
         minimum: 0
-        imageOverlay: "images/slider_fg.png"
+        imageOverlay: "images/smallsliderfg.png"
         xMin: 0
         value: 0
         handleY: 0
         hintRadius: 9
         hintWidth: 40
-        imageHandle: "images/handle.png"
+        imageHandle: "images/smallsliderhandle.png"
         allowDrag: true
         hintHeight: 40
 
@@ -126,6 +126,7 @@ Rectangle {
             spedometer2.value = 38.23 * spedometer1.value / 100.0;
         }
     }
+
 
 }
 

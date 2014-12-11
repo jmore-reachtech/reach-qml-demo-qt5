@@ -148,10 +148,7 @@ Rectangle {
 
     Rectangle{
         id: rectOpaque
-        gradient: Gradient {
-            GradientStop {position: 0.0; color: "#666666"}
-            GradientStop {position: 1.0; color: "#EEEEEE"}
-        }
+        color: "#666666"
         width: 640
         height: 480
         opacity: 0.2

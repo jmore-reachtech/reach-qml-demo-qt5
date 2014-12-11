@@ -11,9 +11,9 @@ Rectangle {
 
     Text {
         id: txtTitle
-        x: 80
+        x: 0
         y: 63
-        width: 640
+        width: 800
         height: 25
         text: qsTr("Data Entry")
         horizontalAlignment: Text.AlignHCenter

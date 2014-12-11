@@ -9,9 +9,9 @@ Rectangle {
 
     Text {
         id: txtTitle
-        x: 80
-        y: 76
-        width: 640
+        x: 0
+        y: 71
+        width: 800
         height: 25
         text: qsTr("Sliders")
         horizontalAlignment: Text.AlignHCenter
@@ -20,8 +20,8 @@ Rectangle {
     }
 
     Rectangle{
-        x: 133
-        y: 293
+        x: 144
+        y: 288
         color: "transparent"
         width: 214
         height: 77
@@ -56,8 +56,8 @@ Rectangle {
     }
 
     Rectangle{
-        x: 126
-        y: 166
+        x: 135
+        y: 143
         color: "transparent"
         width: 326
         height: 72
@@ -110,8 +110,8 @@ Rectangle {
 
     VerticalSlider {
         id: slider___vertical2
-        x: 615
-        y: 141
+        x: 625
+        y: 132
         width: 23
         height: 260
         hintBorderColor: "#000000"
@@ -138,8 +138,8 @@ Rectangle {
 
     VerticalSlider {
         id: slider___vertical1
-        x: 503
-        y: 179
+        x: 513
+        y: 170
         width: 48
         height: 184
         hintBorderColor: "#000000"

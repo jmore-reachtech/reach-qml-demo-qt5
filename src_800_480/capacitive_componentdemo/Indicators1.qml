@@ -12,9 +12,9 @@ Rectangle {
 
     Text {
         id: txtTitle
-        x: 87
-        y: 80
-        width: 640
+        x: 0
+        y: 71
+        width: 800
         height: 25
         text: qsTr("Indicators")
         horizontalAlignment: Text.AlignHCenter
@@ -24,8 +24,8 @@ Rectangle {
 
     HorizontalLevelIndicator {
         id: horizontal1
-        x: 482
-        y: 161
+        x: 449
+        y: 156
         width: 200
         height: 20
         hintFontBold: true
@@ -51,8 +51,8 @@ Rectangle {
     }
 
     Image{
-        x: 380
-        y: 161
+        x: 348
+        y: 165
         source: "images/level_base.png"
         VerticalLevelIndicator {
             id: vertical1
@@ -84,8 +84,8 @@ Rectangle {
     }
 
     Image{
-        x: 165
-        y: 152
+        x: 158
+        y: 156
         source: "images/battery_base.png"
 
         VerticalLevelIndicator {
@@ -112,8 +112,8 @@ Rectangle {
     }
 
     ImageSequencer{
-        x: 498
-        y: 192
+        x: 465
+        y: 187
         timerDuration: 1000
         imageExtension: ".png"
         property int totalImages: 10

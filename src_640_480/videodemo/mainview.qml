@@ -92,6 +92,7 @@ Rectangle {
         font.family: "DejaVu Sans"
 
         onButtonClick: {
+			video.stop();
             onButtonClick: root.message("../src/mainmenu.qml");
         }
     }

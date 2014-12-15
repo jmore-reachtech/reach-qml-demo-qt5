@@ -23,8 +23,8 @@ Item {
     Connections {
         target: loader.item
         onMessage: {
-            sound1.volume = 0.6;
-            sound1.play();
+            //sound1.volume = 0.6;
+            //sound1.play();
             loader.source = msg;            
         }
     }

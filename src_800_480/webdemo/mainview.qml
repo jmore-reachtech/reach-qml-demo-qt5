@@ -20,8 +20,16 @@ Rectangle {
             width: 800
             height: 417
             url: "http://127.0.0.1/info"
-            //url: "http://192.168.1.240/info"
         }
+    }
+
+    Text{
+        id: txtProgress
+        anchors.centerIn: parent
+        text: "Loading please wait..."
+        font.pixelSize: 34
+		color: "red"
+        visible: web.loading
     }
 
 	ImageButton {
@@ -39,7 +47,7 @@ Rectangle {
         font.family: "DejaVu Sans"
 
         onButtonClick: {
-            onButtonClick: web.reload();
+            web.url = "http://127.0.0.1/info"
         }
     }
 

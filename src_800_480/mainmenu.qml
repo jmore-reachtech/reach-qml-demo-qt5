@@ -9,11 +9,6 @@ Rectangle {
     color: "#2D2D2D"
     signal message(string msg)
 
-    gradient: Gradient {
-        GradientStop {position: 0.0; color: "#2D2D2D"}
-        GradientStop {position: 1.0; color: "#666666"}
-    }
-
     ListModel {
         id: listModel
 

@@ -16,22 +16,23 @@ Rectangle {
         text: qsTr("Sliders")
         horizontalAlignment: Text.AlignHCenter
         font.bold: false
-        font.pixelSize: 24
+        font.pixelSize: 26
     }
 
     Rectangle{
-        x: 144
-        y: 288
+        x: 92
+        y: 284
         color: "transparent"
-        width: 214
-        height: 77
+        width: 317
+        height: 97
 
         MouseArea{
             anchors.fill: parent
+            preventStealing: true
         }
 
         HorizontalSlider {
-            width: 184
+            width: 270
             height: 48
             anchors.centerIn: parent
             hintBorderColor: "#000000"
@@ -46,7 +47,7 @@ Rectangle {
             minimum: 0
             xMin: 0
             value: 0
-            handleY: 0
+            handleY: 2
             hintRadius: 9
             hintWidth: 40
             imageHandle: "images/slider_handle.png"
@@ -56,11 +57,11 @@ Rectangle {
     }
 
     Rectangle{
-        x: 135
-        y: 143
+        x: 63
+        y: 139
         color: "transparent"
-        width: 326
-        height: 72
+        width: 376
+        height: 108
 
         MouseArea{
             anchors.fill: parent
@@ -70,8 +71,8 @@ Rectangle {
             id: slider___horizontal1
             x: 20
             y: 16
-            width: 288
-            height: 29
+            width: 358
+            height: 36
             anchors.centerIn: parent
             hintBorderColor: "#000000"
             showHint: false
@@ -85,7 +86,7 @@ Rectangle {
             imageTrack: "images/slider_bg.png"
             minimum: 0
             xMin: 0
-            xMax: 247
+            xMax: 310
             value: 0
             handleY: -2
             hintRadius: 9
@@ -110,17 +111,17 @@ Rectangle {
 
     VerticalSlider {
         id: slider___vertical2
-        x: 625
-        y: 132
-        width: 23
-        height: 260
+        x: 655
+        y: 81
+        width: 29
+        height: 328
         hintBorderColor: "#000000"
         showHint: true
         maximum: 10
         hintBorderWidth: 0
         hintFontFamily: "Arial"
         hintFontColor: "#ffffff"
-        hintFontPixelSize: 16
+        hintFontPixelSize: 20
         hintFontBold: true
         hintBackgroundColor: "transparent"
         imageTrack: "images/vert_slider_fg.png"
@@ -138,10 +139,10 @@ Rectangle {
 
     VerticalSlider {
         id: slider___vertical1
-        x: 513
-        y: 170
+        x: 517
+        y: 128
         width: 48
-        height: 184
+        height: 248
         hintBorderColor: "#000000"
         showHint: true
         maximum: 50

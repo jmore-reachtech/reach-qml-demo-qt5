@@ -11,14 +11,14 @@ Rectangle {
 
     Text {
         id: txtTitle
-        x: 80
+        x: 0
         y: 63
-        width: 640
+        width: 800
         height: 25
         text: qsTr("Data Entry")
         horizontalAlignment: Text.AlignHCenter
         font.bold: false
-        font.pixelSize: 24
+        font.pixelSize: 26
     }
 
     AlphaField {
@@ -159,9 +159,9 @@ Rectangle {
     ImageButton{
         x: 249
         y: 366
-        width: 74
+        width: 79
         height: 40
-        font.pixelSize: 18
+        font.pixelSize: 20
         text: "Save"
         imageUp: "images/internal_button_up.bmp"
         imageDown: "images/internal_button_dn.bmp"

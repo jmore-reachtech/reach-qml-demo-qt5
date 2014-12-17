@@ -15,7 +15,7 @@ Rectangle {
         y: 73
         text: qsTr("Buttons and Switches")
         font.bold: false
-        font.pixelSize: 24
+        font.pixelSize: 26
     }
 
     Rectangle{

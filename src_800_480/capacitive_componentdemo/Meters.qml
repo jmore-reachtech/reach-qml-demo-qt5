@@ -21,13 +21,13 @@ Rectangle {
             text: qsTr("Meters")
             horizontalAlignment: Text.AlignHCenter
             font.bold: false
-            font.pixelSize: 24
+            font.pixelSize: 26
         }
 
         Speedometer {
             id: spedometer2
-            x: 463
-            y: 146
+            x: 447
+            y: 140
             width: 215
             height: 217
             minAngle: -112
@@ -53,8 +53,8 @@ Rectangle {
 
         Speedometer {
             id: spedometer1
-            x: 124
-            y: 118
+            x: 153
+            y: 126
             width: 244
             height: 245
             minAngle: -126
@@ -96,11 +96,11 @@ Rectangle {
 
     HorizontalSlider {
         id: slider___horizontal1
-        x: 326
-        y: 391
-        width: 180
-        height: 22
-        xMax: 158
+        x: 243
+        y: 402
+        width: 358
+        height: 36
+        xMax: 310
         hintBorderColor: "#000000"
         showHint: false
         maximum: 180
@@ -109,15 +109,15 @@ Rectangle {
         hintBackgroundColor: "#ffffff"
         hintFontColor: "#000000"
         hintFontPixelSize: 16
-        imageTrack: "images/smallsliderbg.png"
+        imageTrack: "images/slider_bg.png"
         minimum: 0
-        imageOverlay: "images/smallsliderfg.png"
+        imageOverlay: "images/slider_fg.png"
         xMin: 0
         value: 0
         handleY: 0
         hintRadius: 9
         hintWidth: 40
-        imageHandle: "images/smallsliderhandle.png"
+        imageHandle: "images/handle.png"
         allowDrag: true
         hintHeight: 40
 

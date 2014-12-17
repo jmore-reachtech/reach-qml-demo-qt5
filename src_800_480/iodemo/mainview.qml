@@ -51,7 +51,7 @@ Rectangle {
         textColor: "#000000"
         imageDown: "../images/internal_button_dn.bmp"
         font.family: "DejaVu Sans"
-        onButtonPress: {
+        onButtonClick: {
             connection.sendMessage("button_click=2")
         }
     }
@@ -68,7 +68,7 @@ Rectangle {
         textColor: "#000000"
         imageDown: "../images/internal_button_dn.bmp"
         font.family: "DejaVu Sans"
-        onButtonPress: {
+        onButtonClick: {
             root.message("../src/mainmenu.qml");
         }
     }

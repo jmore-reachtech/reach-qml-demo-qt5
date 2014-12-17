@@ -11,8 +11,8 @@ Rectangle {
 
     LineEdit {
         id: text_input1
-        x: 351
-        y: 95
+        x: 346
+        y: 97
         width: 108
         height: 26
         text: qsTr("")
@@ -22,15 +22,15 @@ Rectangle {
 
     Knob {
         id: knob1
-        x: 288
-        y: 154
+        x: 230
+        y: 129
         width: 234
         height: 222
-        anchors.verticalCenterOffset: 25
-        anchors.horizontalCenterOffset: 5
+        anchors.verticalCenterOffset: 15
+        anchors.horizontalCenterOffset: 0
         anchors.centerIn: parent
-        imageBase: "images/dialbase_large.svg"
-        imageNeedle: "images/dialneedle_large.png"
+        imageBase: "../images/dialbase_large.svg"
+        imageNeedle: "../images/dialneedle_large.png"
         model: listModel3
 
         ListModel{
@@ -70,13 +70,13 @@ Rectangle {
 
     ImageButton {
         id: textbutton1
-        x: 583
-        y: 56
+        x: 551
+        y: 62
         width: 48
         height: 48
         text: ""
-        imageUp: "images/plus.png"
-        imageDown: "images/plus_down.png"
+        imageUp: "../images/plus.png"
+        imageDown: "../images/plus_down.png"
 
         onButtonClick:{
             var i = listModel3.count;
@@ -88,13 +88,13 @@ Rectangle {
 
     ImageButton {
         id: textbutton2
-        x: 583
-        y: 119
+        x: 551
+        y: 125
         width: 48
         height: 48
         text: ""
-        imageDown: "images/minus_down.png"
-        imageUp: "images/minus.png"
+        imageDown: "../images/minus_down.png"
+        imageUp: "../images/minus.png"
 
         onButtonClick:{
             knob1.remove = true;
@@ -106,13 +106,13 @@ Rectangle {
 
     ImageButton {
         id: imagebutton1
-        x: 45
-        y: 241
+        x: 44
+        y: 216
         width:48
         height:48
         text: ""
-        imageDown: "images/prev_down.png"
-        imageUp: "images/prev_up.png"
+        imageDown: "../images/prev_down.png"
+        imageUp: "../images/prev_up.png"
         onButtonClick : rootDial.message("dialdemo/mainview.qml");
     }
 

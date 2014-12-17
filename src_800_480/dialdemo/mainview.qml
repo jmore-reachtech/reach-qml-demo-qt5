@@ -11,20 +11,21 @@ Rectangle {
     LineEdit {
         id: text_input1
         x: 359
-        y: 227
+        y: 224
         width: 82
-        height: 26
+        height: 33
         text: qsTr("")
+        fontPixelSize: 22
         font.pointSize: 12
         radius: 2
     }
 
     Knob {
         id: knob1
-        x: 151
-        y: 45
-        width: 180
-        height: 186
+        x: 157
+        y: 16
+        width: 225
+        height: 225
         initialIndex: 0
 
         onKnobValueChanged: {
@@ -34,21 +35,15 @@ Rectangle {
         }
     }
 
-    GeometricKnob {
-        id: dial1
-        x: 457
-        y: 249
-        width: 180
-        height: 203
-        needleColor: "#084a95"
-        outerCircleColor: "#aa9b38"
-        innerCircleRadius: 73
-        outerCircleRadius: 98
-
-        model: listModel1
+    Knob {
+        id: knob2
+        x: 180
+        y: 258
+        initialIndex: 0
+        model: listModel3
 
         ListModel{
-            id: listModel1
+            id: listModel3
             ListElement{
                 index: 0
                 value: -3
@@ -63,29 +58,62 @@ Rectangle {
             }
             ListElement{
                 index: 3
-                value: 1
+                value: 0
             }
             ListElement{
                 index: 4
-                value: 2
+                value: 1
             }
             ListElement{
                 index: 5
+                value: 2
+            }
+            ListElement{
+                index: 6
                 value: 3
             }
         }
 
-        onValueChanged: {
-            text_input1.text = dial1.value.toFixed(1).toString();
+        onKnobValueChanged: {
+            text_input1.text = knob2.knobValue.toFixed(1).toString();
             if (! typeof connection === 'undefined')
                 connection.sendMessage("txt.value=" + text_input1.text);
         }
     }
 
+    ImageButton{
+        id:nextButton
+        x: 676
+        y: 307
+        width: 48
+        height: 48
+        text: ""
+
+        imageDown: "../images/next_down.png"
+        imageUp: "../images/next_up.png"
+
+
+        onButtonClick: {
+            rootDial.message("dialdemo/largedemo.qml");
+        }
+    }
+
+    ImageButton {
+        id: quitButton
+        x: 676
+        y: 372
+        width: 48
+        height: 48
+        text: ""
+        imageDown: "../images/quit_down.png"
+        imageUp: "../images/quit_up.png"
+        onButtonClick: rootDial.message("../src/mainmenu.qml");
+    }
+
     GeometricKnob {
         id: dial2
-        x: 464
-        y: 45
+        x: 411
+        y: 16
         model: listModel2
 
         ListModel{
@@ -142,17 +170,22 @@ Rectangle {
             if (! typeof connection === 'undefined')
                 connection.sendMessage("txt.value=" + text_input1.text);
         }
+
     }
 
-    Knob {
-        id: knob2
-        x: 151
-        y: 261
-        initialIndex: 0
-        model: listModel3
+
+    GeometricKnob {
+        id: dial1
+        x: 411
+        y: 236
+        outerCircleColor: "#aa9b38"
+        needleColor: "#084a95"
+        innerCircleRadius: outerCircleRadius-30
+
+        model: listModel1
 
         ListModel{
-            id: listModel3
+            id: listModel1
             ListElement{
                 index: 0
                 value: -3
@@ -167,56 +200,23 @@ Rectangle {
             }
             ListElement{
                 index: 3
-                value: 0
-            }
-            ListElement{
-                index: 4
                 value: 1
             }
             ListElement{
-                index: 5
+                index: 4
                 value: 2
             }
             ListElement{
-                index: 6
+                index: 5
                 value: 3
             }
         }
 
-        onKnobValueChanged: {
-            text_input1.text = knob2.knobValue.toFixed(1).toString();
+        onValueChanged: {
+            text_input1.text = dial1.value.toFixed(1).toString();
             if (! typeof connection === 'undefined')
                 connection.sendMessage("txt.value=" + text_input1.text);
         }
+
     }
-
-    ImageButton {
-        id: quitButton
-        x: 673
-        y: 371
-        width: 48
-        height: 48
-        text: ""
-        imageDown: "images/quit_down.png"
-        imageUp: "images/quit_up.png"
-        onButtonClick: rootDial.message("../src/mainmenu.qml");
-    }
-
-    ImageButton{
-        id:nextButton
-        x: 673
-        y: 303
-        width: 48
-        height: 48
-        text: ""
-
-        imageDown: "images/next_down.png"
-        imageUp: "images/next_up.png"
-
-
-        onButtonClick: {
-            rootDial.message("dialdemo/largedemo.qml");
-        }
-    }
-
 }

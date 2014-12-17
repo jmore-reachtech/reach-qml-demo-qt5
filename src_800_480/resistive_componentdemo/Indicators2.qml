@@ -19,7 +19,7 @@ Rectangle {
         text: qsTr("Indicators")
         horizontalAlignment: Text.AlignHCenter
         font.bold: false
-        font.pixelSize: 24
+        font.pixelSize: 26
     }
 
     Image{

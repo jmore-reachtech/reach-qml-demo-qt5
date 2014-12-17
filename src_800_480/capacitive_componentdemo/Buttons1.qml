@@ -18,7 +18,7 @@ Rectangle {
         text: qsTr("Buttons and Switches")
         horizontalAlignment: Text.AlignHCenter
         font.bold: false
-        font.pixelSize: 24
+        font.pixelSize: 26
     }
 
     ImageButton {

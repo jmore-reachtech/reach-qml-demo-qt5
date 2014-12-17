@@ -14,20 +14,20 @@ Rectangle {
 
         Text {
             id: txtTitle
-            x: 80
+            x: 0
             y: 71
-            width: 640
+            width: 800
             height: 25
             text: qsTr("Meters")
             horizontalAlignment: Text.AlignHCenter
             font.bold: false
-            font.pixelSize: 24
+            font.pixelSize: 26
         }
 
         Speedometer {
             id: spedometer2
-            x: 414
-            y: 146
+            x: 447
+            y: 140
             width: 215
             height: 217
             minAngle: -112
@@ -53,8 +53,8 @@ Rectangle {
 
         Speedometer {
             id: spedometer1
-            x: 159
-            y: 118
+            x: 153
+            y: 126
             width: 244
             height: 245
             minAngle: -126
@@ -96,11 +96,11 @@ Rectangle {
 
     HorizontalSlider {
         id: slider___horizontal1
-        x: 260
-        y: 388
-        width: 288
-        height: 29
-        xMax: 247
+        x: 243
+        y: 402
+        width: 358
+        height: 36
+        xMax: 310
         hintBorderColor: "#000000"
         showHint: false
         maximum: 180
@@ -126,6 +126,7 @@ Rectangle {
             spedometer2.value = 38.23 * spedometer1.value / 100.0;
         }
     }
+
 
 }
 

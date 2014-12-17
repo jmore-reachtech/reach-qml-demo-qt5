@@ -11,47 +11,24 @@ Rectangle {
 
     Text {
         id: txtTitle
-        x: 80
-        y: 95
-        width: 640
+        x: 0
+        y: 71
+        width: 800
         height: 25
         text: qsTr("Dials")
         horizontalAlignment: Text.AlignHCenter
         font.bold: false
-        font.pixelSize: 24
+        font.pixelSize: 26
     }
 
     Knob {
         id: knob1
-        x: 168
-        y: 174
-        width: 180
-        height: 180
-        hintBorderColor: "#000000"
-        imageNeedleHeight: 108
-        imageBase: "images/dialbase.png"
-        showHint: true
-        hintBorderWidth: 2
-        hintFontFamily: "Arial"
-        imageNeedle: "images/dialneedle.png"
-        hintBackgroundColor: "#ffffff"
-        hintFontColor: "#000000"
-        hintFontPixelSize: 16
-        remove: false
+        x: 134
+        y: 138
+        width: 225
+        height: 225
         initialIndex: 0
-        mouseAreaWidth: 77
-        mouseAreaHeight: 77
-        textColor: "#ffffff"
-        imageNeedleWidth: 108
-        font.family: "Arial"
-        imageBaseHeight: 108
-        font.bold: false
-        hintRadius: 9
-        imageBaseWidth: 108
-        hintWidth: 40
-        add: false
-        hintHeight: 40
-        font.pixelSize: 16
+        font.pixelSize: 18
 
         onKnobValueChanged: {
             text_input1.text = knob1.knobValue.toFixed(1).toString();
@@ -63,8 +40,8 @@ Rectangle {
 
     Knob {
         id: knob2
-        x: 450
-        y: 169
+        x: 462
+        y: 155
         width: 190
         height: 190
         hintBorderColor: "#000000"
@@ -91,7 +68,7 @@ Rectangle {
         hintWidth: 40
         add: false
         hintHeight: 40
-        font.pixelSize: 16
+        font.pixelSize: 18
         model: listModel
 
         ListModel{
@@ -145,7 +122,7 @@ Rectangle {
     LineEdit {
         id: text_input1
         x: 370
-        y: 251
+        y: 237
         width: 61
         height: 26
         text: qsTr("")

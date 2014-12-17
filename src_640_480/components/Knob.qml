@@ -158,7 +158,7 @@ Item
 
     Text{
         id: textFont
-        font.pointSize:9
+        font.pixelSize:14
         font.bold: false
     }
 
@@ -218,7 +218,7 @@ Item
 
                 Text {
                     color: textColor
-                    font.pointSize: textFont.font.pointSize
+                    font.pixelSize: textFont.font.pixelSize
                     anchors.centerIn: parent
                     font.bold: textFont.font.bold
                     text: value

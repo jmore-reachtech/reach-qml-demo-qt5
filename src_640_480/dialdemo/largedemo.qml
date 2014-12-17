@@ -27,8 +27,8 @@ Rectangle {
         width: 234
         height: 222
         anchors.centerIn: parent
-        imageBase: "images/dialbase_large.svg"
-        imageNeedle: "images/dialneedle_large.png"
+        imageBase: "../images/dialbase_large.svg"
+        imageNeedle: "../images/dialneedle_large.png"
         model: listModel3
 
         ListModel{
@@ -73,8 +73,8 @@ Rectangle {
         width: 48
         height: 48
         text: ""
-        imageUp: "images/plus.png"
-        imageDown: "images/plus_down.png"
+        imageUp: "../images/plus.png"
+        imageDown: "../images/plus_down.png"
 
         onButtonClick:{
             var i = listModel3.count;
@@ -91,8 +91,8 @@ Rectangle {
         width: 48
         height: 48
         text: ""
-        imageDown: "images/minus_down.png"
-        imageUp: "images/minus.png"
+        imageDown: "../images/minus_down.png"
+        imageUp: "../images/minus.png"
 
         onButtonClick:{
             knob1.remove = true;
@@ -109,8 +109,8 @@ Rectangle {
         width:48
         height:48
         text: ""
-        imageDown: "images/prev_down.png"
-        imageUp: "images/prev_up.png"
+        imageDown: "../images/prev_down.png"
+        imageUp: "../images/prev_up.png"
         onButtonClick : rootDial.message("dialdemo/mainview.qml");
     }
 

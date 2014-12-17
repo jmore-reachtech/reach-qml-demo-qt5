@@ -21,17 +21,18 @@ Rectangle {
 
     Rectangle{
         x: 54
-        y: 292
+        y: 285
         color: "transparent"
-        width: 214
-        height: 77
+        width: 317
+        height: 97
 
         MouseArea{
             anchors.fill: parent
+            preventStealing: true
         }
 
         HorizontalSlider {
-            width: 184
+            width: 270
             height: 48
             anchors.centerIn: parent
             hintBorderColor: "#000000"
@@ -46,7 +47,7 @@ Rectangle {
             minimum: 0
             xMin: 0
             value: 0
-            handleY: 0
+            handleY: 2
             hintRadius: 9
             hintWidth: 40
             imageHandle: "images/slider_handle.png"
@@ -70,8 +71,8 @@ Rectangle {
             id: slider___horizontal1
             x: 20
             y: 16
-            width: 288
-            height: 29
+            width: 358
+            height: 36
             anchors.centerIn: parent
             hintBorderColor: "#000000"
             showHint: false
@@ -85,7 +86,7 @@ Rectangle {
             imageTrack: "images/slider_bg.png"
             minimum: 0
             xMin: 0
-            xMax: 247
+            xMax: 310
             value: 0
             handleY: -2
             hintRadius: 9
@@ -110,17 +111,17 @@ Rectangle {
 
     VerticalSlider {
         id: slider___vertical2
-        x: 535
-        y: 136
-        width: 23
-        height: 260
+        x: 540
+        y: 76
+        width: 29
+        height: 328
         hintBorderColor: "#000000"
         showHint: true
         maximum: 10
         hintBorderWidth: 0
         hintFontFamily: "Arial"
         hintFontColor: "#ffffff"
-        hintFontPixelSize: 16
+        hintFontPixelSize: 20
         hintFontBold: true
         hintBackgroundColor: "transparent"
         imageTrack: "images/vert_slider_fg.png"
@@ -138,10 +139,10 @@ Rectangle {
 
     VerticalSlider {
         id: slider___vertical1
-        x: 423
-        y: 174
+        x: 435
+        y: 121
         width: 48
-        height: 184
+        height: 248
         hintBorderColor: "#000000"
         showHint: true
         maximum: 50

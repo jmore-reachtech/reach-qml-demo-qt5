@@ -18,7 +18,7 @@ Rectangle {
         text: qsTr("Data Entry")
         horizontalAlignment: Text.AlignHCenter
         font.bold: false
-        font.pixelSize: 24
+        font.pixelSize: 26
     }
 
     AlphaField {
@@ -80,8 +80,8 @@ Rectangle {
         x: 169
         y: 248
         spacing: 5
-        imageHeight: 30
-        imageWidth: 30
+        imageHeight: 34
+        imageWidth: 34
         itemSpacing: 10
         font.pixelSize: 18
         textColor: "#000000"
@@ -128,8 +128,8 @@ Rectangle {
         height: 91
         spacing: 6
         itemSpacing: 10
-        imageWidth: 30
-        imageHeight: 30
+        imageWidth: 34
+        imageHeight: 34
         font.pixelSize: 18
         textColor: "#000000"
         font.family: "Arial"

@@ -21,7 +21,7 @@ Rectangle {
             text: qsTr("Meters")
             horizontalAlignment: Text.AlignHCenter
             font.bold: false
-            font.pixelSize: 24
+            font.pixelSize: 26
         }
 
         Speedometer {
@@ -96,11 +96,11 @@ Rectangle {
 
     HorizontalSlider {
         id: slider___horizontal1
-        x: 180
-        y: 388
-        width: 288
-        height: 29
-        xMax: 247
+        x: 141
+        y: 391
+        width: 358
+        height: 36
+        xMax: 310
         hintBorderColor: "#000000"
         showHint: false
         maximum: 180

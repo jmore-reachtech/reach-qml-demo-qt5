@@ -80,8 +80,8 @@ Rectangle {
         x: 169
         y: 248
         spacing: 5
-        imageHeight: 30
-        imageWidth: 30
+        imageHeight: 34
+        imageWidth: 34
         itemSpacing: 10
         font.pixelSize: 18
         textColor: "#000000"
@@ -128,8 +128,8 @@ Rectangle {
         height: 91
         spacing: 6
         itemSpacing: 10
-        imageWidth: 30
-        imageHeight: 30
+        imageWidth: 34
+        imageHeight: 34
         font.pixelSize: 18
         textColor: "#000000"
         font.family: "Arial"
@@ -159,12 +159,12 @@ Rectangle {
     ImageButton{
         x: 169
         y: 354
-        width: 64
-        height: 33
+        width: 68
+        height: 36
         text: "Save"
         imageUp: "images/internal_button_up.bmp"
         imageDown: "images/internal_button_dn.bmp"
-        font.pixelSize: 16
+        font.pixelSize: 18
 
         onButtonClick: {
             console.debug("Name: " + tbName.inputText);

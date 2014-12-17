@@ -11,20 +11,21 @@ Rectangle {
     LineEdit {
         id: text_input1
         x: 279
-        y: 227
+        y: 230
         width: 82
-        height: 26
+        height: 33
         text: qsTr("")
+        fontPixelSize: 22
         font.pointSize: 12
         radius: 2
     }
 
     Knob {
         id: knob1
-        x: 58
-        y: 24
-        width: 180
-        height: 186
+        x: 77
+        y: 22
+        width: 225
+        height: 225
         initialIndex: 0
 
         onKnobValueChanged: {
@@ -36,8 +37,8 @@ Rectangle {
 
     Knob {
         id: knob2
-        x: 58
-        y: 246
+        x: 100
+        y: 264
         initialIndex: 0
         model: listModel3
 
@@ -80,58 +81,39 @@ Rectangle {
         }
     }
 
-    GeometricKnob {
-        id: dial1
-        x: 342
-        y: 228
-        width: 180
-        height: 203
-        needleColor: "#084a95"
-        outerCircleColor: "#aa9b38"
-        innerCircleRadius: 73
-        outerCircleRadius: 98
+    ImageButton{
+        id:nextButton
+        x: 562
+        y: 308
+        width: 48
+        height: 48
+        text: ""
 
-        model: listModel1
+        imageDown: "../images/next_down.png"
+        imageUp: "../images/next_up.png"
 
-        ListModel{
-            id: listModel1
-            ListElement{
-                index: 0
-                value: -3
-            }
-            ListElement{
-                index: 1
-                value: -2
-            }
-            ListElement{
-                index: 2
-                value: -1
-            }
-            ListElement{
-                index: 3
-                value: 1
-            }
-            ListElement{
-                index: 4
-                value: 2
-            }
-            ListElement{
-                index: 5
-                value: 3
-            }
+
+        onButtonClick: {
+            rootDial.message("dialdemo/largedemo.qml");
         }
+    }
 
-        onValueChanged: {
-            text_input1.text = dial1.value.toFixed(1).toString();
-            if (! typeof connection === 'undefined')
-                connection.sendMessage("txt.value=" + text_input1.text);
-        }
+    ImageButton {
+        id: quitButton
+        x: 562
+        y: 373
+        width: 48
+        height: 48
+        text: ""
+        imageDown: "../images/quit_down.png"
+        imageUp: "../images/quit_up.png"
+        onButtonClick: rootDial.message("../src/mainmenu.qml");
     }
 
     GeometricKnob {
         id: dial2
-        x: 349
-        y: 24
+        x: 331
+        y: 22
         model: listModel2
 
         ListModel{
@@ -188,35 +170,53 @@ Rectangle {
             if (! typeof connection === 'undefined')
                 connection.sendMessage("txt.value=" + text_input1.text);
         }
+
     }
 
-    ImageButton{
-        id:nextButton
-        x: 534
-        y: 305
-        width: 48
-        height: 48
-        text: ""
 
-        imageDown: "images/next_down.png"
-        imageUp: "images/next_up.png"
+    GeometricKnob {
+        id: dial1
+        x: 331
+        y: 242
+        outerCircleColor: "#aa9b38"
+        needleColor: "#084a95"
+        innerCircleRadius: outerCircleRadius-30
 
+        model: listModel1
 
-        onButtonClick: {
-            rootDial.message("dialdemo/largedemo.qml");
+        ListModel{
+            id: listModel1
+            ListElement{
+                index: 0
+                value: -3
+            }
+            ListElement{
+                index: 1
+                value: -2
+            }
+            ListElement{
+                index: 2
+                value: -1
+            }
+            ListElement{
+                index: 3
+                value: 1
+            }
+            ListElement{
+                index: 4
+                value: 2
+            }
+            ListElement{
+                index: 5
+                value: 3
+            }
         }
-    }
 
-    ImageButton {
-        id: quitButton
-        x: 534
-        y: 370
-        width: 48
-        height: 48
-        text: ""
-        imageDown: "images/quit_down.png"
-        imageUp: "images/quit_up.png"
-        onButtonClick: rootDial.message("../src/mainmenu.qml");
-    }
+        onValueChanged: {
+            text_input1.text = dial1.value.toFixed(1).toString();
+            if (! typeof connection === 'undefined')
+                connection.sendMessage("txt.value=" + text_input1.text);
+        }
 
+    }
 }

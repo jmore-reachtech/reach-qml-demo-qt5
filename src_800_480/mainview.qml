@@ -7,7 +7,7 @@ Item {
     width: 800
     height: 480
 	
-    Audio{
+    SoundEffect{
         id: sound1
         source: "audio/beep.wav"
     }
@@ -19,8 +19,8 @@ Item {
     Connections {
         target: loader.item
         onMessage: {
-            //sound1.volume = 0.6;
-            //sound1.play();
+            sound1.volume = 0.2;
+            sound1.play();
             loader.source = msg;            
         }
     }

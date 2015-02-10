@@ -19,8 +19,11 @@ Item {
     Connections {
         target: loader.item
         onMessage: {
-            sound1.volume = 0.2;
-            sound1.play();
+            if (msg != "videodemo/mainview.qml")
+            {
+                sound1.volume = 0.4;
+                sound1.play();
+            }
             loader.source = msg;            
         }
     }

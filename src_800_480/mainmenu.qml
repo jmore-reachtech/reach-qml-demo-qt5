@@ -51,6 +51,10 @@ Rectangle {
 		ListElement {
                    image: "images/io-icon.png"; iconheight:65; iconwidth: 80; form: "iodemo/mainview.qml"; icontext: "I/O Demo"
         }
+		ListElement {
+            image: "images/gpio-icon.png"; iconheight:64; iconwidth: 76; form: "gpiodemo/mainview.qml"; icontext: "GPIO Plugin\n    Demo"
+        }
+
     }
 
     GridView{

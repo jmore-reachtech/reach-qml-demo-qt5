@@ -235,9 +235,13 @@ Rectangle {
 
 
     Component.onCompleted: {
-		switch_pin0.on = false;            
-        switch_pin1.on = false;            
-        switch_pin2.on = false;            
-        switch_pin3.on = false;   
+		if (pin0.readPin() == 1)
+		    switch_pin0.on = true;
+		if (pin1.readPin() == 1)
+            switch_pin1.on = true;
+		if (pin2.readPin() == 1)
+            switch_pin2.on = true;
+		if (pin3.readPin() == 1)
+            switch_pin3.on = true;
     }
 }

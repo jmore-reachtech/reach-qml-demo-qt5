@@ -74,6 +74,7 @@ Rectangle {
                 page = 1;
             else if (menu.atYEnd)
                 page = rows;
+             mainView.mainMenuY = menu.contentY;
         }
 
         Component {
@@ -200,6 +201,7 @@ Rectangle {
 
                 index = (menu.page - 1) * 4;
                 menu.positionViewAtIndex(index, GridView.Beginning);
+                mainView.mainMenuY = menu.contentY;
             }
         }
 
@@ -224,9 +226,14 @@ Rectangle {
                     menu.page = 1;
                 index = (menu.page - 1) * 4;
                 menu.positionViewAtIndex(index, GridView.Beginning);
+                mainView.mainMenuY = menu.contentY;
             }
         }
     }
 
+
+    Component.onCompleted: {
+        menu.contentY = mainView.mainMenuY;
+    }
 
 }

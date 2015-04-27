@@ -1,55 +1,66 @@
 import QtQuick 2.0
-import QtMultimedia 5.0
 import "components"
+import com.reachtech.systemplugin 1.0
 
-Item {
+Rectangle {
     id: mainView
     width: 640
     height: 480
-
-    Audio{
-        id: sound1
-        source: "audio/beep-01a.wav"
-    }
+    color: "#2D2D2D"
+    property int mainMenuY: 0
 
     Loader{
         id: loader
     }
 
-    /*Backlight{
-        id: backLight
-    }*/
+    Text{
+        id: txtMessage
+        anchors.centerIn:parent
+        font.pixelSize: 32
+        color: "Red"
+        text: "Loading QML Application...Please Wait."
+        visible: true
+    }
+
+    Connections {
+        target: connection
+        onReadyToSend: {
+            txtMessage.visible = false;
+            loader.source = "mainmenu.qml";
+        }
+    }
 
     Connections {
         target: loader.item
         onMessage: {
-            //sound1.volume = 0.6;
-            //sound1.play();
-            loader.source = msg;            
+            loader.source = msg;
         }
     }
 
+    GPIOPinOutput{
+        id: pin0
+        pin: 0
+    }
+
+    GPIOPinOutput{
+        id: pin1
+        pin: 1
+    }
+
+    GPIOPinOutput{
+        id: pin2
+        pin: 2
+    }
+
+    GPIOPinOutput{
+        id: pin3
+        pin: 3
+    }
+
     Component.onCompleted: {
-        //Set beeper values
-        /*var volume = settings.getValue("beeper_volume",50);
-        var duration = settings.getValue("beeper_duration", 100);
-        var freq = settings.getValue("beeper_frequency", 1000);
-
-        beeper.setVolume(volume);
-        beeper.setFrequency(freq);
-        beeper.setDuration(duration);
-
-        settings.setValue("beeper_volume", volume);
-        settings.setValue("beeper_duration", duration);
-        settings.setValue("beeper_frequency", freq);
-
-        //Set backlight values
-        var brightness = settings.getValue("backlight_brightness",60);
-
-        backLight.setBrightness(brightness);
-        settings.setValue("backlight_enable", true);
-        settings.setValue("backlight_brightness", brightness);*/
-        loader.source = "mainmenu.qml";
+        pin0.writeToPin(0);
+        pin1.writeToPin(0);
+        pin2.writeToPin(0);
+        pin3.writeToPin(0);
     }
 }
-

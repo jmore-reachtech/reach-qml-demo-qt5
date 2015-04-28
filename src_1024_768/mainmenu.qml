@@ -51,6 +51,9 @@ Rectangle {
 		ListElement {
                    image: "images/io-icon.png"; iconheight:65; iconwidth: 80; form: "iodemo/mainview.qml"; icontext: "I/O Demo"
         }
+        ListElement {
+            image: "images/gpio-icon.png"; iconheight:64; iconwidth: 76; form: "gpiodemo/mainview.qml"; icontext: "GPIO Plugin\n    Demo"
+        }
     }
 
     GridView{
@@ -70,6 +73,7 @@ Rectangle {
                 page = 1;
             else if (menu.atYEnd)
                 page = rows;
+            mainView.mainMenuY = menu.contentY;
         }
 
         Component {
@@ -196,6 +200,7 @@ Rectangle {
 
                 index = (menu.page - 1) * 4;
                 menu.positionViewAtIndex(index, GridView.Beginning);
+                mainView.mainMenuY = menu.contentY;
             }
         }
 
@@ -220,9 +225,12 @@ Rectangle {
                     menu.page = 1;
                 index = (menu.page - 1) * 4;
                 menu.positionViewAtIndex(index, GridView.Beginning);
+                mainView.mainMenuY = menu.contentY;
             }
         }
     }
 
-
+    Component.onCompleted: {
+        menu.contentY = mainView.mainMenuY;
+    }
 }

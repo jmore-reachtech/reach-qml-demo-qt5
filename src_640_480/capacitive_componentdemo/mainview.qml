@@ -53,6 +53,8 @@ Rectangle {
         orientation: ListView.Horizontal
         snapMode: ListView.SnapOneItem;
         flickDeceleration: 500
+		cacheBuffer: width * 4
+        boundsBehavior: Flickable.StopAtBounds
 
         onFlickEnded: {
             var index = view.contentX/640;

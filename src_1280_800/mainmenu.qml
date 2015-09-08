@@ -13,46 +13,46 @@ Rectangle {
         id: listModel
 
         ListElement {
-            image: "images/coffee-icon.png"; iconheight:76; iconwidth: 100; form: "capacitive_coffeedemo/mainview.qml"; icontext: "  Capacitive\nCoffee Demo"
+            image: "images/coffee-icon.png"; iconheight:86; iconwidth: 113; form: "capacitive_coffeedemo/mainview.qml"; icontext: "  Capacitive\nCoffee Demo"
         }
         ListElement {
-            image: "images/coffee-icon.png"; iconheight:76; iconwidth: 100; form: "resistive_coffeedemo/mainview.qml"; icontext: "   Resistive\nCoffee Demo"
+            image: "images/coffee-icon.png"; iconheight:86; iconwidth: 113; form: "resistive_coffeedemo/mainview.qml"; icontext: "   Resistive\nCoffee Demo"
         }
         ListElement {
-            image: "images/dial-icon.png"; iconheight:76; iconwidth: 76; form: "dialdemo/mainview.qml"; icontext: "Dial Demo"
+            image: "images/dial-icon.png"; iconheight:88; iconwidth: 88; form: "dialdemo/mainview.qml"; icontext: "Dial Demo"
         }
         ListElement {
-            image: "images/vumeter-icon.png"; iconheight:74; iconwidth: 110; form: "vumeterdemo/mainview.qml"; icontext: "VU Meter Demo"
+            image: "images/vumeter-icon.png"; iconheight:84; iconwidth: 125; form: "vumeterdemo/mainview.qml"; icontext: "VU Meter Demo"
         }
         ListElement {
-            image: "images/samegame-icon.png"; iconheight:74; iconwidth: 110; form: "samegame/mainview.qml"; icontext: "Same Game"
+            image: "images/samegame-icon.png"; iconheight:84; iconwidth: 125; form: "samegame/mainview.qml"; icontext: "Same Game"
         }
         ListElement {
-            image: "images/spedometer-icon.png"; iconheight:78; iconwidth: 78; form: "spedometerdemo/mainview.qml"; icontext: "Spedometer Demo"
+            image: "images/spedometer-icon.png"; iconheight:96; iconwidth: 96; form: "spedometerdemo/mainview.qml"; icontext: "Spedometer Demo"
         }
         ListElement {
-            image: "images/reach-icon.png"; iconheight:76; iconwidth: 76; form: "capacitive_componentdemo/mainview.qml"; icontext: "     Capacitive\nComponent Demo"
+            image: "images/reach-icon.png"; iconheight:84; iconwidth: 84; form: "capacitive_componentdemo/mainview.qml"; icontext: "     Capacitive\nComponent Demo"
         }
         ListElement {
-            image: "images/reach-icon.png"; iconheight:76; iconwidth: 76; form: "resistive_componentdemo/mainview.qml"; icontext: "      Resistive\nComponent Demo"
+            image: "images/reach-icon.png"; iconheight:84; iconwidth: 84; form: "resistive_componentdemo/mainview.qml"; icontext: "      Resistive\nComponent Demo"
         }
         ListElement {
-            image: "images/graph-icon.png"; iconheight:64; iconwidth: 76; form: "graphdemo/mainview.qml"; icontext: "Graph Demo"
+            image: "images/graph-icon.png"; iconheight:72; iconwidth: 86; form: "graphdemo/mainview.qml"; icontext: "Graph Demo"
         }
         ListElement {
-            image: "images/system-icon.png"; iconheight:64; iconwidth: 76; form: "systemdemo/mainview.qml"; icontext: "System Plugin\n      Demo"
+            image: "images/system-icon.png"; iconheight:72; iconwidth: 84; form: "systemdemo/mainview.qml"; icontext: "System Plugin\n      Demo"
         }
         ListElement {
-                   image: "images/video-icon.png"; iconheight:77; iconwidth: 76; form: "videodemo/mainview.qml"; icontext: "Video Demo"
+                   image: "images/video-icon.png"; iconheight:89; iconwidth: 88; form: "videodemo/mainview.qml"; icontext: "Video Demo"
         }
 		ListElement {
-                   image: "images/web-icon.png"; iconheight:80; iconwidth: 80; form: "webdemo/mainview.qml"; icontext: "Web Demo"
+                   image: "images/web-icon.png"; iconheight:90; iconwidth: 90; form: "webdemo/mainview.qml"; icontext: "Web Demo"
         }
 		ListElement {
-                   image: "images/io-icon.png"; iconheight:65; iconwidth: 80; form: "iodemo/mainview.qml"; icontext: "I/O Demo"
+                   image: "images/io-icon.png"; iconheight:76; iconwidth: 92; form: "iodemo/mainview.qml"; icontext: "I/O Demo"
         }
         ListElement {
-                   image: "images/gpio-icon.png"; iconheight:64; iconwidth: 76; form: "gpiodemo/mainview.qml"; icontext: "GPIO Plugin\n    Demo"
+                   image: "images/gpio-icon.png"; iconheight:72; iconwidth: 86; form: "gpiodemo/mainview.qml"; icontext: "GPIO Plugin\n    Demo"
         }
     }
 
@@ -108,7 +108,7 @@ Rectangle {
                             topMargin: 4;
                         }
                         text: icontext
-                        font.pixelSize: 16
+                        font.pixelSize: 18
                         font.family: "DejaVu Sans"
                         color:"white"
                         font.bold: false;

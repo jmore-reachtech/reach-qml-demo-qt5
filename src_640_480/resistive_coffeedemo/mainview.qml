@@ -193,7 +193,7 @@ Rectangle {
 
         }
 
-        var currentIndex = parseInt(db.getSetting("currentIndex"));
+        var currentIndex = 0;
         db.closeDB();
 
         if (currentIndex && currentIndex >= 0)

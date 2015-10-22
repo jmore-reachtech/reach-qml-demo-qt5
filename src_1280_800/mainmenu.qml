@@ -54,6 +54,9 @@ Rectangle {
         ListElement {
                    image: "images/gpio-icon.png"; iconheight:72; iconwidth: 86; form: "gpiodemo/mainview.qml"; icontext: "GPIO Plugin\n    Demo"
         }
+        ListElement {
+            image: "images/spedometer-icon.png"; iconheight:96; iconwidth: 96; form: "persist_spedometerdemo/mainview.qml"; icontext: "Persistent Spedometer Demo"
+        }
     }
 
     GridView{

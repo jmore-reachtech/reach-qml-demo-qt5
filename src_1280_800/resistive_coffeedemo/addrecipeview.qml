@@ -224,8 +224,8 @@ Rectangle {
         id: btnSave
         x: 560
         y: 526
-        width: 76
-        height: 64
+        width: 86
+        height: 74
         text: ""
         imageUp: "images/btnSave.png"
         imageDown: "images/btnSaveOff.png"
@@ -281,8 +281,8 @@ Rectangle {
         id: btnCancel
         x: 648
         y: 526
-        width: 76
-        height: 64
+        width: 86
+        height: 74
         text: ""
         imageUp: "images/btnCancel.png"
         imageDown: "images/btnCancelOff.png"
@@ -330,8 +330,8 @@ Rectangle {
             id: btnErrorCancel
             x: 117
             y: 132
-            width: 76
-            height: 64
+            width: 86
+            height: 74
             text: ""
             imageUp: "images/btnCancel.png"
             imageDown: "images/btnCancelOff.png"

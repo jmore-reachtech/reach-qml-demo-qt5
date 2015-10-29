@@ -80,8 +80,8 @@ Rectangle {
         x: 413
         y: 380
         spacing: 5
-        imageHeight: 36
-        imageWidth: 36
+        imageHeight: 42
+        imageWidth: 42
         itemSpacing: 8
         font.pixelSize: 20
         textColor: "#000000"
@@ -128,9 +128,9 @@ Rectangle {
         height: 91
         spacing: 6
         itemSpacing: 9
-        imageWidth: 36
-        imageHeight: 36
-        font.pixelSize: 18
+        imageWidth: 42
+        imageHeight: 42
+        font.pixelSize: 20
         textColor: "#000000"
         font.family: "Arial"
         font.bold: false
@@ -159,8 +159,8 @@ Rectangle {
     ImageButton{
         x: 415
         y: 564
-        width: 79
-        height: 40
+        width: 82
+        height: 42
         font.pixelSize: 20
         text: "Save"
         imageUp: "images/internal_button_up.bmp"

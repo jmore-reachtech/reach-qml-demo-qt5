@@ -29,7 +29,7 @@ Rectangle {
         x: 459
         y: 452
         width: 130
-        height: 37
+        height: 40
         textOffBold: true
         textOnBold: true
         textOff: "Pin 4 Low"
@@ -51,7 +51,7 @@ Rectangle {
         x: 459
         y: 391
         width: 130
-        height: 37
+        height: 40
         textOff: "Pin 3 Low"
         textOn: "Pin 3 High"
         imageOn: "../images/internal_button_dn.bmp"
@@ -73,7 +73,7 @@ Rectangle {
         x: 459
         y: 323
         width: 130
-        height: 37
+        height: 40
         textOffBold: true
         textOnBold: true
         textOff: "Pin 2 LOW"
@@ -95,7 +95,7 @@ Rectangle {
         x: 459
         y: 258
         width: 130
-        height: 37
+        height: 40
         textOffBold: true
         textOnBold: true
         textOff: "Pin 1 LOW"
@@ -103,6 +103,7 @@ Rectangle {
         imageOff: "../images/internal_button_up.bmp"
         imageOn: "../images/internal_button_dn.bmp"
         on: false;
+
 
         onOnChanged: {
             if (on)
@@ -116,8 +117,8 @@ Rectangle {
         id: quitButton
         x: 459
         y: 552
-        width: 48
-        height: 48
+        width: 58
+        height: 58
         text: ""
         imageDown: "../images/quit_down.png"
         imageUp: "../images/quit_up.png"
@@ -195,7 +196,7 @@ Rectangle {
     Text {
         id: txtGPIO4
         x: 702
-        y: 264
+        y: 265
         width: 96
         height: 25
         text: qsTr("Pin 5 LOW")
@@ -205,7 +206,7 @@ Rectangle {
     Text {
         id: txtGPIO5
         x: 702
-        y: 329
+        y: 330
         width: 96
         height: 25
         text: qsTr("Pin 6 LOW")
@@ -215,7 +216,7 @@ Rectangle {
     Text {
         id: txtGPIO6
         x: 702
-        y: 397
+        y: 398
         width: 96
         height: 25
         text: qsTr("Pin 7 LOW")
@@ -225,7 +226,7 @@ Rectangle {
     Text {
         id: txtGPIO7
         x: 702
-        y: 458
+        y: 459
         width: 96
         height: 25
         text: qsTr("Pin 8 LOW")

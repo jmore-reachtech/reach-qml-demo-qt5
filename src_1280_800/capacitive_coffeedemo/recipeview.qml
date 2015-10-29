@@ -195,8 +195,8 @@ Rectangle {
         id: btnSave
         x: 507
         y: 535
-        width: 76
-        height: 64
+        width: 86
+        height: 74
         text: ""
         imageUp: "images/btnSave.png"
         imageDown: "images/btnSaveOff.png"
@@ -247,8 +247,8 @@ Rectangle {
         id: btnDelete
         x: 587
         y: 535
-        width: 76
-        height: 64
+        width: 86
+        height: 74
         text: ""
         imageUp: "images/btnDelete.png"
         imageDown: "images/btnDeleteOff.png"
@@ -263,8 +263,8 @@ Rectangle {
         id: btnCancel
         x: 667
         y: 535
-        width: 76
-        height: 64
+        width: 86
+        height: 74
         text: ""
         imageUp: "images/btnCancel.png"
         imageDown: "images/btnCancelOff.png"
@@ -322,8 +322,8 @@ Rectangle {
             id: btnConfirmYes
             x: 70
             y: 129
-            width: 76
-            height: 64
+            width: 86
+            height: 74
             text: ""
             imageUp: "images/btnYes.png"
             imageDown: "images/btnYesOff.png"
@@ -345,8 +345,8 @@ Rectangle {
             id: btnConfirmNo
             x: 155
             y: 129
-            width: 76
-            height: 64
+            width: 86
+            height: 74
             text: ""
             imageUp: "images/btnCancel.png"
             imageDown: "images/btnCancelOff.png"
@@ -393,8 +393,8 @@ Rectangle {
             id: btnErrorCancel
             x: 117
             y: 132
-            width: 76
-            height: 64
+            width: 86
+            height: 74
             text: ""
             imageUp: "images/btnCancel.png"
             imageDown: "images/btnCancelOff.png"

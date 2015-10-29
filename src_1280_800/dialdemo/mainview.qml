@@ -84,9 +84,9 @@ Rectangle {
     ImageButton{
         id:nextButton
         x: 933
-        y: 430
-        width: 48
-        height: 48
+        y: 419
+        width: 58
+        height: 58
         text: ""
 
         imageDown: "../images/next_down.png"
@@ -101,9 +101,9 @@ Rectangle {
     ImageButton {
         id: quitButton
         x: 933
-        y: 495
-        width: 48
-        height: 48
+        y: 490
+        width: 58
+        height: 58
         text: ""
         imageDown: "../images/quit_down.png"
         imageUp: "../images/quit_up.png"

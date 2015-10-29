@@ -28,7 +28,7 @@ Rectangle {
 
     ImageButton {
         id: image_button1
-        x: 671
+        x: 638
         y: 275
         width: 102
         height: 102
@@ -49,10 +49,10 @@ Rectangle {
 
     Switch {
         id: switch1
-        x: 369
-        y: 259
-        width: 49
-        height: 135
+        x: 366
+        y: 260
+        width: 59
+        height: 145
         on: false
         textOff: ""
         textOn: ""
@@ -75,10 +75,10 @@ Rectangle {
 
     Switch {
         id: switch2
-        x: 508
-        y: 291
-        width: 70
-        height: 70
+        x: 498
+        y: 290
+        width: 80
+        height: 80
         on: false
         textOff: ""
         textOn: ""
@@ -101,8 +101,8 @@ Rectangle {
 
     VerticalSwitchGroup {
         id: switch_group2
-        x: 867
-        y: 253
+        x: 840
+        y: 252
         width: 60
         height: 146
         spacing: 10
@@ -117,8 +117,8 @@ Rectangle {
                 val: "1"
                 text_off: "1"
                 image_on: "../images/switchgroupdown.png"
-                item_width: 60
-                item_height: 40
+                item_width: 70
+                item_height: 50
             }
             ListElement {
                 text_on: "2"
@@ -126,8 +126,8 @@ Rectangle {
                 val: "2"
                 text_off: "2"
                 image_on: "../images/switchgroupdown.png"
-                item_width: 60
-                item_height: 40
+                item_width: 70
+                item_height: 50
             }
             ListElement {
                 text_on: "3"
@@ -135,8 +135,8 @@ Rectangle {
                 val: "3"
                 text_off: "3"
                 image_on: "../images/switchgroupdown.png"
-                item_width: 60
-                item_height: 40
+                item_width: 70
+                item_height: 50
             }
         }
 
@@ -151,10 +151,10 @@ Rectangle {
 
     ImageButton {
         id: quitButton
-        x: 370
-        y: 511
-        width: 48
-        height: 48
+        x: 367
+        y: 542
+        width: 58
+        height: 58
         text: ""
         imageDown: "images/quit_down.png"
         imageUp: "images/quit_up.png"

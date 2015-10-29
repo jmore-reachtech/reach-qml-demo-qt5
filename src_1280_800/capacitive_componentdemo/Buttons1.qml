@@ -45,8 +45,8 @@ Rectangle {
         id: switch1
         x: 366
         y: 260
-        width: 49
-        height: 135
+        width: 59
+        height: 145
         on: false
         textOff: ""
         textOn: ""
@@ -70,8 +70,8 @@ Rectangle {
         id: switch2
         x: 498
         y: 290
-        width: 70
-        height: 70
+        width: 80
+        height: 80
         on: false
         textOff: ""
         textOn: ""
@@ -109,8 +109,8 @@ Rectangle {
                 val: "1"
                 text_off: "1"
                 image_on: "../images/switchgroupdown.png"
-                item_width: 60
-                item_height: 40
+                item_width: 70
+                item_height: 50
             }
             ListElement {
                 text_on: "2"
@@ -118,8 +118,8 @@ Rectangle {
                 val: "2"
                 text_off: "2"
                 image_on: "../images/switchgroupdown.png"
-                item_width: 60
-                item_height: 40
+                item_width: 70
+                item_height: 50
             }
             ListElement {
                 text_on: "3"
@@ -127,8 +127,8 @@ Rectangle {
                 val: "3"
                 text_off: "3"
                 image_on: "../images/switchgroupdown.png"
-                item_width: 60
-                item_height: 40
+                item_width: 70
+                item_height: 50
             }
         }
 
@@ -142,8 +142,8 @@ Rectangle {
         id: quitButton
         x: 367
         y: 542
-        width: 48
-        height: 48
+        width: 58
+        height: 58
         text: ""
         imageDown: "images/quit_down.png"
         imageUp: "images/quit_up.png"

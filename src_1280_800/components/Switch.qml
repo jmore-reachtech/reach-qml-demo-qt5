@@ -70,7 +70,7 @@ Rectangle {
         id: textOn
         text: "On"
         anchors.centerIn: parent
-        font.pixelSize: 12
+        font.pixelSize: 14
         visible: on
         color: textOnColor
     }
@@ -79,7 +79,7 @@ Rectangle {
         id: textOff
         text: "Off"
         anchors.centerIn: parent
-        font.pixelSize: 12
+        font.pixelSize: 14
         visible: !on
         color: textOffColor
     }

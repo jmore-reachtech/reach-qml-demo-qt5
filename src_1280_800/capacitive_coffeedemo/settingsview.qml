@@ -34,8 +34,8 @@ Rectangle {
         id: btnCancel
         x: 602
         y: 430
-        width: 76
-        height: 64
+        width: 86
+        height: 74
         text: ""
         imageUp: "images/btnCancel.png"
         imageDown: "images/btnCancelOff.png"

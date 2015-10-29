@@ -58,7 +58,7 @@ Rectangle {
         id: switch_group___horizontal1
         x: 390
         y: 464
-        width: 216
+        width: 281
         height: 60
         font.pixelSize: 16
         spacing: 10
@@ -71,8 +71,8 @@ Rectangle {
                 val: "a"
                 text_off: "A"
                 image_on: "../images/switchgroupdownrnd.png"
-                item_width: 60
-                item_height: 60
+                item_width: 70
+                item_height: 70
             }
 
             ListElement {
@@ -81,8 +81,8 @@ Rectangle {
                 val: "b"
                 text_off: "B"
                 image_on: "../images/switchgroupdownrnd.png"
-                item_width: 60
-                item_height: 60
+                item_width: 70
+                item_height: 70
             }
             ListElement {
                 text_on: "C"
@@ -90,8 +90,8 @@ Rectangle {
                 val: "c"
                 text_off: "C"
                 image_on: "../images/switchgroupdownrnd.png"
-                item_width: 60
-                item_height: 60
+                item_width: 70
+                item_height: 70
             }
             ListElement {
                 text_on: "D"
@@ -99,8 +99,8 @@ Rectangle {
                 val: "d"
                 text_off: "D"
                 image_on: "../images/switchgroupdownrnd.png"
-                item_width: 60
-                item_height: 60
+                item_width: 70
+                item_height: 70
             }
         }
         textOnColor: "#000000"
@@ -136,6 +136,8 @@ Rectangle {
         MouseArea{
             x: 75
             y: 0
+            width: 155
+            height: 86
             anchors.rightMargin: -75
             anchors.bottomMargin: 0
             anchors.leftMargin: 75
@@ -147,24 +149,24 @@ Rectangle {
             id: animatedswitch2
             x: 98
             y: 24
-            width: 100;
-            height: 27;
+            width: 120;
+            height: 40;
             anchors.verticalCenterOffset: 0
             anchors.horizontalCenterOffset: 75
             anchors.centerIn: parent
             on: true
             imageOff: "images/animated_btn_off.png"
-            imageOffWidth: 100
-            imageOffHeight: 27
+            imageOffWidth: 120
+            imageOffHeight: 40
             sliderImage: "images/animated_slider.png"
             imageOn: "images/animated_btn_on.png"
-            imageOnWidth: 100
-            imageOnHeight: 27
+            imageOnWidth: 120
+            imageOnHeight: 40
             sliderImageOnX: 0
             sliderImageY: 0
             sliderImageOffX: 62
             textOnX: 18
-            textOffX: 54
+            textOffX: 68
             textColor: "Black"
         }
 

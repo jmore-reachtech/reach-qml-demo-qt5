@@ -13,9 +13,9 @@ Rectangle {
 
     CoffeeCarousel {
         id: imagecarousel1
-        x: 0
-        y: 10
-        width: 1280
+        x: 50
+        y: 18
+        width: 1180
         height: 500
 
         onCurrentIndexChanged: {
@@ -30,8 +30,8 @@ Rectangle {
         id: btnSettings
         x: 379
         y: 540
-        width: 76
-        height: 64
+        width: 86
+        height: 74
         text: ""
         imageUp: "images/btnSettings.png"
         imageDown: "images/btnSettingsOff.png"
@@ -47,8 +47,8 @@ Rectangle {
         x: 470
         y: 540
         text: ""
-        width: 76
-        height: 64
+        width: 86
+        height: 74
         imageUp: "images/btnRinse.png"
         imageDown: "images/btnRinseOff.png"
 
@@ -62,8 +62,8 @@ Rectangle {
         x: 560
         y: 540
         text: ""
-        width: 76
-        height: 64
+        width: 86
+        height: 74
         imageUp: "images/btnBrew.png"
         imageDown: "images/btnBrewOff.png"
 
@@ -77,8 +77,8 @@ Rectangle {
         id: btnEdit
         x: 650
         y: 540
-        width: 76
-        height: 64
+        width: 86
+        height: 74
         text: ""
         imageUp: "images/btnEdit.png"
         imageDown: "images/btnEditOff.png"
@@ -91,8 +91,8 @@ Rectangle {
         id: btnAdd
         x: 740
         y: 540
-        width: 76
-        height: 64
+        width: 86
+        height: 74
         text: ""
         imageUp: "images/btnAdd.png"
         imageDown: "images/btnAddOff.png"
@@ -105,8 +105,8 @@ Rectangle {
         id: btnQuit
         x: 830
         y: 540
-        width: 76
-        height: 64
+        width: 86
+        height: 74
         text: ""
         imageUp: "images/btnCancel.png"
         imageDown: "images/btnCancelOff.png"

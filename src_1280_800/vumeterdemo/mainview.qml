@@ -157,10 +157,10 @@ Rectangle {
 
     ImageButton {
         id: quitButton
-        x: 840
-        y: 584
-        width: 48
-        height: 48
+        x: 824
+        y: 583
+        width: 58
+        height: 58
         text: ""
         imageDown: "../images/quit_down.png"
         imageUp: "../images/quit_up.png"

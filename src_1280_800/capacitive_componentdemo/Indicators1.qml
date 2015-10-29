@@ -24,21 +24,20 @@ Rectangle {
 
     HorizontalLevelIndicator {
         id: horizontal1
-        x: 704
-        y: 261
-        width: 200
-        height: 20
+        x: 616
+        y: 270
+        width: 400
+        height: 40
         hintFontBold: true
-        hintFontPointSize: 10
         minValue: 0
-        hintFontPixelSize: 14
+        hintFontPixelSize: 18
         imageBase: "images/tank.png"
         hintFontColor: "#ffffff"
         value: 0
         showHint: true
         imageOverlay: "images/tank_overlay.png"
         maxValue: 50
-        increment: 4
+        increment: 8
         startPosition: "left"
         hintFontFamily: "Arial"
 
@@ -51,7 +50,7 @@ Rectangle {
     }
 
     Image{
-        x: 547
+        x: 503
         y: 270
         source: "images/level_base.png"
         VerticalLevelIndicator {

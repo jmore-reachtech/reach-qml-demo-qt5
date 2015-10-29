@@ -74,8 +74,8 @@ Rectangle {
         id: textbutton1
         x: 618
         y: 190
-        width: 48
-        height: 48
+        width: 58
+        height: 58
         text: ""
         imageUp: "../images/plus.png"
         imageDown: "../images/plus_down.png"
@@ -92,8 +92,8 @@ Rectangle {
         id: textbutton2
         x: 804
         y: 190
-        width: 48
-        height: 48
+        width: 58
+        height: 58
         text: ""
         imageDown: "../images/minus_down.png"
         imageUp: "../images/minus.png"
@@ -108,10 +108,10 @@ Rectangle {
 
     ImageButton {
         id: imagebutton1
-        x: 156
-        y: 456
-        width:48
-        height:48
+        x: 161
+        y: 451
+        width:58
+        height:58
         text: ""
         imageDown: "../images/prev_down.png"
         imageUp: "../images/prev_up.png"

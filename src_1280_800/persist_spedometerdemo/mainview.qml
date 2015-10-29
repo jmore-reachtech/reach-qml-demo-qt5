@@ -17,8 +17,8 @@ Rectangle {
 
     Speedometer {
         id: spedo
-        x: 241
-        y: 118
+        x: 449
+        y: 210
         objectName: "spedo"
         width: 210
         height: 210
@@ -43,8 +43,8 @@ Rectangle {
 
     VerticalSlider {
         id: slider1
-        x: 501
-        y: 124
+        x: 709
+        y: 216
         width: 48
         height: 184
         imageHandle: "../images/slider_handle.png"
@@ -69,10 +69,10 @@ Rectangle {
 
     ImageButton {
         id: quitButton
-        x: 501
-        y: 351
-        width: 48
-        height: 48
+        x: 611
+        y: 460
+        width: 58
+        height: 58
         text: ""
         imageDown: "../images/quit_down.png"
         imageUp: "../images/quit_up.png"

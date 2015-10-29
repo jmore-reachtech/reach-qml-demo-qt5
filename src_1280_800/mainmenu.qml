@@ -188,10 +188,10 @@ Rectangle {
 
         ImageButton {
             id: image_button1
-            x: 1170
-            y: 703
-            width: 40
-            height: 40
+            x: 1160
+            y: 693
+            width: 50
+            height: 50
             text: ""
             imageUp: "images/down-arrow_up.png"
             font.pixelSize: 18
@@ -211,30 +211,30 @@ Rectangle {
                 mainView.mainMenuY = menu.contentY;
             }
         }
+    }
 
-        ImageButton {
-            id: image_button2
-            x: 1170
-            y: 66
-            width: 40
-            height: 40
-            text: ""
-            imageUp: "images/up-arrow_up.png"
-            font.pixelSize: 18
-            textColor: "#000000"
-            imageDown: "images/up-arrow_down.png"
-            font.bold: false
-            font.family: "Arial"
+    ImageButton {
+        id: image_button2
+        x: 1160
+        y: 76
+        width: 50
+        height: 50
+        text: ""
+        imageUp: "images/up-arrow_up.png"
+        font.pixelSize: 18
+        textColor: "#000000"
+        imageDown: "images/up-arrow_down.png"
+        font.bold: false
+        font.family: "Arial"
 
-            onButtonClick: {
-                var index = 0;
-                menu.page -= 1;
-                if (menu.page < 1)
-                    menu.page = 1;
-                index = (menu.page - 1) * 6;
-                menu.positionViewAtIndex(index, GridView.Beginning);
-                mainView.mainMenuY = menu.contentY;
-            }
+        onButtonClick: {
+            var index = 0;
+            menu.page -= 1;
+            if (menu.page < 1)
+                menu.page = 1;
+            index = (menu.page - 1) * 6;
+            menu.positionViewAtIndex(index, GridView.Beginning);
+            mainView.mainMenuY = menu.contentY;
         }
     }
 

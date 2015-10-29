@@ -50,8 +50,8 @@ Rectangle {
         id: image_button1
         x: 96
         y: 670
-        width: 48
-        height: 40
+        width: 58
+        height: 50
         text: ""
         imageUp: "images/left_arrow_up.png"
         font.pixelSize: 18
@@ -74,8 +74,8 @@ Rectangle {
         id: image_button2
         x: 1119
         y: 670
-        width: 48
-        height: 40
+        width: 58
+        height: 50
         text: ""
         smooth: true
         imageUp: "images/right_arrow_up.png"

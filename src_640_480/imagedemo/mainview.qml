@@ -4,7 +4,7 @@ import "../js/imagedemo.js" as Jscript
 
 Rectangle {
     id: root
-    width: 800
+    width: 640
     height: 480
     color: "#666666"
     signal message(string msg)
@@ -14,7 +14,7 @@ Rectangle {
         id: txtTitle
         x: 0
         y: 53
-        width: 800
+        width: 640
         height: 29
         text: qsTr("Image Test")
         horizontalAlignment: Text.AlignHCenter
@@ -25,8 +25,8 @@ Rectangle {
 
     ImageButton {
         id: btnTestImages
-        x: 294
-        y: 111
+        x: 200
+        y: 108
         width: 240
         height: 40
         text: "Browse Test Images"
@@ -44,8 +44,8 @@ Rectangle {
 
     ImageButton {
         id: btnUSB
-        x: 294
-        y: 182
+        x: 200
+        y: 179
         width: 240
         height: 40
         text: "Browse USB Drive Images"
@@ -81,8 +81,8 @@ Rectangle {
 
     ImageButton {
         id: btnUnmount
-        x: 294
-        y: 252
+        x: 200
+        y: 249
         width: 240
         height: 40
         text: "Unmount USB Drive"
@@ -106,8 +106,8 @@ Rectangle {
 
     ImageButton {
         id: btnQuit
-        x: 294
-        y: 323
+        x: 200
+        y: 320
         width: 240
         height: 40
         text: "Go Back to Main Menu"
@@ -131,7 +131,7 @@ Rectangle {
         id: txtWarning
         x: 0
         y: 375
-        width: 800
+        width: 640
         height: 72
         color: "#ff0000"
         visible: false

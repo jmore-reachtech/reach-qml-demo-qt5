@@ -4,7 +4,7 @@ import "../components"
 
 Rectangle {
     id: root
-    width: 800
+    width: 640
     height: 480
     property int currentIndex: 0
     property int count: list.model.count
@@ -109,13 +109,13 @@ Rectangle {
     Rectangle{
         id: rectOpaque
         color: "#666666"
-        width: 800
+        width: 640
         height: 480
         opacity: 0.2
 
         Rectangle{
             id: rectMessage
-            x: 68
+            x: 64
             y: 84
             radius: 10
             anchors.verticalCenterOffset: 0
@@ -128,7 +128,7 @@ Rectangle {
             smooth: true
             anchors.centerIn: parent
             gradient: Gradient {
-                GradientStop {position: 0.0; color: "#2D2D2D"}
+                GradientStop {position: 0.0; color: "#ffffff"}
                 GradientStop {position: 1.0; color: "#666666"}
             }
 

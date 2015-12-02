@@ -33,21 +33,22 @@ Rectangle {
 
         Spinner {
             id: spinner2
-            x: 395
+            x: 408
             y: 2
-            width: 82
+            width: 93
             height: 240
             color: "#ffffff"
             radius: 2
             initialIndex: 0
             textColor: "#000000"
-            font.pixelSize: 25
+            font.pixelSize: 28
             border.color: "#000000"
             border.width: 3
             backGroundImage: "images/spinner-bg.png"
             highlightImage: "images/spinner-select.png"
             font.bold: false
-            font.family: "Arial"
+            font.family: "DejaVu Sans"
+
             model: ListModel {
                 ListElement {
                     text: "-20"
@@ -157,8 +158,8 @@ Rectangle {
 
     ImageButton {
         id: quitButton
-        x: 824
-        y: 583
+        x: 835
+        y: 582
         width: 58
         height: 58
         text: ""

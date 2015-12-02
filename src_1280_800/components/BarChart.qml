@@ -26,6 +26,7 @@ Canvas{
     id: graph
     width: 440
     height: 180
+    property string color: "transparent"
     //Boolean - If we show the scale above the chart data
     property bool scaleOverlay : true
     //Boolean - If we want to override with a hard coded scale
@@ -80,7 +81,8 @@ Canvas{
 
     function draw() {
         var ctx = getContext("2d");
-        ctx.clearRect(0,0, width, height);
+        ctx.fillStyle = color;
+        ctx.fillRect(0,0, width, height);
         var maxSize, scaleHop, calculatedScale, labelHeight, scaleHeight, valueBounds, labelTemplateString, valueHop,widestXLabel, xAxisLength,yAxisPosX,xAxisPosY,barWidth, rotateLabels = 0;
 
         calculateDrawingSizes();
@@ -404,7 +406,7 @@ Canvas{
             {
                 //Draw box
                 ctx.fillStyle = dataColor[i];
-                ctx.fillRect(x - scaleFontSize, 1, scaleFontSize, scaleFontSize);
+                ctx.fillRect(x - scaleFontSize, 3, scaleFontSize, scaleFontSize);
                 ctx.fillStyle = scaleFontColor;
                 ctx.textAlign = "left"
                 ctx.fillText(dataText[i], x + 4, scaleFontSize-3);

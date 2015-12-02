@@ -53,6 +53,8 @@ Canvas{
         var ctx = getContext("2d");
 
         ctx.clearRect(0, 0, width, height);
+        ctx.fillStyle = color;
+        ctx.fillRect(0, 0, width, height);
 
         if (showLegend)
            drawLegend(ctx);

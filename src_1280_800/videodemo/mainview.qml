@@ -12,8 +12,8 @@ Rectangle {
 
     Rectangle{
         id: rect
-        width: 640
-        height: 460
+        width: 820
+        height: 488
         anchors.centerIn: parent
         color: "black"
         anchors.verticalCenterOffset: 0
@@ -22,11 +22,10 @@ Rectangle {
         Video{
             id: video
             source: "video/video.mp4"
-            width: 620
-            height: 420
-            x: 10
-            y: -20
+            width: 800
+            height: 448
             muted: false
+            anchors.centerIn: parent
 
             onStopped:{
                 btnPlay.visible = true;
@@ -38,8 +37,8 @@ Rectangle {
 
     ImageButton {
         id: btnPause
-        x: 320
-        y: 658
+        x: 230
+        y: 655
         width: 80
         height: 40
         text: "Pause"
@@ -54,14 +53,15 @@ Rectangle {
             video.pause();
             btnPlay.visible = true;
             btnPause.visible = false;
+            console.debug(video.width + " " + video.height)
         }
     }
 
     ImageButton {
         id: btnPlay
         visible: false
-        x: 320
-        y: 658
+        x: 230
+        y: 655
         width: 80
         height: 40
         text: "Play"
@@ -81,8 +81,8 @@ Rectangle {
 
     ImageButton {
         id: image_button2
-        x: 428
-        y: 658
+        x: 339
+        y: 655
         width: 80
         height: 40
         text: "Back"

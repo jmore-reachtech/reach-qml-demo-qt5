@@ -5,22 +5,22 @@ Rectangle {
     id: root
     width: 1280
     height: 800
-    color: "#eeeeee"
+    color: "#666666"
     property int test: 0
 
     signal message(string msg)
 
     ImageButton {
         id: image_button1
-        x: 343
-        y: 564
-        width: 110
+        x: 240
+        y: 664
+        width: 122
         height: 40
         text: "Change Data"
-        imageUp: "../images/internal_button_up.bmp"
-        font.pixelSize: 14
-        textColor: "#000000"
-        imageDown: "../images/internal_button_dn.bmp"
+        imageUp: "../images/blue_button_up.png"
+        font.pixelSize: 15
+        textColor: "#ffffff"
+        imageDown: "../images/blue_button_dn.png"
         font.bold: false
         font.family: "DejaVu Sans"
 
@@ -49,15 +49,15 @@ Rectangle {
 
     ImageButton {
         id: image_button3
-        x: 484
-        y: 564
+        x: 394
+        y: 664
         width: 80
         height: 40
         text: "Back"
-        imageUp: "../images/internal_button_up.bmp"
-        font.pixelSize: 14
-        textColor: "#000000"
-        imageDown: "../images/internal_button_dn.bmp"
+        imageUp: "../images/blue_button_up.png"
+        font.pixelSize: 15
+        textColor: "#ffffff"
+        imageDown: "../images/blue_button_dn.png"
         font.bold: false
         font.family: "DejaVu Sans"
 
@@ -66,27 +66,28 @@ Rectangle {
 
     BarChart {
         id: chart
-        x: 343
-        y: 143
-        width: 594
-        height: 354
+        anchors.centerIn: parent
+        anchors.verticalCenterOffset: -20
+        color: "#ffffff"
+        width: 800
+        height: 504
         scaleShowGridLines: true
         showLegend: true
-        scaleLineWidth: 1
-        scaleFontStyle: "normal"
-        barStrokeWidth: 2
+        scaleLineWidth: 2
+        scaleFontStyle: "bold"
+        barStrokeWidth: 3
         scaleOverlay: true
         scaleLabel: "<%=value%>"
         barDatasetSpacing: 1
-        scaleLineColor: "rgba(0,0,0,0.1)"
+        scaleLineColor: "rgba(0,0,0,0.2)"
         barShowStroke: true
         scaleFontFamily: "DejaVu Sans"
         scaleShowLabels: true
         scaleFontColor: "#666"
-        scaleGridLineColor: "rgba(0,0,0,0.05)"
+        scaleGridLineColor: "rgba(0,0,0,0.1)"
         barValueSpacing: 5
-        scaleFontSize: 12
-        scaleGridLineWidth: 1
+        scaleFontSize: 14
+        scaleGridLineWidth: 2
     }
 
 

@@ -63,7 +63,7 @@ Rectangle {
     NumericSelector {
         id: brightness
         x: 565
-        y: 391
+        y: 393
         width: 119
         height: 38
         value: 7
@@ -101,14 +101,14 @@ Rectangle {
     ImageButton {
         id: btnSubmit
         x: 565
-        y: 456
+        y: 458
         width: 80
         height: 40
         text: "Submit"
-        imageUp: "../images/internal_button_up.bmp"
-        textColor: "#000000"
+        imageUp: "../images/blue_button_up.png"
+        textColor: "#ffffff"
         font.pixelSize: 18
-        imageDown: "../images/internal_button_dn.bmp"
+        imageDown: "../images/blue_button_dn.png"
         font.family: "DejaVu Sans"
         font.bold: false
 
@@ -125,28 +125,30 @@ Rectangle {
     ImageButton {
             id: quitButton
             x: 660
-            y: 456
+            y: 458
             width: 64
             height: 40
             text: "Back"
+            textColor: "#ffffff"
             font.pixelSize: 18
 			font.family: "DejaVu Sans"
-            imageDown: "../images/internal_button_dn.bmp"
-            imageUp: "../images/internal_button_up.bmp"
+            imageDown: "../images/blue_button_dn.png"
+            imageUp: "../images/blue_button_up.png"
             onButtonClick: root.message("../src/mainmenu.qml");
         }
 
     ImageButton {
             id: disableBacklightButton
             x: 565
-            y: 305
+            y: 307
             width: 150
             height: 40
             text: "3 second test"
+            textColor: "#ffffff"
             font.family: "DejaVu Sans"
             font.pixelSize: 18
-            imageDown: "../images/internal_button_dn.bmp"
-            imageUp: "../images/internal_button_up.bmp"
+            imageDown: "../images/blue_button_dn.png"
+            imageUp: "../images/blue_button_up.png"
             onButtonClick: {
                 var start = new Date().getTime();
                 backLight.disable();

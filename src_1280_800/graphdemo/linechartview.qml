@@ -6,7 +6,7 @@ Rectangle {
     objectName: "root"
     width: 1280
     height: 800
-    color: "#eeeeee"
+    color: "#666666"
     property int test: 0
 
     signal message(string msg)
@@ -14,15 +14,15 @@ Rectangle {
 
     ImageButton {
         id: image_button1
-        x: 343
-        y: 565
+        x: 240
+        y: 657
         width: 110
         height: 40
         text: "Change Data"
-        imageUp: "../images/internal_button_up.bmp"
+        imageUp: "../images/blue_button_up.png"
         font.pixelSize: 16
-        textColor: "#000000"
-        imageDown: "../images/internal_button_dn.bmp"
+        textColor: "#ffffff"
+        imageDown: "../images/blue_button_dn.png"
         font.bold: false
         font.family: "Arial"
 
@@ -53,15 +53,15 @@ Rectangle {
 
     ImageButton {
         id: image_button3
-        x: 486
-        y: 565
+        x: 389
+        y: 657
         width: 70
         height: 40
         text: "Back"
-        imageUp: "../images/internal_button_up.bmp"
+        imageUp: "../images/blue_button_up.png"
         font.pixelSize: 16
-        textColor: "#000000"
-        imageDown: "../images/internal_button_dn.bmp"
+        textColor: "#ffffff"
+        imageDown: "../images/blue_button_dn.png"
         font.bold: false
         font.family: "Arial"
 
@@ -72,27 +72,30 @@ Rectangle {
         id: chart
         x: 343
         y: 154
-        width: 594
-        height: 354
+        width: 800
+        height: 504
+        anchors.centerIn: parent
+        anchors.verticalCenterOffset: -20
+        color: "#ffffff"
         showLegend: true
         scaleShowGridLines: true
         datasetStroke: true
         datasetStrokeWidth: 2
         datasetFill: true
-        scaleLineWidth: 1
+        scaleLineWidth: 2
         scaleFontStyle: "normal"
         pointDotStrokeWidth: 2
         scaleOverlay: true
         scaleLabel: "<%=value%>"
         pointDot: true
-        scaleLineColor: "rgba(0,0,0,0.1)"
+        scaleLineColor: "rgba(0,0,0,0.2)"
         pointDotRadius: 4
         scaleFontFamily: "DejaVu Sans"
         scaleShowLabels: true
         scaleFontColor: "#666"
         bezierCurve: true
-        scaleGridLineColor: "rgba(0,0,0,0.05)"
-        scaleFontSize: 12
+        scaleGridLineColor: "rgba(0,0,0,0.1)"
+        scaleFontSize: 14
         scaleGridLineWidth: 1
     }
 

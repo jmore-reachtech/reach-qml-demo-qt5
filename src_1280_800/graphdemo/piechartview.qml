@@ -6,50 +6,51 @@ Rectangle {
     objectName: "root"
     width: 1280
     height: 800
-    color: "#eeeeee"
+    color: "#666666"
     property int test: 0
 
     signal message(string msg)
 
     PieChart{
         id: pchart
-        x: 272
-        y: 178
-        width: 354
-        height: 324
+        x: 130
+        y: 172
+        width: 434
+        height: 378
         legendFontFamily: "DejaVu Sans"
         showLegend: true
-        legendFontColor: "#090808"
-        legendFontSize: 11
+        legendFontColor: "#ffffff"
+        legendFontSize: 13
         segmentShowStroke: true
         color: "transparent"
     }
 
     DoughnutChart{
         id : dchart
-        x: 690
-        y: 178
-        width: 354
-        height: 324
+        x: 696
+        y: 172
+        width: 434
+        height: 378
         legendFontFamily: "DejaVu Sans"
         showLegend: true
-        legendFontColor: "#090808"
-        legendFontSize: 11
+        legendFontColor: "#ffffff"
+        legendFontSize: 13
         segmentShowStroke: true
+        innerCutoutColor: "#666666"
         color: "transparent"
     }
 
     ImageButton {
         id: image_button1
-        x: 266
-        y: 557
+        x: 175
+        y: 605
         width: 110
         height: 40
         text: "Change Data"
-        imageUp: "../images/internal_button_up.bmp"
-        font.pixelSize: 14
-        textColor: "#000000"
-        imageDown: "../images/internal_button_dn.bmp"
+        imageUp: "../images/blue_button_up.png"
+        font.pixelSize: 16
+        textColor: "#ffffff"
+        imageDown: "../images/blue_button_dn.png"
         font.bold: false
         font.family: "Arial"
 
@@ -76,15 +77,15 @@ Rectangle {
 
     ImageButton {
         id: image_button3
-        x: 414
-        y: 557
+        x: 341
+        y: 605
         width: 70
         height: 40
         text: "Back"
-        imageUp: "../images/internal_button_up.bmp"
-        font.pixelSize: 14
-        textColor: "#000000"
-        imageDown: "../images/internal_button_dn.bmp"
+        imageUp: "../images/blue_button_up.png"
+        font.pixelSize: 16
+        textColor: "#ffffff"
+        imageDown: "../images/blue_button_dn.png"
         font.bold: false
         font.family: "Arial"
 

@@ -10,22 +10,22 @@ Rectangle {
 
     LineEdit {
         id: text_input1
-        x: 616
-        y: 347
+        x: 599
+        y: 384
         width: 82
         height: 33
         text: qsTr("")
-        fontPixelSize: 22
+        fontPixelSize: 24
         font.pointSize: 12
         radius: 2
     }
 
     Knob {
         id: knob1
-        x: 414
-        y: 139
-        width: 225
-        height: 225
+        x: 330
+        y: 159
+        width: 180
+        height: 180
         initialIndex: 0
 
         onKnobValueChanged: {
@@ -37,8 +37,10 @@ Rectangle {
 
     Knob {
         id: knob2
-        x: 437
-        y: 381
+        x: 330
+        y: 444
+        width: 180
+        height: 180
         initialIndex: 0
         model: listModel3
 
@@ -83,8 +85,8 @@ Rectangle {
 
     ImageButton{
         id:nextButton
-        x: 933
-        y: 419
+        x: 1026
+        y: 505
         width: 58
         height: 58
         text: ""
@@ -100,8 +102,8 @@ Rectangle {
 
     ImageButton {
         id: quitButton
-        x: 933
-        y: 490
+        x: 1026
+        y: 592
         width: 58
         height: 58
         text: ""
@@ -112,8 +114,10 @@ Rectangle {
 
     GeometricKnob {
         id: dial2
-        x: 668
-        y: 139
+        x: 741
+        y: 159
+        width: 180
+        height: 180
         model: listModel2
 
         ListModel{
@@ -176,8 +180,10 @@ Rectangle {
 
     GeometricKnob {
         id: dial1
-        x: 668
-        y: 359
+        x: 741
+        y: 444
+        width: 180
+        height: 180
         outerCircleColor: "#aa9b38"
         needleColor: "#084a95"
         innerCircleRadius: outerCircleRadius-30

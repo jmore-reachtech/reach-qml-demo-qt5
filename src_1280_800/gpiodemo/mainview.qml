@@ -34,9 +34,11 @@ Rectangle {
         textOnBold: true
         textOff: "Pin 4 Low"
         textOn: "Pin 4 High"
-        imageOff: "../images/internal_button_up.bmp"
-        imageOn: "../images/internal_button_dn.bmp"
+        imageOff: "../images/blue_button_up.png"
+        imageOn: "../images/blue_button_dn.png"
         on: false;
+        textOffFontSize:18
+        textOnFontSize: 18
 
         onOnChanged: {
             if (on)
@@ -54,11 +56,13 @@ Rectangle {
         height: 40
         textOff: "Pin 3 Low"
         textOn: "Pin 3 High"
-        imageOn: "../images/internal_button_dn.bmp"
-        imageOff: "../images/internal_button_up.bmp"
+        imageOn: "../images/blue_button_dn.png"
+        imageOff: "../images/blue_button_up.png"
         textOffBold: true
         textOnBold: true;
         on: false
+        textOffFontSize:18
+        textOnFontSize: 18
 
         onOnChanged: {
             if (on)
@@ -78,9 +82,11 @@ Rectangle {
         textOnBold: true
         textOff: "Pin 2 LOW"
         textOn: "Pin 2 High"
-        imageOff: "../images/internal_button_up.bmp"
-        imageOn: "../images/internal_button_dn.bmp"
+        imageOff: "../images/blue_button_up.png"
+        imageOn: "../images/blue_button_dn.png"
         on: false;
+        textOffFontSize:18
+        textOnFontSize: 18
 
         onOnChanged: {
             if (on)
@@ -100,10 +106,11 @@ Rectangle {
         textOnBold: true
         textOff: "Pin 1 LOW"
         textOn: "Pin 1 High"
-        imageOff: "../images/internal_button_up.bmp"
-        imageOn: "../images/internal_button_dn.bmp"
+        imageOff: "../images/blue_button_up.png"
+        imageOn: "../images/blue_button_dn.png"
         on: false;
-
+        textOffFontSize:18
+        textOnFontSize: 18
 
         onOnChanged: {
             if (on)
@@ -200,7 +207,7 @@ Rectangle {
         width: 96
         height: 25
         text: qsTr("Pin 5 LOW")
-        font.pixelSize: 18
+        font.pixelSize: 20
     }
 
     Text {
@@ -210,7 +217,7 @@ Rectangle {
         width: 96
         height: 25
         text: qsTr("Pin 6 LOW")
-        font.pixelSize: 18
+        font.pixelSize: 20
     }
 
     Text {
@@ -220,7 +227,7 @@ Rectangle {
         width: 96
         height: 25
         text: qsTr("Pin 7 LOW")
-        font.pixelSize: 18
+        font.pixelSize: 20
     }
 
     Text {
@@ -230,7 +237,7 @@ Rectangle {
         width: 96
         height: 25
         text: qsTr("Pin 8 LOW")
-        font.pixelSize: 18
+        font.pixelSize: 20
     }
 
 

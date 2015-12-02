@@ -6,7 +6,7 @@ Rectangle {
     objectName: "root"
     width: 1280
     height: 800
-    color: "#eeeeee"
+    color: "#666666"
     property real angle: 0
 
     signal message(string msg)
@@ -14,11 +14,12 @@ Rectangle {
 
     Timer {
         id: timer1
-        interval: 120;
+        interval: 60;
         running: false;
         repeat: true
         onTriggered: {
-            wave.currentValue1 = getRandomInt(-10, 10);
+            wave.currentValue1 = getRandomInt(-10, -1);
+            wave.currentValue2 = getRandomInt(0, 10);
         }
     }
 
@@ -28,15 +29,15 @@ Rectangle {
 
     ImageButton {
         id: image_button3
-        x: 298
-        y: 559
+        x: 274
+        y: 602
         width: 70
         height: 40
         text: "Back"
-        imageUp: "../images/internal_button_up.bmp"
-        font.pixelSize: 14
-        textColor: "#000000"
-        imageDown: "../images/internal_button_dn.bmp"
+        imageUp: "../images/blue_button_up.png"
+        font.pixelSize: 16
+        textColor: "#ffffff"
+        imageDown: "../images/blue_button_dn.png"
         font.bold: false
         font.family: "Arial"
 
@@ -46,10 +47,10 @@ Rectangle {
 
     ScopeChart{
         id: wave
-        x: 298
-        y: 215
-        width: 684
-        height: 304
+        x: 274
+        y: 136
+        width: 732
+        height: 411
         scaleLineColor : "rgba(0,0,0,1.0)"
         scaleLineWidth : 1
         scaleShowLabels : true
@@ -65,6 +66,7 @@ Rectangle {
         bezierCurve: true
         scaleBgColor: "#000000"
         line1PenColor: "yellow"
+        line2PenColor: "red"
         xPixels: 10
     }
 

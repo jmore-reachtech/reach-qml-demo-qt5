@@ -17,36 +17,38 @@ Rectangle {
 
     Speedometer {
         id: spedo
-        x: 449
-        y: 210
+        x: 414
+        y: 250
+        visible: true
         objectName: "spedo"
-        width: 210
-        height: 210
+        width: 300
+        height: 300
         needleImage: "../images/needle.png"
-        overlayImageHeight: 105
+        overlayImageHeight: 150
         min: 0
-        needleImageHeight: 63
+        needleImageHeight: 90
         overlayImage: "../images/overlay.png"
         value: 0
-        needleImageWidth: 8
+        needleImageWidth: 11
         max: 120
-        needleRotationY: 65
-        needleRotationX: 5
-        maxAngle: 133
-        overlayY: 18
-        overlayImageWidth: 148
-        overlayX: 21
-        needleY: 33
-        needleX: 98
+        needleRotationX: 6
+        needleRotationY: 87
+        maxAngle: 135
+        minAngle: -130
+        overlayImageWidth: 211
+        overlayX: 30
+        overlayY: 24
+        needleX: 140
+        needleY: 51
         backgroundImage: "../images/meterbackground.png"
     }
 
     VerticalSlider {
         id: slider1
-        x: 709
-        y: 216
+        x: 747
+        y: 269
         width: 48
-        height: 184
+        height: 240
         imageHandle: "../images/slider_handle.png"
         allowDrag: true
         yMin: 0
@@ -70,7 +72,7 @@ Rectangle {
     ImageButton {
         id: quitButton
         x: 611
-        y: 460
+        y: 572
         width: 58
         height: 58
         text: ""

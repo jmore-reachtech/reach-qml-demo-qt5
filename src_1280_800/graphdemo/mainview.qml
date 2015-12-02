@@ -12,18 +12,18 @@ Rectangle {
 
     Column{
         anchors.centerIn: parent
-        spacing: 20
+        spacing: 30
 
         Row{
-            spacing: 20
+            spacing: 30
             ImageButton {
-                width: 139
-                height: 77
+                width: 160
+                height: 80
                 text: "Bar Chart"
-                imageUp: "../images/internal_button_up.bmp"
-                font.pixelSize: 18
-                textColor: "#000000"
-                imageDown: "../images/internal_button_dn.bmp"
+                imageUp: "../images/blue_button_up.png"
+                font.pixelSize: 22
+                textColor: "#ffffff"
+                imageDown: "../images/blue_button_dn.png"
                 font.bold: false
                 font.family: "Arial"
 
@@ -31,13 +31,13 @@ Rectangle {
             }
 
             ImageButton {
-                width: 139
-                height: 77
+                width: 160
+                height: 80
                 text: "Line Chart"
-                imageUp: "../images/internal_button_up.bmp"
-                font.pixelSize: 18
-                textColor: "#000000"
-                imageDown: "../images/internal_button_dn.bmp"
+                imageUp: "../images/blue_button_up.png"
+                font.pixelSize: 22
+                textColor: "#ffffff"
+                imageDown: "../images/blue_button_dn.png"
                 font.bold: false
                 font.family: "Arial"
 
@@ -45,13 +45,13 @@ Rectangle {
             }
 
             ImageButton {
-                width: 139
-                height: 77
+                width: 160
+                height: 80
                 text: "Pie Chart"
-                imageUp: "../images/internal_button_up.bmp"
-                font.pixelSize: 18
-                textColor: "#000000"
-                imageDown: "../images/internal_button_dn.bmp"
+                imageUp: "../images/blue_button_up.png"
+                font.pixelSize: 22
+                textColor: "#ffffff"
+                imageDown: "../images/blue_button_dn.png"
                 font.bold: false
                 font.family: "Arial"
 
@@ -60,15 +60,15 @@ Rectangle {
         }
 
         Row{
-            spacing: 20
+            spacing: 30
             ImageButton {
-                width: 139
-                height: 77
+                width: 160
+                height: 80
                 text: "Strip Chart"
-                imageUp: "../images/internal_button_up.bmp"
-                font.pixelSize: 18
-                textColor: "#000000"
-                imageDown: "../images/internal_button_dn.bmp"
+                imageUp: "../images/blue_button_up.png"
+                font.pixelSize: 22
+                textColor: "#ffffff"
+                imageDown: "../images/blue_button_dn.png"
                 font.bold: false
                 font.family: "Arial"
 
@@ -76,13 +76,13 @@ Rectangle {
             }
 
             ImageButton {
-                width: 139
-                height: 77
+                width: 160
+                height: 80
                 text: "Draw Area"
-                imageUp: "../images/internal_button_up.bmp"
-                font.pixelSize: 18
-                textColor: "#000000"
-                imageDown: "../images/internal_button_dn.bmp"
+                imageUp: "../images/blue_button_up.png"
+                font.pixelSize: 22
+                textColor: "#ffffff"
+                imageDown: "../images/blue_button_dn.png"
                 font.bold: false
                 font.family: "Arial"
 
@@ -90,13 +90,13 @@ Rectangle {
             }
              
 			ImageButton {
-                width: 139
-                height: 77
+                width: 160
+                height: 80
                 text: "Scope Chart"
-                imageUp: "../images/internal_button_up.bmp"
-                font.pixelSize: 18
-                textColor: "#000000"
-                imageDown: "../images/internal_button_dn.bmp"
+                imageUp: "../images/blue_button_up.png"
+                font.pixelSize: 22
+                textColor: "#ffffff"
+                imageDown: "../images/blue_button_dn.png"
                 font.bold: false
                 font.family: "Arial"
 
@@ -106,16 +106,16 @@ Rectangle {
         }
 
         Row{
-            spacing: 20
+            spacing: 30
 
             ImageButton {
-                width: 139
-                height: 77
+                width: 160
+                height: 80
                 text: "Go Back"
-                imageUp: "../images/internal_button_up.bmp"
-                font.pixelSize: 18
-                textColor: "#000000"
-                imageDown: "../images/internal_button_dn.bmp"
+                imageUp: "../images/blue_button_up.png"
+                font.pixelSize: 22
+                textColor: "#ffffff"
+                imageDown: "../images/blue_button_dn.png"
                 font.bold: false
                 font.family: "Arial"
 

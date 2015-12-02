@@ -3,8 +3,8 @@ import QtQuick 2.0
 Rectangle
 {
     id: view
-    height: 225
-    width: 225
+    height: 250
+    width: 250
     color: "transparent"
 
     property real degreeAngle : 360.0/repeater.model.count //disect the circle into slices
@@ -76,7 +76,7 @@ Rectangle
     Rectangle
     {
         id: outerCircle
-        width: 128
+        width: view.width
         height: width
         color: "#0e8ba4"
         border.color: "black"
@@ -87,7 +87,7 @@ Rectangle
 
         Rectangle {
             id: innerCircle
-            width: 115
+            width: view.width - 20
             height: width
             color: "#bebbbb"
             border.color: "black"

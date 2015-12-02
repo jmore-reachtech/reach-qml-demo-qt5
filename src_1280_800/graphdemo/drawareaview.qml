@@ -6,7 +6,7 @@ Rectangle {
     objectName: "root"
     width: 1280
     height: 800
-    color: "#eeeeee"
+    color: "#666666"
 
     signal message(string msg)
 
@@ -35,10 +35,10 @@ Rectangle {
         width: 70
         height: 40
         text: "Copy"
-        imageUp: "../images/internal_button_up.bmp"
-        font.pixelSize: 14
-        textColor: "#000000"
-        imageDown: "../images/internal_button_dn.bmp"
+        imageUp: "../images/blue_button_up.png"
+        font.pixelSize: 16
+        textColor: "#ffffff"
+        imageDown: "../images/blue_button_dn.png"
         font.bold: false
         font.family: "Arial"
 
@@ -51,6 +51,7 @@ Rectangle {
         id: text1
         x: 232
         y: 138
+        color: "#ffffff"
         text: "Enter Signature"
         font.pixelSize: 20
     }
@@ -62,10 +63,10 @@ Rectangle {
         width: 70
         height: 40
         text: "Clear"
-        imageUp: "../images/internal_button_up.bmp"
-        font.pixelSize: 14
-        textColor: "#000000"
-        imageDown: "../images/internal_button_dn.bmp"
+        imageUp: "../images/blue_button_up.png"
+        font.pixelSize: 16
+        textColor: "#ffffff"
+        imageDown: "../images/blue_button_dn.png"
         font.bold: false
         font.family: "Arial"
 
@@ -82,10 +83,10 @@ Rectangle {
         width: 70
         height: 40
         text: "Back"
-        imageUp: "../images/internal_button_up.bmp"
-        font.pixelSize: 14
-        textColor: "#000000"
-        imageDown: "../images/internal_button_dn.bmp"
+        imageUp: "../images/blue_button_up.png"
+        font.pixelSize: 16
+        textColor: "#ffffff"
+        imageDown: "../images/blue_button_dn.png"
         font.bold: false
         font.family: "Arial"
 

@@ -166,6 +166,8 @@ Item
         id: imgDialBase
         source: "../images/dialbase.png"
         anchors.centerIn: parent
+        width: view.width
+        height: view.height
     }
 
     Image {
@@ -173,7 +175,8 @@ Item
         source: "../images/dialneedle.png"
         smooth: true
         anchors.centerIn: parent
-
+        width: view.width
+        height: view.height
     }
 
     Rectangle{
@@ -237,7 +240,8 @@ Item
 
     function getEventAngle(event)
     {
-        var angle = Math.atan2(event.y - 46, event.x - 46);
+        //var angle = Math.atan2(event.y - 46, event.x - 46);
+        var angle = Math.atan2(event.y - dialer.width/2, event.x - dialer.width/2);
 
         recValue.x = event.x + recValue.width;
         recValue.y = event.y + recValue.height * 2;
@@ -257,8 +261,8 @@ Item
 
     MouseArea {
         id: mouseArea
-        height: 77
-        width: 77
+        height: dialer.height
+        width: dialer.width
         anchors.centerIn: parent
         preventStealing: true
 

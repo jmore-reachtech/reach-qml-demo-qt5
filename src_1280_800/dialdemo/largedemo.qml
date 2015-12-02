@@ -11,11 +11,12 @@ Rectangle {
 
     LineEdit {
         id: text_input1
-        x: 690
-        y: 275
+        x: 586
+        y: 267
         width: 108
-        height: 26
+        height: 31
         text: qsTr("")
+        fontPixelSize: 20
         font.pixelSize: 18
         radius: 2
     }
@@ -25,12 +26,11 @@ Rectangle {
         x: 230
         y: 129
         width: 234
-        height: 222
+        height: 234
         anchors.verticalCenterOffset: 80
-        anchors.horizontalCenterOffset: 104
-        mouseAreaHeight: 142
-        mouseAreaWidth: 142
+        anchors.horizontalCenterOffset: 7
         anchors.centerIn: parent
+        font.pixelSize: 22
         imageBase: "../images/dialbase_large.svg"
         imageNeedle: "../images/dialneedle_large.png"
         model: listModel3
@@ -72,7 +72,7 @@ Rectangle {
 
     ImageButton {
         id: textbutton1
-        x: 618
+        x: 470
         y: 190
         width: 58
         height: 58
@@ -90,8 +90,8 @@ Rectangle {
 
     ImageButton {
         id: textbutton2
-        x: 804
-        y: 190
+        x: 730
+        y: 199
         width: 58
         height: 58
         text: ""

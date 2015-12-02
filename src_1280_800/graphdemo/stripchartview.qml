@@ -6,14 +6,14 @@ Rectangle {
     objectName: "root"
     width: 1280
     height: 800
-    color: "#eeeeee"
+    color: "#666666"
 
     signal message(string msg)
 
     HorizontalSlider {
         id: slider
-        x: 346
-        y: 505
+        x: 351
+        y: 539
         width: 622
         height: 46
         hintBorderColor: "#000000"
@@ -48,15 +48,15 @@ Rectangle {
 
     ImageButton {
         id: image_button3
-        x: 346
-        y: 591
+        x: 351
+        y: 625
         width: 70
         height: 40
         text: "Back"
-        imageUp: "../images/internal_button_up.bmp"
-        font.pixelSize: 14
-        textColor: "#000000"
-        imageDown: "../images/internal_button_dn.bmp"
+        imageUp: "../images/blue_button_up.png"
+        font.pixelSize: 16
+        textColor: "#ffffff"
+        imageDown: "../images/blue_button_dn.png"
         font.bold: false
         font.family: "Arial"
 
@@ -66,9 +66,9 @@ Rectangle {
     StripChart {
         id: wave
         x: 298
-        y: 166
+        y: 124
         width: 684
-        height: 304
+        height: 368
         scaleShowGridLines: true
         line1PenColor: "#ffffff"
         datasetStrokeWidth: 2
@@ -86,7 +86,7 @@ Rectangle {
         minTime: 0
         minYValue: -10
         scaleGridLineColor: "rgba(50,205,50,0.5)"
-        scaleFontSize: 11
+        scaleFontSize: 13
         scaleGridLineWidth: 1
         verticalScaleLines: 10
     }

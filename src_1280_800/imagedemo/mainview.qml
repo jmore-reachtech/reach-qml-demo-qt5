@@ -138,7 +138,7 @@ Rectangle {
         wrapMode: Text.NoWrap
         horizontalAlignment: Text.AlignHCenter
         font.bold: false
-        font.pixelSize: 19
+        font.pixelSize: 22
     }
 
     Timer{

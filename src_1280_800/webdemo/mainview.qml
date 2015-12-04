@@ -26,8 +26,7 @@ Rectangle {
             id: web
             width: 1080
             height: 600
-            //url: "http://127.0.0.1/info"
-            url: "http://192.168.1.43/info"
+            url: "http://127.0.0.1/info"
         }
 
     }

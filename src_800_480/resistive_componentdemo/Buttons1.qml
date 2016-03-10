@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import "../components"
-import QtMultimedia 5.0
+import com.reachtech.systemplugin 1.0
 
 Rectangle {
     id: button1
@@ -10,9 +10,8 @@ Rectangle {
     color: "#666666"
     signal message(string msg)
 
-    SoundEffect{
-        id: sound
-        source: "../audio/beep.wav"
+    System{
+        id: system
     }
 
     Text {
@@ -39,7 +38,7 @@ Rectangle {
         font.family: "Arial"
 
         onButtonPress: {
-            sound.play();
+            system.execute("beep -f 2000 -l 100");
             console.debug("Button Pressed.");
         }
     }
@@ -66,7 +65,7 @@ Rectangle {
         textOffBold: false
 
         onOnChanged: {
-            sound.play();
+            system.execute("beep -f 2000 -l 100");
             console.debug(on)
         }
     }
@@ -92,7 +91,7 @@ Rectangle {
         textOffBold: false
 
         onOnChanged: {
-            sound.play();
+            system.execute("beep -f 2000 -l 100");
             console.debug(on)
         }
     }
@@ -141,7 +140,7 @@ Rectangle {
         textOffColor: "#000000"
 
         onValueChanged: {
-            sound.play();
+            system.execute("beep -f 2000 -l 100");
             console.debug(value);
         }
     }

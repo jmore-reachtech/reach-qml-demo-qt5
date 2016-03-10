@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import "../components"
+import com.reachtech.systemplugin 1.0
 
 Rectangle {
     id: root
@@ -10,6 +11,10 @@ Rectangle {
     color: "#666666"
 
     signal message(string msg)
+
+    System{
+        id: system
+    }
 
     // Put the name of the QML files containing your pages (without the '.qml')
     property variant pagesList  : [
@@ -63,6 +68,7 @@ Rectangle {
         visible: root.page > 0
 
         onButtonClick: {
+            system.execute("beep -f 2000 -l 100");
             root.page -= 1;
             if (root.page < 0)
                 root.page = 0;
@@ -87,6 +93,7 @@ Rectangle {
         visible: root.page < pagesList.length-1
 
         onButtonClick: {
+            system.execute("beep -f 2000 -l 100");
             root.page += 1;
             if (root.page > repeater.count-1)
                 root.page = repeater.count-1;

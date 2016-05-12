@@ -60,6 +60,9 @@ Rectangle {
 		ListElement {
             image: "images/imagedemo-icon.png"; iconheight:78; iconwidth: 130; form: "imagedemo/mainview.qml"; icontext: "    Image\n Test Demo"
         }
+		ListElement {
+            image: "images/upgrade-icon.png"; iconheight:75; iconwidth: 80; form: "upgradedemo/mainview.qml"; icontext: "Upgrade\n  Demo"
+        }
     }
 
     GridView{

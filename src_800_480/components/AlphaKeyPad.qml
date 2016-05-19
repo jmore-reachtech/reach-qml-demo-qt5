@@ -9,7 +9,6 @@
  ** your understanding and fairness.
  **
 ****************************************************************************/
-
 import QtQuick 2.0
 import "../js/keycodes.js" as KeyCodes
 

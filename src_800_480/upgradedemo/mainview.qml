@@ -10,6 +10,7 @@ Rectangle{
     property int totalFiles: 0
 	color: "#DDDDDD"
 
+    signal message(string msg)
 
 	Text {
         id: txtTitle
@@ -131,8 +132,8 @@ Rectangle{
 
     ImageButton {
         id: btnUpgrade
-        x: 355
-        y: 299
+        x: 444
+        y: 306
         width: 90
         height: 42
         text: "Upgrade"
@@ -157,6 +158,25 @@ Rectangle{
         }
     }
 
+    ImageButton {
+        id: btnBack
+        x: 285
+        y: 306
+        width: 90
+        height: 42
+        text: "Back"
+        imageUp: "../images/internal_button_up.bmp"
+        imageDown: "../images/internal_button_dn.bmp"
+        font.bold: false
+        font.family: "DejaVu Sans"
+        font.pixelSize: 14
+        visible: false
+
+        onButtonClick: {
+            onButtonClick: root.message("../src/mainmenu.qml");
+        }
+    }
+
     System{
         id: system
     }
@@ -176,11 +196,13 @@ Rectangle{
         if (values.length > 0 && values[0].length > 0)
 		{
 		    btnUpgrade.visible = true;
+            btnBack.visible = true;
             text1.text = "USB stick found.";
 			timer.stop();
 		}
         else {
 		    btnUpgrade.visible = false;
+            btnBack.visible = true;
             text1.text = "No USB stick found.  Plug in a USB stick."
         }
 

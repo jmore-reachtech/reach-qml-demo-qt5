@@ -35,8 +35,8 @@ Rectangle {
         font.bold: false
         font.family: "Arial"
 
-        onButtonPress: {
-            console.debug("Button Pressed.");
+        onButtonClick: {
+            console.debug("Button Clicked.");
         }
     }
 

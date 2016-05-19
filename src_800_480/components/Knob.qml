@@ -11,11 +11,12 @@
 ****************************************************************************/
 import QtQuick 2.0
 
-Item
+Rectangle
 {
     id: view
     height: 180
     width: 180
+    color: "transparent"
     property alias model: repeater.model
     property real degreeAngle : 360.0/repeater.model.count
     property real digitAngle : degreeAngle/57.2957795
@@ -53,8 +54,6 @@ Item
     property color hintBorderColor: "#000000"
     property int hintBorderWidth: 2
     property color hintFontColor: "#000000"
-    property bool mousePressed: false
-
 
     /* List element for the control */
     ListModel{
@@ -158,7 +157,7 @@ Item
 
     Text{
         id: textFont
-        font.pixelSize:14
+        font.pointSize:9
         font.bold: false
     }
 
@@ -166,6 +165,7 @@ Item
         id: imgDialBase
         source: "../images/dialbase.png"
         anchors.centerIn: parent
+
     }
 
     Image {
@@ -174,6 +174,24 @@ Item
         smooth: true
         anchors.centerIn: parent
 
+    }
+
+
+    MouseArea {
+        id: mouseArea
+        height: 77
+        width: 77
+        anchors.centerIn: parent
+
+        onPositionChanged: {
+             dialer.rotation = getEventAngle(mouse);
+        }
+        onReleased: {
+             dialer.rotation = getEventAngle(mouse);
+        }
+        onPressed: {
+            dialer.rotation = getEventAngle(mouse);
+        }
     }
 
     Rectangle{
@@ -218,7 +236,7 @@ Item
 
                 Text {
                     color: textColor
-                    font.pixelSize: textFont.font.pixelSize
+                    font.pointSize: textFont.font.pointSize
                     anchors.centerIn: parent
                     font.bold: textFont.font.bold
                     text: value
@@ -255,30 +273,6 @@ Item
         return (angle * 57.2957795);
     }
 
-    MouseArea {
-        id: mouseArea
-        height: 77
-        width: 77
-        anchors.centerIn: parent
-        preventStealing: true
-
-        onPositionChanged: {
-            dialer.rotation = getEventAngle(mouse);
-        }
-        onReleased: {
-            dialer.rotation = getEventAngle(mouse);
-            mousePressed : false;
-        }
-        onPressed: {
-            mousePressed: true
-            dialer.rotation = getEventAngle(mouse);
-        }
-        onClicked: {
-            mousePressed: true
-            dialer.rotation = getEventAngle(mouse);
-        }
-
-    }
 
     Component.onCompleted : {
         numbers.rotation = angleOffSet;

@@ -1,232 +1,246 @@
-import HelperWidgets 1.0
-import QtQuick 1.0
-import Bauhaus 1.0
+import QtQuick 2.0
+import HelperWidgets 2.0
+import QtQuick.Layouts 1.0
 
+Column {
+    anchors.left: parent.left
+    anchors.right: parent.right
 
-QWidget {
-    layout: QVBoxLayout {
-        topMargin: 0
-        bottomMargin: 0
-        leftMargin: 0
-        rightMargin: 0
-        spacing: 0
+    Section {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        caption: qsTr("Image Sources")
 
-        GroupBox {
-            caption: qsTr("Image Sources")
-            layout: VerticalLayout {
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Image On")
-                            toolTip: qsTr("Image Source for On State")
-                        }
-                        UrlEdit {
-                            backendValue: backendValues.imageOn
-                            baseStateFlag: isBaseState
-                            filter: "*.png *.gif *.jpg *.bmp *.jpeg"
-                            showComboBox: true
-                        }
-                    }
+        SectionLayout {
+
+            Label {
+                text: qsTr("Image On")
+            }
+
+            SecondColumnLayout {
+                UrlChooser {
+                    Layout.fillWidth: true
+                    backendValue: backendValues.imageOn
                 }
 
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Image Off")
-                            toolTip: qsTr("Image Source for Off State")
-                        }
-                        UrlEdit {
-                            backendValue: backendValues.imageOff
-                            baseStateFlag: isBaseState
-                            filter: "*.png *.gif *.jpg *.bmp"
-                            showComboBox: true
-                        }
-                    }
+                ExpandingSpacer {
+
                 }
             }
-        }
 
-
-        GroupBox {
-            caption: "Text On"
-            layout: VerticalLayout {
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: "Text On"
-                            toolTip: qsTr("Text")
-                        }
-                        LineEdit {
-                            backendValue: backendValues.textOn
-                            baseStateFlag: isBaseState
-                            translation: true
-                        }
-                    }                   
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        ColorGroupBox{
-                            caption: "Color"
-                            backendColor: backendValues.textOnColor
-                            baseStateFlag: isBaseState
-                       }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: "Font Family"
-                            toolTip: qsTr("Text On Font Family")
-                        }
-                        FontComboBox{
-                            backendValue: backendValues.textOnFontFamily
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Font Size")
-                            toolTip: qsTr("Text On Font Size")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.textOnFontSize
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 20
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: ""
-                            toolTip: qsTr("")
-                        }
-                        CheckBox {
-                            text: qsTr("Bold")
-                            toolTip: qsTr("Bold")
-                            backendValue: backendValues.textOnBold
-                            baseStateFlag: isBaseState
-                            checkable: true
-                        }
-                    }
-                }
-
+            Label {
+                text: qsTr("Image Off")
             }
-        }
 
-
-        GroupBox{
-            caption: "Text Off"
-            layout: VerticalLayout {
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: "Text Off"
-                            toolTip: qsTr("Text")
-                        }
-                        LineEdit {
-                            backendValue: backendValues.textOff
-                            baseStateFlag: isBaseState
-                            translation: true
-                        }
-                    }
+            SecondColumnLayout {
+                UrlChooser {
+                    Layout.fillWidth: true
+                    backendValue: backendValues.imageOff
                 }
 
-                QWidget {
-                    layout: HorizontalLayout {
-                        ColorGroupBox{
-                            caption: "Color"
-                            backendColor: backendValues.textOffColor
-                            baseStateFlag: isBaseState
-                        }
-                    }
+                ExpandingSpacer {
+
                 }
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: "Font Family"
-                            toolTip: qsTr("Text Off Font Family")
-                        }
-                        FontComboBox{
-                            backendValue: backendValues.textOffFontFamily
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Font Size")
-                            toolTip: qsTr("Text Off Font Size")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.textOffFontSize
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 20
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: ""
-                            toolTip: qsTr("")
-                        }
-                        CheckBox {
-                            text: qsTr("Bold")
-                            toolTip: qsTr("Bold")
-                            backendValue: backendValues.textOffBold
-                            baseStateFlag: isBaseState
-                            checkable: true
-                        }
-                    }
-                }
-
-
             }
+
         }
+    }
 
-        GroupBox {
-            caption: "Switch State"
-            layout: VerticalLayout {
+    Section {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        caption: qsTr("Text On")
 
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: ""
-                        }
-                        CheckBox {
-                            text: qsTr("On")
-                            backendValue: backendValues.on
-                            baseStateFlag: isBaseState
-                            checkable: true
-                        }
-                    }
+        SectionLayout {
+
+            Label {
+                text: qsTr("Text On")
+            }
+
+            SecondColumnLayout {
+
+                LineEdit{
+                    backendValue: backendValues.textOn
                 }
 
+                ExpandingSpacer {
+
+                }
             }
-        }
-        
-        QScrollArea {
+
+            Label {
+                text: qsTr("Font Family")
+            }
+
+            SecondColumnLayout {
+
+                FontComboBox{
+                    backendValue: backendValues.textOnFontFamily
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Font Size")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.textOnFontSize
+                    minimumValue: 0
+                    maximumValue: 50
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Bold")
+            }
+
+            SecondColumnLayout {
+                CheckBox {
+                    backendValue: backendValues.textOnBold
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+
         }
 
     }
-}
 
+    Section {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            caption: qsTr("Text On Color")
+
+            ColorEditor {
+                caption: qsTr("Text On Color")
+                backendValue: backendValues.textOnColor
+                supportGradient: false
+            }
+    }
+
+    Section {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        caption: qsTr("Text Off")
+
+        SectionLayout {
+
+            Label {
+                text: qsTr("Text Off")
+            }
+
+            SecondColumnLayout {
+
+                LineEdit{
+                    backendValue: backendValues.textOff
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Font Family")
+            }
+
+            SecondColumnLayout {
+
+                FontComboBox{
+                    backendValue: backendValues.textOffFontFamily
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Font Size")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    id: spinTextOffFontSize
+                    backendValue: backendValues.textOffFontSize
+                    minimumValue: 0
+                    maximumValue: 50
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Bold")
+            }
+
+            SecondColumnLayout {
+                CheckBox {
+                    backendValue: backendValues.textOffBold
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+        }
+
+    }
+
+    Section {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            caption: qsTr("Text Off Color")
+
+            ColorEditor {
+                caption: qsTr("Text Off Color")
+                backendValue: backendValues.textOffColor
+                supportGradient: true
+            }
+    }
+
+    Section {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        caption: qsTr("Switch State")
+
+        SectionLayout {
+
+            Label {
+                text: ""
+            }
+
+            SecondColumnLayout {
+                CheckBox{
+                    backendValue: backendValues.on
+                }
+
+                Label {
+                    text: "On"
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+        }
+    }
+
+}

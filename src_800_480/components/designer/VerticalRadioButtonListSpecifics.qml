@@ -1,118 +1,160 @@
-import HelperWidgets 1.0
-import QtQuick 1.0
-import Bauhaus 1.0
+import QtQuick 2.0
+import HelperWidgets 2.0
+import QtQuick.Layouts 1.0
 
+Column {
+    anchors.left: parent.left
+    anchors.right: parent.right
 
-QWidget {
-    layout: QVBoxLayout {
-        topMargin: 0
-        bottomMargin: 0
-        leftMargin: 0
-        rightMargin: 0
-        spacing: 0
+    Section {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        caption: qsTr("RadioButtonList - Vertical")
 
-        GroupBox {
-            caption: "RadioButtonList - Vertical"
-            layout: VerticalLayout {
+        SectionLayout {
+            Label {
+                text: qsTr("Initial Value")
+            }
 
-                QWidget {
-                    layout: HorizontalLayout {
-                        ColorGroupBox{
-                            caption: "Text Color"
-                            backendColor: backendValues.textColor
-                            baseStateFlag: isBaseState
-                        }
-                    }
+            SecondColumnLayout {
+                LineEdit {
+                    backendValue: backendValues.initialValue
                 }
 
-                IntEditor {
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: "Field Spacing"
+            }
+
+            SecondColumnLayout {
+
+                SpinBox {
                     backendValue: backendValues.spacing
-
-                    caption: qsTr("Field Spacing")
-                    baseStateFlag: isBaseState;
-
-                    step: 1;
-                    minimumValue: 0;
-                    maximumValue: 100;
+                    minimumValue: 1
+                    maximumValue: 100
+                    decimals: 0
                 }
 
-                IntEditor {
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Item Spacing")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
                     backendValue: backendValues.itemSpacing
-
-                    caption: qsTr("Item Spacing")
-                    baseStateFlag: isBaseState;
-
-                    step: 1;
-                    minimumValue: 0;
-                    maximumValue: 1000;
+                    minimumValue: 1
+                    maximumValue: 100
+                    decimals: 0
                 }
 
-            }
-        }
+                ExpandingSpacer {
 
-        GroupBox {
+                }
+            }
+
+
+        }
+    }
+
+
+    Section {
+            anchors.left: parent.left
+            anchors.right: parent.right
             caption: qsTr("Image Sources")
-            layout: VerticalLayout {
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Checked")
-                            toolTip: qsTr("Image Source for Checked State")
-                        }
-                        UrlEdit {
-                            backendValue: backendValues.imageChecked
-                            baseStateFlag: isBaseState
-                            filter: "*.png *.gif *.jpg *.bmp *.jpeg *.svg"
-                            showComboBox: true
-                        }
-                    }
-                }
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("UnChecked")
-                            toolTip: qsTr("Image Source for UnChecked State")
-                        }
-                        UrlEdit {
-                            backendValue: backendValues.imageUnChecked
-                            baseStateFlag: isBaseState
-                            filter: "*.png *.gif *.jpg *.bmp *.svg"
-                            showComboBox: true
-                        }
-                    }
-                }
+         SectionLayout {
 
-                IntEditor {
-                    backendValue: backendValues.imageHeight
+             Label {
+                 text: qsTr("Checked")
+             }
 
-                    caption: qsTr("Image Height")
-                    baseStateFlag: isBaseState;
+             SecondColumnLayout {
+                 UrlChooser {
+                      Layout.fillWidth: true
+                      backendValue: backendValues.imageChecked
+                 }
 
-                    step: 1;
-                    minimumValue: 0;
-                    maximumValue: 1000;
-                }
+                 ExpandingSpacer {
 
-                IntEditor {
-                    backendValue: backendValues.imageWidth
+                 }
+             }
 
-                    caption: qsTr("Image Width")
-                    baseStateFlag: isBaseState;
+             Label {
+                 text: qsTr("UnChecked")
+             }
 
-                    step: 1;
-                    minimumValue: 0;
-                    maximumValue: 1000;
-                }
+             SecondColumnLayout {
+                 UrlChooser {
+                      Layout.fillWidth: true
+                      backendValue: backendValues.imageUnChecked
+                 }
+
+                 ExpandingSpacer {
+
+                 }
+             }
+
+             Label {
+                 text: qsTr("Source size")
+             }
+
+             SecondColumnLayout {
+                 Label {
+                     text: "W"
+                     width: 12
+                 }
+
+                 SpinBox {
+                     backendValue: backendValues.imageWidth
+                     minimumValue: 0
+                     maximumValue: 1000
+                     decimals: 0
+                 }
+
+                 Label {
+                     text: "H"
+                     width: 12
+                 }
+
+                 SpinBox {
+                     backendValue: backendValues.imageHeight
+                     minimumValue: 0
+                     maximumValue: 1000
+                     decimals: 0
+                 }
+
+                 ExpandingSpacer {
+
+                 }
+             }
+
+
+         }
+    }
+
+
+    Section {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            caption: qsTr("Text Color")
+
+            ColorEditor {
+                caption: qsTr("Text Color")
+                backendValue: backendValues.textColor
+                supportGradient: false
             }
-        }
-
-        FontGroupBox {
-            //finished: finishedNotify;
-        }
-
-        QScrollArea {
-        }
 
     }
-}
 
+    FontSection{}
+
+
+}

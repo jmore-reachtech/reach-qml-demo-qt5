@@ -2,7 +2,6 @@ import QtQuick 2.0
 import "components"
 
 HorizontalRadioButtonList {
-    id: radiobutton_list1
     textColor: "#000000"
     font.pixelSize: 16
     font.bold: false

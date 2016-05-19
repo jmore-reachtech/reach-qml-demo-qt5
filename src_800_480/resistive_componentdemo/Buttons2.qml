@@ -111,7 +111,7 @@ Rectangle {
         font.bold: false
         font.family: "Arial"
 
-        onButtonPress: console.debug("pressed");
+        onButtonClick: console.debug("pressed");
     }
 
     Rectangle{

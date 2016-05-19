@@ -23,8 +23,34 @@ Item {
     property alias textColor: fontText.color
     property int spacing: 4
     property alias itemSpacing: col.spacing
+    property string initialValues
+    property bool completed: false
+
     width: col.width
     height: col.height
+
+    onInitialValuesChanged: {
+        //For the designer
+        if (completed)
+            setInitialValues(initialValues)
+    }
+
+    function setInitialValues(values)
+    {
+        var arrValues = values.split(",");
+        checkList.values.clear();
+        for (var i=0; i < listRepeater.count; i++)
+        {
+            if (arrValues.indexOf(listRepeater.itemAt(i).value) > -1)
+            {
+                listRepeater.itemAt(i).checked = true;
+                checkList.values.append({value: listRepeater.itemAt(i).value});
+                valuesChanged();
+            }
+            else
+                listRepeater.itemAt(i).checked = false;
+        }
+    }
 
     Text {
         id: fontText
@@ -83,6 +109,12 @@ Item {
                   }
 
             }
+
+            Component.onCompleted: {
+                completed = true;
+                if (initialValues != null && initialValues.length > 0)
+                    setInitialValues(initialValues);
+            }
         }
 
     }
@@ -97,8 +129,6 @@ Item {
         id: valueModel
     }
 
-
     Component.onCompleted: {
-
     }
 }

@@ -1,3 +1,23 @@
+/****************************************************************************
+ **
+ ** Copyright (C) 2013-2014 Reach Technology Inc.
+ ** All rights reserved.
+ **
+ ** This code is protected by international copyright laws. This file may
+ ** only be used in accordance with a license and cannot be used on
+ ** hardware other than supplied by Reach Technology Inc. We appreciate
+ ** your understanding and fairness.
+ **
+ ** Based on Chart.js
+ **
+ ** Chart.js
+ ** http://chartjs.org/
+ **
+ ** Copyright 2013 Nick Downie
+ ** Released under the MIT license
+ ** https://github.com/nnnick/Chart.js/blob/master/LICENSE.md
+ **
+****************************************************************************/
 import QtQuick 2.0
 
 Canvas{
@@ -6,23 +26,30 @@ Canvas{
     height: 200
     //Boolean - Whether we should show a stroke on each segment
     property bool segmentShowStroke : true
+    onSegmentShowStrokeChanged: graph.requestPaint();
     //String - The color of each segment stroke
     property string segmentStrokeColor : "#ffffff"
+    onSegmentStrokeColorChanged: graph.requestPaint();
     //Number - The width of each segment stroke
     property int segmentStrokeWidth : 2
+    onSegmentStrokeWidthChanged: graph.requestPaint();
     //Bool: - Whether we should show a legend
     property bool showLegend: true
+    onShowLegendChanged: graph.requestPaint();
     //String - Legend label font declaration for the legend label
     property string legendFontFamily : "DejaVu Sans"
+    onLegendFontFamilyChanged: graph.requestPaint();
     //Number - Legend label font size in pixels
     property int legendFontSize : 10
+    onLegendFontSizeChanged: graph.requestPaint();
     //Number - Legend Width
     property int legendWidth: 0
     //String - Legend label font weight style
     property string legendFontStyle : "normal"
+    onLegendFontStyleChanged: graph.requestPaint();
     //String - Legend label font colour
     property string legendFontColor : "#000"
-    property string color: ""
+    onLegendFontColorChanged: graph.requestPaint();
 
     property variant data : [
                 {
@@ -97,7 +124,7 @@ Canvas{
 
     function drawLegend(ctx)
     {
-        ctx.font = legendFontStyle + " " + legendFontSize + "px \"" + legendFontFamily + "\"";
+        ctx.font = legendFontStyle + " " + legendFontSize + "px '" + legendFontFamily + "'";
         legendWidth = 0;
 
         //first get the length of the legend

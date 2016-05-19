@@ -6,10 +6,8 @@ Type {
 
         ItemLibraryEntry {
             name: "Switch"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
-            forceImport: "true"
-
             requiredImport: "components"
             Property { name: "width"; type: "int"; value: 60; }
             Property { name: "height"; type: "int"; value: 40; }
@@ -35,10 +33,21 @@ Type {
 
         ItemLibraryEntry {
             name: "Image Button"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
-            forceImport: "true"
             QmlSource {source: "ImageButtonSource.qml" }
+        }
+    }
+
+    Type {
+        name: "ScrollingTextBox"
+        icon: "item-icon16.png"
+
+        ItemLibraryEntry {
+            name: "Scrolling Text Box"
+            category: " Reach Components"
+            libraryIcon: "item-icon.png"
+            QmlSource {source: "ScrollingTextBoxSource.qml" }
         }
     }
 
@@ -48,13 +57,9 @@ Type {
 
         ItemLibraryEntry {
             name: "LED Light"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
-            forceImport: "true"
-
             requiredImport: "components"
-            Property { name: "width"; type: "int"; value: 58; }
-            Property { name: "height"; type: "int"; value: 58; }
             Property { name: "imageOn"; type: "QUrl"; value: "images/ledon.png"; }
             Property { name: "imageOff"; type: "QUrl"; value: "images/ledoff.png"; }
             Property { name: "on"; type: "bool"; value: false; }
@@ -74,10 +79,8 @@ Type {
 
         ItemLibraryEntry {
             name: "Panel Read Out"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
-            forceImport: "true"
-
             requiredImport: "components"
             Property { name: "width"; type: "int"; value: 211; }
             Property { name: "height"; type: "int"; value: 99; }
@@ -96,10 +99,8 @@ Type {
 
         ItemLibraryEntry {
             name: "Level Indicator - Horizontal"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
-            forceImport: "true"
-
             requiredImport: "components"
             Property { name: "width"; type: "int"; value: 200; }
             Property { name: "height"; type: "int"; value: 20; }
@@ -123,10 +124,8 @@ Type {
 
         ItemLibraryEntry {
             name: "Level Indicator - Vertical"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"            
-            forceImport: "true"
-
             requiredImport: "components"
             Property { name: "width"; type: "int"; value: 28; }
             Property { name: "height"; type: "int"; value: 161; }
@@ -150,7 +149,7 @@ Type {
 
         ItemLibraryEntry {
             name: "CheckBox List - Horizontal"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
             QmlSource {source: "HorizontalCheckBoxListSource.qml" }
         }
@@ -162,7 +161,7 @@ Type {
 
         ItemLibraryEntry {
             name: "CheckBox List - Vertical"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
             QmlSource {source: "VerticalCheckBoxListSource.qml" }
         }
@@ -174,10 +173,9 @@ Type {
 
         ItemLibraryEntry {
             name: "Numeric Field - Horizontal"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
             requiredImport: "components"
-            forceImport: "true"
             Property { name: "width"; type: "int"; value: 180; }
             Property { name: "fieldSpacing"; type: "int"; value: 4; }
             Property { name: "labelFontFamily"; type: "QString"; value: "DejaVu Sans"; }
@@ -201,10 +199,9 @@ Type {
 
         ItemLibraryEntry {
             name: "Numeric Selector"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
             requiredImport: "components"
-            forceImport: "true"
             Property { name: "width"; type: "int"; value: 110; }
             Property { name: "textFontFamily"; type: "QString"; value: "DejaVu Sans"; }
             Property { name: "textFontPixelSize"; type: "int"; value: 14; }
@@ -231,10 +228,9 @@ Type {
 
         ItemLibraryEntry {
             name: "Numeric Field - Vertical"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
             requiredImport: "components"
-            forceImport: "true"
             Property { name: "width"; type: "int"; value: 180; }
             Property { name: "fieldSpacing"; type: "int"; value: 4; }
             Property { name: "labelFontFamily"; type: "QString"; value: "DejaVu Sans"; }
@@ -258,10 +254,9 @@ Type {
 
         ItemLibraryEntry {
             name: "Alphabetic Field - Horizontal"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
             requiredImport: "components"
-            forceImport: "true"
             Property { name: "fieldSpacing"; type: "int"; value: 4; }
             Property { name: "labelFontFamily"; type: "QString"; value: "DejaVu Sans"; }
             Property { name: "labelText"; type: "QString"; value: "Label"; }
@@ -277,15 +272,87 @@ Type {
     }
 
 Type {
+        name: "TimeField"
+        icon: "item-icon16.png"
+
+        ItemLibraryEntry {
+            name: "Time Field - Horizontal"
+            category: " Reach Components"
+            libraryIcon: "item-icon.png"
+            QmlSource {source: "TimeFieldSource.qml" }
+        }
+    }
+
+Type {
+        name: "VerticalTimeField"
+        icon: "item-icon16.png"
+
+        ItemLibraryEntry {
+            name: "Time Field - Vertical"
+            category: " Reach Components"
+            libraryIcon: "item-icon.png"
+            QmlSource {source: "VerticalTimeFieldSource.qml" }
+        }
+    }
+
+Type {
+        name: "DateField"
+        icon: "item-icon16.png"
+
+        ItemLibraryEntry {
+            name: "Date Field - Horizontal"
+            category: " Reach Components"
+            libraryIcon: "item-icon.png"
+            QmlSource {source: "DateFieldSource.qml" }
+        }
+    }
+
+Type {
+        name: "VerticalDateField"
+        icon: "item-icon16.png"
+
+        ItemLibraryEntry {
+            name: "Date Field - Vertical"
+            category: " Reach Components"
+            libraryIcon: "item-icon.png"
+            QmlSource {source: "VerticalDateFieldSource.qml" }
+        }
+    }
+
+Type {
+        name: "ListField"
+        icon: "item-icon16.png"
+
+        ItemLibraryEntry {
+            name: "List Field - Horizontal"
+            category: " Reach Components"
+            libraryIcon: "item-icon.png"
+            QmlSource {source: "ListFieldSource.qml" }
+        }
+    }
+
+
+Type {
+        name: "VerticalListField"
+        icon: "item-icon16.png"
+
+        ItemLibraryEntry {
+            name: "List Field - Vertical"
+            category: " Reach Components"
+            libraryIcon: "item-icon.png"
+            QmlSource {source: "VerticalListFieldSource.qml" }
+        }
+    }
+
+Type {
         name: "VerticalAlphaField"
         icon: "item-icon16.png"
 
         ItemLibraryEntry {
             name: "Alphabetic Field - Vertical"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
             requiredImport: "components"
-            forceImport: "true"
             Property { name: "fieldSpacing"; type: "int"; value: 4; }
             Property { name: "labelFontFamily"; type: "QString"; value: "DejaVu Sans"; }
             Property { name: "labelText"; type: "QString"; value: "Label"; }
@@ -307,7 +374,7 @@ Type {
 
         ItemLibraryEntry {
             name: "RadioButton List - Horizontal"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
             QmlSource {source: "HorizontalRadioButtonListSource.qml" }
         }
@@ -319,7 +386,7 @@ Type {
 
         ItemLibraryEntry {
             name: "RadioButton List - Vertical"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
             QmlSource {source: "VerticalRadioButtonListSource.qml" }
         }
@@ -331,7 +398,7 @@ Type {
 
         ItemLibraryEntry {
             name: "Spinner"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
             QmlSource {source: "SpinnerSource.qml" }
         }
@@ -343,11 +410,9 @@ Type {
 
         ItemLibraryEntry {
             name: "Animated Switch"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
-            forceImport: "true"
             requiredImport: "components"
-
             Property { name: "width"; type: "int"; value: 130; }
             Property { name: "height"; type: "int"; value: 56; }
             Property { name: "textOn"; type: "QString"; value: "On"; }
@@ -377,7 +442,7 @@ Type {
 
         ItemLibraryEntry {
             name: "Knob"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
             QmlSource {source: "KnobSource.qml" }
         }
@@ -389,7 +454,7 @@ Type {
 
         ItemLibraryEntry {
             name: "Switch Group - Vertical"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
             QmlSource {source: "VerticalSwitchGroupSource.qml" }
         }
@@ -401,7 +466,7 @@ Type {
 
         ItemLibraryEntry {
             name: "Switch Group - Horizontal"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
             QmlSource {source: "HorizontalSwitchGroupSource.qml" }
         }
@@ -413,9 +478,8 @@ Type {
 
         ItemLibraryEntry {
             name: "Slider - Vertical"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
-            forceImport: "true"
             requiredImport: "components"
             Property { name: "width"; type: "int"; value: 48; }
             Property { name: "height"; type: "int"; value: 184; }
@@ -447,9 +511,8 @@ Type {
 
         ItemLibraryEntry {
             name: "Slider - Horizontal"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
-            forceImport: "true"
             requiredImport: "components"
             Property { name: "width"; type: "int"; value: 184; }
             Property { name: "height"; type: "int"; value: 48; }
@@ -482,9 +545,8 @@ Type {
 
         ItemLibraryEntry {
             name: "VU Meter"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
-            forceImport: "true"
             requiredImport: "components"
             Property { name: "width"; type: "int"; value: 377; }
             Property { name: "height"; type: "int"; value: 242; }
@@ -511,9 +573,8 @@ Type {
 
         ItemLibraryEntry {
             name: "Speedometer"
-            category: "Reach Components"
+            category: " Reach Components"
             libraryIcon: "item-icon.png"
-            forceImport: "true"
             requiredImport: "components"
             Property { name: "width"; type: "int"; value: 210; }
             Property { name: "height"; type: "int"; value: 210; }
@@ -548,7 +609,7 @@ Type {
 
         ItemLibraryEntry {
             name: "Bar Chart"
-            category: "Reach Graph Components"
+            category: " Reach Graph Components"
             libraryIcon: "item-icon.png"
             QmlSource {source: "BarChartSource.qml" }
         }
@@ -560,7 +621,7 @@ Type {
 
         ItemLibraryEntry {
             name: "Draw Area"
-            category: "Reach Graph Components"
+            category: " Reach Graph Components"
             libraryIcon: "item-icon.png"
             QmlSource {source: "DrawAreaSource.qml" }
         }
@@ -572,21 +633,9 @@ Type {
 
         ItemLibraryEntry {
             name: "Doughnut Chart"
-            category: "Reach Graph Components"
+            category: " Reach Graph Components"
             libraryIcon: "item-icon.png"
             QmlSource {source: "DoughnutChartSource.qml" }
-        }
-    }
-
-Type {
-        name: "HeatMap"
-        icon: "item-icon16.png"
-
-        ItemLibraryEntry {
-            name: "Heat Map"
-            category: "Reach Graph Components"
-            libraryIcon: "item-icon.png"
-            QmlSource {source: "HeatMapSource.qml" }
         }
     }
 
@@ -596,7 +645,7 @@ Type {
 
         ItemLibraryEntry {
             name: "Line Chart"
-            category: "Reach Graph Components"
+            category: " Reach Graph Components"
             libraryIcon: "item-icon.png"
             QmlSource {source: "LineChartSource.qml" }
         }
@@ -608,7 +657,7 @@ Type {
 
         ItemLibraryEntry {
             name: "Pie Chart"
-            category: "Reach Graph Components"
+            category: " Reach Graph Components"
             libraryIcon: "item-icon.png"
             QmlSource {source: "PieChartSource.qml" }
         }
@@ -620,7 +669,7 @@ Type {
 
         ItemLibraryEntry {
             name: "Scatter Chart"
-            category: "Reach Graph Components"
+            category: " Reach Graph Components"
             libraryIcon: "item-icon.png"
             QmlSource {source: "ScatterChartSource.qml" }
         }
@@ -632,7 +681,7 @@ Type {
 
         ItemLibraryEntry {
             name: "Scope Chart"
-            category: "Reach Graph Components"
+            category: " Reach Graph Components"
             libraryIcon: "item-icon.png"
             QmlSource {source: "ScopeChartSource.qml" }
         }
@@ -644,7 +693,7 @@ Type {
 
         ItemLibraryEntry {
             name: "Strip Chart"
-            category: "Reach Graph Components"
+            category: " Reach Graph Components"
             libraryIcon: "item-icon.png"
             QmlSource {source: "StripChartSource.qml" }
         }

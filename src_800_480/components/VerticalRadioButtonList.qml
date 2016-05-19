@@ -14,6 +14,7 @@ import QtQuick 2.0
 Item {
     id: radioList
     property string value;
+    property variant initialValue
     property int childID;
     property alias model: listRepeater.model
     property url imageChecked: "../images/radiobutton_click.png"
@@ -24,8 +25,30 @@ Item {
     property alias textColor: fontText.color
     property int spacing: 4
     property alias itemSpacing: col.spacing
+    property bool completed: false;
     width: col.width
     height: col.height
+
+    onInitialValueChanged: {
+        if (completed && initialValue.length > 0)
+        {
+            setInitialValue(initialValue.toString());
+        }
+    }
+
+    function setInitialValue(value)
+    {
+        for (var i=0; i < listRepeater.count; i++)
+        {
+            if (listRepeater.itemAt(i).value == value)
+            {
+                listRepeater.itemAt(i).checked = true;
+                radioList.value = value;
+            }
+            else
+                listRepeater.itemAt(i).checked = false;
+        }
+    }
 
     ListModel{
         id: data
@@ -97,7 +120,16 @@ Item {
             }
         }
 
+        Component.onCompleted: {
+            completed = true;
+            if (initialValue != null && initialValue.length > 0)
+                setInitialValue(initialValue.toString());
+        }
+
     }
 
+
+    Component.onCompleted: {
+    }
 
 }

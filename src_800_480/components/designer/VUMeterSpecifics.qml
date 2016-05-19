@@ -1,312 +1,296 @@
-import HelperWidgets 1.0
-import QtQuick 1.0
-import Bauhaus 1.0
+import QtQuick 2.0
+import HelperWidgets 2.0
+import QtQuick.Layouts 1.0
 
+Column {
+    anchors.left: parent.left
+    anchors.right: parent.right
 
-QWidget {
-    layout: QVBoxLayout {
-        topMargin: 0
-        bottomMargin: 0
-        leftMargin: 0
-        rightMargin: 0
-        spacing: 0
+    Section {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        caption: qsTr("VU Meter")
 
-        GroupBox {
-            caption: "VU Meter"
-            layout: VerticalLayout {
+        SectionLayout {
 
-                QWidget {
-                    layout: HorizontalLayout {
+            Label {
+                text: qsTr("Initial Value")
+            }
 
-                        Label {
-                            text: qsTr("Value")
-                            toolTip: qsTr("Initial Value")
-                        }
+            SecondColumnLayout {
+                LineEdit {
+                    backendValue: backendValues.initialValue
+                }
 
-                        SpinBox {
-                            backendValue: backendValues.value
-                            singleStep: 1
-                            minimum: -20
-                            maximum: 10000
-                            baseStateFlag: isBaseState
-                        }
-                    }
+                ExpandingSpacer {
+
                 }
             }
-        }
-
-        GroupBox {
-            caption: qsTr("Image Sources")
-            layout: VerticalLayout {
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Background Image")
-                            toolTip: qsTr("Image Source for Background")
-                        }
-                        UrlEdit {
-                            backendValue: backendValues.backgroundImage
-                            baseStateFlag: isBaseState
-                            filter: "*.png *.gif *.jpg *.bmp *.jpeg *.svg"
-                            showComboBox: true
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Background width")
-                            toolTip: qsTr("Background width")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.width
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 10000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Background height")
-                            toolTip: qsTr("Background height")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.height
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 10000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Needle Image")
-                            toolTip: qsTr("Image Source for the Needle")
-                        }
-                        UrlEdit {
-                            backendValue: backendValues.needleImage
-                            baseStateFlag: isBaseState
-                            filter: "*.png *.gif *.jpg *.bmp"
-                            showComboBox: true
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Needle width")
-                            toolTip: qsTr("Needle width")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.needleImageWidth
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 10000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Needle height")
-                            toolTip: qsTr("Needle height")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.needleImageHeight
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 10000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Needle X")
-                            toolTip: qsTr("Needle X")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.needleX
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 10000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Needle Y")
-                            toolTip: qsTr("Needle Y")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.needleX
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 10000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Needle Rotation X")
-                            toolTip: qsTr("Needle Rotation X")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.needleRotationX
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 10000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Needle Rotation Y")
-                            toolTip: qsTr("Needle Rotation Y")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.needleRotationY
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 10000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Overlay Image")
-                            toolTip: qsTr("Image Source for the Overlay")
-                        }
-                        UrlEdit {
-                            backendValue: backendValues.overlayImage
-                            baseStateFlag: isBaseState
-                            filter: "*.png *.gif *.jpg *.bmp"
-                            showComboBox: true
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Overlay width")
-                            toolTip: qsTr("Overlay width")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.overlayImageWidth
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 10000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Overlay height")
-                            toolTip: qsTr("Overlay height")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.overlayImageHeight
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 10000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Overlay X")
-                            toolTip: qsTr("Overlay X")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.overlayX
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 10000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Overlay Y")
-                            toolTip: qsTr("Overlay Y")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.overlayY
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 10000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-
-            }
-        }
-
-
-        QScrollArea {
         }
 
     }
-}
 
+
+    Section {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        caption: qsTr("Image Sources")
+
+        SectionLayout {
+
+            Label {
+                text: qsTr("Background Image")
+            }
+
+            SecondColumnLayout {
+                UrlChooser {
+                    Layout.fillWidth: true
+                    backendValue: backendValues.backgroundImage
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Background size")
+            }
+
+            SecondColumnLayout {
+                Label {
+                    text: "W"
+                    width: 12
+                }
+
+                SpinBox {
+                    backendValue: backendValues.width
+                    minimumValue: 0
+                    maximumValue: 2000
+                    decimals: 0
+                }
+
+                Label {
+                    text: "H"
+                    width: 12
+                }
+
+                SpinBox {
+                    backendValue: backendValues.height
+                    minimumValue: 0
+                    maximumValue: 2000
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Needle Image")
+            }
+
+            SecondColumnLayout {
+                UrlChooser {
+                    Layout.fillWidth: true
+                    backendValue: backendValues.needleImage
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Needle size")
+            }
+
+            SecondColumnLayout {
+                Label {
+                    text: "W"
+                    width: 12
+                }
+
+                SpinBox {
+                    backendValue: backendValues.needleImageWidth
+                    minimumValue: 0
+                    maximumValue: 2000
+                    decimals: 0
+                }
+
+                Label {
+                    text: "H"
+                    width: 12
+                }
+
+                SpinBox {
+                    backendValue: backendValues.needleImageHeight
+                    minimumValue: 0
+                    maximumValue: 2000
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Needle X")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.needleX
+                    minimumValue: -1000
+                    maximumValue: 1000
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Needle Y")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.needleY
+                    minimumValue: -1000
+                    maximumValue: 1000
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Needle Rotation X")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.needleRotationX
+                    minimumValue: -1000
+                    maximumValue: 1000
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Needle Rotation Y")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.needleRotationY
+                    minimumValue: -1000
+                    maximumValue: 1000
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Overlay Image")
+            }
+
+            SecondColumnLayout {
+                UrlChooser {
+                    Layout.fillWidth: true
+                    backendValue: backendValues.overlayImage
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Overlay size")
+            }
+
+            SecondColumnLayout {
+                Label {
+                    text: "W"
+                    width: 12
+                }
+
+                SpinBox {
+                    backendValue: backendValues.overlayImageWidth
+                    minimumValue: 0
+                    maximumValue: 2000
+                    decimals: 0
+                }
+
+                Label {
+                    text: "H"
+                    width: 12
+                }
+
+                SpinBox {
+                    backendValue: backendValues.overlayImageHeight
+                    minimumValue: 0
+                    maximumValue: 2000
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Overlay X")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.overlayX
+                    minimumValue: -1000
+                    maximumValue: 1000
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Overlay Y")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.overlayY
+                    minimumValue: -1000
+                    maximumValue: 1000
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+        }
+    }
+
+    Component.onCompleted: {
+        spinValue.value =  backendValues.value;
+    }
+}

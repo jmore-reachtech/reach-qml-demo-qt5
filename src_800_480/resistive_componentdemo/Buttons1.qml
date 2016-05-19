@@ -37,7 +37,7 @@ Rectangle {
         font.bold: false
         font.family: "Arial"
 
-        onButtonPress: {
+        onButtonClick: {
             system.execute("beep -f 2000 -l 100");
             console.debug("Button Pressed.");
         }

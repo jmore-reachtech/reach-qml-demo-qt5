@@ -24,19 +24,19 @@ Item {
 
     ImageButton {
         id: btnHome
-        x: 183
-        y: 15
-        width: 20
-        height: 20
+        x: 180
+        y: 2
+        width: 48
+        height: 48
         text: ""
-        imageUp: "images/home.png"
-        imageDown: "images/home.png"
+        imageUp: "images/quit_up.png"
+        imageDown: "images/quit_down.png"
         font.pixelSize: 18
         textColor: "#000000"
         font.bold: false
         font.family: "DejaVu Sans"
 
-        onButtonClick: goBack(); //mainview.message("mainmenu.qml");
+        onButtonClick: goBack();
     }
 
     Timer{

@@ -2,7 +2,6 @@ import QtQuick 2.0
 import "components"
 
 BarChart {
-    id: barChart
     width: 440
     height: 180
     scaleOverlay : true

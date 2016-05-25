@@ -13,15 +13,29 @@ import QtQuick 2.0
 
 Item {
     id: switchGroup
+    width: col.width
+    height: col.height
     property string value;
+    property string initialValue;
     property alias model: listRepeater.model
     property alias font: fontText.font
     property string textOnColor: "#000000"
     property string textOffColor: "#000000"
     property alias spacing: col.spacing
+    property bool completed: false;
 
-    width: col.width
-    height: col.height
+    onInitialValueChanged: {
+        if (completed)
+        {
+            for (var i=0; i < listRepeater.count; i++)
+            {
+                if (listRepeater.itemAt(i).value == initialValue.toString())
+                    listRepeater.itemAt(i).on = true;
+                else
+                    listRepeater.itemAt(i).on = false;
+            }
+        }
+    }
 
     Text {
         id: fontText
@@ -72,16 +86,32 @@ Item {
                 value: val
                 width: item_width
                 height: item_height
-                  onButtonClick:
-                      if (id.on)
-                          col.checked(value);
-                      else
-                          switchGroup.value = "";
+                enabled: !on
+                on: false
+                onButtonClick:
+                    if (id.on)
+                        col.checked(value);
+                    else
+                        switchGroup.value = "";
             }
         }
 
     }
 
+    Component.onCompleted: {
+        completed = true;
+        if (typeof initialValue !== "undefined")
+        {
+            for (var i=0; i < listRepeater.count; i++)
+            {
+                if (listRepeater.itemAt(i).value == initialValue)
+                {
+                    listRepeater.itemAt(i).on = true;
+                    switchGroup.value = initialValue;
+                }
+            }
+        }
+    }
 
 }
 

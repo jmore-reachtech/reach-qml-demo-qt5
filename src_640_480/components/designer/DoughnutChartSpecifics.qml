@@ -1,165 +1,170 @@
+import QtQuick 2.0
+import HelperWidgets 2.0
+import QtQuick.Layouts 1.0
 
-import HelperWidgets 1.0
-import QtQuick 1.0
-import Bauhaus 1.0
+Column {
+    anchors.left: parent.left
+    anchors.right: parent.right
 
+    Section {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        caption: qsTr("Doughnut Chart")
 
-QWidget {
-    layout: QVBoxLayout {
-        topMargin: 0
-        bottomMargin: 0
-        leftMargin: 0
-        rightMargin: 0
-        spacing: 0
+        SectionLayout {
 
-        GroupBox {
-            caption: "Doughnut Chart"
-            layout: VerticalLayout {
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Show Segment Stroke")
-                            toolTip: qsTr("Show Segment Stroke")
-                        }
-
-                        CheckBox {
-                            id: showSegmentStrokeCheckBox
-                            backendValue: backendValues.segmentShowStroke
-                            baseStateFlag: isBaseState
-                            checkable: true
-                            text: qsTr("Enable")
-                        }
-
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Segment Stroke Width")
-                            toolTip: qsTr("Segment Stroke Width")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.segmentStrokeWidth
-                            singleStep: 1
-                            minimum: 1
-                            maximum: 100
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        ColorGroupBox {
-                            caption: "Segment Stroke Color"
-                            finished: finishedNotify
-                            backendColor: backendValues.segmentStrokeColor
-                        }
-                    }
-                }
-
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Percentage Inner Cutout")
-                            toolTip: qsTr("Percentage Inner Cutout")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.percentageInnerCutout
-                            singleStep: 1
-                            minimum: 1
-                            maximum: 100
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        ColorGroupBox {
-                            caption: "Inner Cutout Color"
-                            finished: finishedNotify
-                            backendColor: backendValues.innerCutoutColor
-                        }
-                    }
-                }
-
-                GroupBox {
-                    caption: qsTr("Legend Information")
-                    layout: VerticalLayout {
-
-                        QWidget {
-                            layout: HorizontalLayout {
-                                Label {
-                                    text: qsTr("Show Legend")
-                                    toolTip: qsTr("Show Legend")
-                                }
-
-                                CheckBox {
-                                    id: scaleShowLabelsCheckBox
-                                    backendValue: backendValues.showLegend
-                                    baseStateFlag: isBaseState
-                                    checkable: true
-                                    text: qsTr("Enable")
-                                }
-
-                            }
-                        }
-
-                        QWidget {
-                            layout: HorizontalLayout {
-                                Label {
-                                    text: qsTr("Legend Font Family")
-                                    toolTip: qsTr("Legend Font Family")
-                                }
-                                FontComboBox{
-                                    backendValue: backendValues.legendFontFamily
-                                    baseStateFlag: isBaseState
-                                }
-                            }
-                        }
-
-                        QWidget {
-                            layout: HorizontalLayout {
-                                ColorGroupBox {
-                                    caption: "Legend Font Color"
-                                    finished: finishedNotify
-                                    backendColor: backendValues.legendFontColor
-                                }
-                            }}
-
-                        QWidget {
-                            layout: HorizontalLayout {
-                                Label {
-                                    text: qsTr("Legend Font Size")
-                                    toolTip: qsTr("Legend Font Size")
-                                }
-
-                                SpinBox {
-                                    backendValue: backendValues.legendFontSize
-                                    singleStep: 1
-                                    minimum: 1
-                                    maximum: 100
-                                    baseStateFlag: isBaseState
-                                }
-                            }
-                        }
-
-
-                    }
-                }
-
-
-                QScrollArea {
-                }
-
+            Label {
+                text: "Show Segment Stroke"
             }
+
+            SecondColumnLayout {
+
+                CheckBox{
+                    backendValue: backendValues.segmentShowStroke
+                }
+
+                Label {
+                    text: "Enable"
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Segment Stroke Width")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.segmentStrokeWidth
+                    minimumValue: 1
+                    maximumValue: 100
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Percentage Inner Cutout")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.percentageInnerCutout
+                    minimumValue: 0
+                    maximumValue: 100
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
         }
     }
-}
 
+    Section {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            caption: qsTr("Segment Stroke Color")
+
+            ColorEditor {
+                caption: qsTr("Segment Stroke Color")
+                backendValue: backendValues.segmentStrokeColor
+                supportGradient: false
+            }
+    }
+
+    Section {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            caption: qsTr("Inner Cutout Color")
+
+            ColorEditor {
+                caption: qsTr("Inner Cutout Color")
+                backendValue: backendValues.innerCutoutColor
+                supportGradient: false
+            }
+    }
+
+    Section {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        caption: qsTr("Legend Information")
+
+        SectionLayout {
+
+            Label {
+                text: "Show Legend"
+            }
+
+            SecondColumnLayout {
+
+                CheckBox{
+                    backendValue: backendValues.showLegend
+                }
+
+                Label {
+                    text: "Enable"
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Legend Font Family")
+            }
+
+            SecondColumnLayout {
+
+                FontComboBox{
+                    backendValue: backendValues.legendFontFamily
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Legend Font Size")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.legendFontSize
+                    minimumValue: 0
+                    maximumValue: 50
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+        }
+
+    }
+
+    Section {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            caption: qsTr("Legend Font Color")
+
+            ColorEditor {
+                caption: qsTr("Legend Font Color")
+                backendValue: backendValues.legendFontColor
+                supportGradient: false
+            }
+    }
+
+}

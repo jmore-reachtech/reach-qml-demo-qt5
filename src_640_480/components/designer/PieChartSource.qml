@@ -2,7 +2,6 @@ import QtQuick 2.0
 import "components"
 
 PieChart{
-    id: pieChart
     width: 200
     height: 200
     segmentShowStroke : true

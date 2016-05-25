@@ -218,7 +218,7 @@ Canvas{
         function calculateDrawingSizes(){
             maxSize = height;
             //Need to check the X axis first - measure the length of each text metric, and figure out if we need to rotate by 45 degrees.
-            ctx.font = scaleFontStyle + " " + scaleFontSize + "px \"" + scaleFontFamily + "\"";
+            ctx.font = scaleFontStyle + " " + scaleFontSize+"px '" + scaleFontFamily + "'";
             widestXLabel = 1;
             for (var i=0; i<data.labels.length; i++){
                 /* updated */
@@ -324,7 +324,7 @@ Canvas{
             var longestText = 1;
             //if we are showing the labels
             if (scaleShowLabels){
-                ctx.font = scaleFontStyle + " " + scaleFontSize+"px \"" + scaleFontFamily + "\"";
+                ctx.font = scaleFontStyle + " " + scaleFontSize+"px '" + scaleFontFamily + "'";
                 for (var i=0; i < calculatedScale.steps; i++)
                 {
                     var measuredText = ctx.measureText(calculatedScale.labels[i]).width;

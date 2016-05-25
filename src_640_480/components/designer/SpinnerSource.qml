@@ -2,14 +2,12 @@ import QtQuick 2.0
 import "components"
 
 Spinner {
-    id: spinner1
     width: 90
     height: 216
     color: "#ffffff"
     radius: 2
     font.pixelSize: 24
     textColor: "#000000"
-    initialIndex: 0
     border.color: "#000000"
     border.width: 3
     backGroundImage: "images/spinner-bg.png"

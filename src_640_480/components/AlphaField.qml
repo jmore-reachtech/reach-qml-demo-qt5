@@ -9,7 +9,6 @@
  ** your understanding and fairness.
  **
 ****************************************************************************/
-
 import QtQuick 2.0
 import "../js/keycodes.js" as KeyCodes
 
@@ -64,6 +63,7 @@ Rectangle {
             id: labelItem
             text: "Label"
             font.pixelSize: 12
+            font.bold: labelFontBold
             anchors.verticalCenter: parent.verticalCenter
 
         }

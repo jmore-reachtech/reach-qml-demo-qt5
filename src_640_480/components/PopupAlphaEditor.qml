@@ -9,7 +9,7 @@
  ** your understanding and fairness.
  **
 ****************************************************************************/
-import QtQuick 2.1
+import QtQuick 2.0
 import "../js/keycodes.js" as KeyCodes
 
 Item {
@@ -39,17 +39,16 @@ Item {
     function show()
     {
         rootObject = popupEditor.parent;
-        while (rootObject.parent && rootObject.parent.width)
-        {
+        while (rootObject.parent)
             rootObject = rootObject.parent;
-        }
+
         popupEditor.parent = rootObject;
         popupEditor.width = rootObject.width;
         popupEditor.height = rootObject.height;
-        popupEditor.x = 0;
+        popupEditor.x = 0;//(rootObject.width - background.width)/2
         popupEditor.y = 0;
         showAnim.from = rootObject.height;
-        showAnim.to = 0;
+        showAnim.to = 0//rootObject.height-background.height;
         showAnim.start();
     }
 
@@ -96,7 +95,6 @@ Item {
    Image {
        id: bgImage
        source: "../images/keyboardbg.png"
-       anchors.fill: parent
        width: parent.width
        height: parent.height
    }
@@ -183,13 +181,13 @@ Item {
 
         target: popupEditor
         property: "y"
-        duration: animationSpeed
+        duration: animationSpeed        
 
         onRunningChanged:{
             if (!running)
                 timer.start();
         }
-    }
+   }
 
     SequentialAnimation {
         id: hideAnim

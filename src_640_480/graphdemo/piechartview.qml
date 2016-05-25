@@ -22,7 +22,6 @@ Rectangle {
         legendFontColor: "#090808"
         legendFontSize: 12
         segmentShowStroke: true
-        color: "transparent"
     }
 
     DoughnutChart{
@@ -36,7 +35,6 @@ Rectangle {
         legendFontColor: "#090808"
         legendFontSize: 12
         segmentShowStroke: true
-        color: "transparent"
     }
 
     ImageButton {

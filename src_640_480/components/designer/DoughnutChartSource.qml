@@ -2,7 +2,6 @@ import QtQuick 2.0
 import "components"
 
 DoughnutChart{
-    id: doughnutChart
     width: 200
     height: 200
     segmentShowStroke : true

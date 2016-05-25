@@ -2,7 +2,6 @@ import QtQuick 2.0
 import "components"
 
 Knob {
-    id: knob1
     width: 180
     height: 180
     hintBorderColor: "#000000"

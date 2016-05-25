@@ -38,7 +38,7 @@ Rectangle {
         font.bold: false
         font.family: "Arial"
 
-        onButtonPress: {
+        onButtonClick: {
             sound.play();
             console.debug("Button Pressed.");
         }

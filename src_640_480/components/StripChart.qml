@@ -76,8 +76,8 @@ Canvas{
     property string bgColor: "#EEEEEE"
     //String - background image for the chart
     property alias bgImage: imageBackground.source
-    //Number - number of vertical scale Lines
-    property int verticalScaleLines: 0
+    //Number - number of vertical Grid Lines
+    property int verticalGridLines: 0
     property int xAxisPosY: 0
     property int yAxisPosX: 0
     property int  xAxisLength: 0
@@ -158,8 +158,8 @@ Canvas{
                 Qt.createQmlObject(imageSrc, graph, "bgImage");
             }
 
-            if (verticalScaleLines == 0)
-                verticalScaleLines = maxTime;
+            if (verticalGridLines == 0)
+                verticalGridLines = maxTime;
             draw(ctx, overlayCtx);
             valueHop = valueHop/maxTime;
 
@@ -214,7 +214,7 @@ Canvas{
         function calculateDrawingSizes(){
             maxSize = height;
             //Need to check the X axis first - measure the length of each text metric, and figure out if we need to rotate by 45 degrees.
-            ctx.font = scaleFontStyle + " " + scaleFontSize+"px \"" + scaleFontFamily + "\"";
+            ctx.font = scaleFontStyle + " " + scaleFontSize+"px '" + scaleFontFamily + "'";
             widestXLabel = 1;
             for (var i=0; i<data.labels.length; i++){
                 /* updated */
@@ -327,7 +327,7 @@ Canvas{
             var longestText = 1;
             //if we are showing the labels
             if (scaleShowLabels){
-                ctx.font = scaleFontStyle + " " + scaleFontSize+"px \"" + scaleFontFamily + "\"";
+                ctx.font = scaleFontStyle + " " + scaleFontSize+"px '" + scaleFontFamily + "'";
                 for (var i=0; i < calculatedScale.steps; i++)
                 {
                     var measuredText = ctx.measureText(calculatedScale.labels[i]).width;
@@ -397,7 +397,7 @@ Canvas{
 
                         //Check i isnt 0, so we dont go over the Y axis twice.
                         if(scaleShowGridLines && i>0){
-                            for (var k = 0; k <= valueHop; k += valueHop/verticalScaleLines)
+                            for (var k = 0; k <= valueHop; k += valueHop/verticalGridLines)
                             {
                                 overlayCtx.beginPath()
                                 overlayCtx.moveTo(yAxisPosX + k, xAxisPosY+3);

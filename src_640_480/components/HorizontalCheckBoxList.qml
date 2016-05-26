@@ -82,7 +82,7 @@ Item {
                   imageWidth: checkList.imageWidth
                   spacing: checkList.spacing
 
-                  onClicked:{
+                  onPressed:{
                       if (id.checked)
                       {
                           checkList.values.append({value: value});

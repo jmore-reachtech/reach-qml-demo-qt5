@@ -88,7 +88,7 @@ Item {
                   height: item_height
                   on: false
                   enabled: !on
-                  onButtonClick:
+                  onButtonPress:
                       if (id.on)
                           row.checked(value);
                       else

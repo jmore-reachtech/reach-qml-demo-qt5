@@ -104,7 +104,7 @@ Item {
                   checked: item_checked
                   spacing: radioList.spacing
 
-                  onClicked: if (id.checked)
+                  onPressed: if (id.checked)
                                row.checked(value);
                              else if (radioList.value === value)
                                  id.checked = true;

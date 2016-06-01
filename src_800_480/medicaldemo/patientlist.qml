@@ -186,7 +186,7 @@ Item {
         textColor: "#ffffff"
         imageDown: "images/patient_box_down.png"
 
-        onButtonRelease: {
+        onButtonClick: {
             load.source = "patientgraphs.qml";
         }
     }
@@ -383,7 +383,7 @@ Item {
         imageUp: "images/down_arrow.png"
         font.bold: false
 
-        onButtonPress: {
+        onButtonClick: {
             flick.contentY = flick.contentHeight - flick.height;
             btnDown.visible = false;
             btnUp.visible = true;
@@ -405,7 +405,7 @@ Item {
         font.bold: false
         visible: false
 
-        onButtonPress: {
+        onButtonClick: {
             flick.contentY = 0;
             btnDown.visible = true;
             btnUp.visible = false;

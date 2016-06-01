@@ -52,16 +52,31 @@ Item {
             font.family: "Museo Sans Rounded 300"
         }
 
+        Text {
+            id: text2
+            x: 45
+            y: 5
+            text: qsTr("Patient List")
+            font.pixelSize: 17
+            color: "#ffffff"
+        }
+
+        Text {
+            id: text3
+            x: 626
+            y: 4
+            text: qsTr("Patient Vitals")
+            font.pixelSize: 17
+            color: "#ffffff"
+        }
+
         MouseArea{
             id: maHome
-            width: 58
+            width: 132
             height: 30
 
             onPressed: {
                 imgNameBox.source = "images/name_back_box_down.png";
-            }
-
-            onReleased: {
                 pressureTimer.stop();
                 oxygenGraphTimer.stop();
                 ekgGraphTimer.stop();
@@ -71,15 +86,14 @@ Item {
 
         MouseArea{
             id: maVitals
-            width: 58
+            x: 678
+            y: 0
+            width: 143
             height: 30
             anchors.right: parent.right
 
             onPressed: {
                 imgNameBox.source = "images/name_back_box_down.png";
-            }
-
-            onReleased: {
                 pressureTimer.stop();
                 oxygenGraphTimer.stop();
                 ekgGraphTimer.stop();
@@ -201,7 +215,7 @@ Item {
                 }
             }
 
-            onButtonPress: {
+            onButtonClick: {
                 pressureTimer.stop();
                 txtSystollic.font.pixelSize = 22;
                 txtSystollic.font.bold = false;
@@ -284,7 +298,7 @@ Item {
             id: scopeChart1
             x: -4
             y: 2
-            width: 392
+            width: 408
             height: 130
             scaleLineColor: "rgba(0,0,0,0)"
             scaleShowGridLines: false
@@ -321,10 +335,10 @@ Item {
 
         MedicalStripChart {
             id: stripChart1
-            x: -4
+            x: 3
             y: 1
-            width: 393
-            height: 130
+            width: 394
+            height: 131
             visible: true
             scaleLineColor: "rgba(0,0,0,0)"
             scaleShowGridLines: false
@@ -634,7 +648,7 @@ Item {
             id: scopeChart2
             x: -4
             y: 2
-            width: 392
+            width: 408
             height: 130
             scaleLineColor: "rgba(0,0,0,0)"
             scaleShowGridLines: false
@@ -653,7 +667,7 @@ Item {
             scaleFontColor: "#666"
             line1PenColor: "#00b8ff"
             scaleFontFamily: "DejaVu Sans"
-            maxYValue: 860
+            maxYValue: 870
             xPixels: 20
             scaleBgColor: "#414042"
             //scaleBgColor: "red"
@@ -671,9 +685,9 @@ Item {
 
         MedicalStripChart {
             id: stripChart2
-            x: -4
+            x: 3
             y: 1
-            width: 393
+            width: 394
             height: 130
             visible: true
             scaleLineColor: "rgba(0,0,0,0)"
@@ -692,7 +706,7 @@ Item {
             scaleFontColor: "#666"
             line1PenColor: "#00b8ff"
             scaleFontFamily: "DejaVu Sans"
-            maxYValue: 860
+            maxYValue: 870
             scaleBgColor: "#414042"
             //scaleBgColor: "yellow"
             maxTime: xAxisLength/2

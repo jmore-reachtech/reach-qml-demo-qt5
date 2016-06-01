@@ -49,13 +49,23 @@ Item {
         textColor: "#ffffff"
         font.family: "Museo Sans Rounded 300"
 
-        onButtonRelease: {
+        onButtonClick: {
             tempTimer.stop();
             pressureTimer.stop();
             ekgGraphTimer.stop();
             oxygenGraphTimer.stop();
             load.source = "patientlist.qml";
         }
+
+        Text {
+            id: text2
+            x: 45
+            y: 5
+            text: qsTr("Patient List")
+            font.pixelSize: 17
+            color: "#ffffff"
+        }
+
     }
 
 

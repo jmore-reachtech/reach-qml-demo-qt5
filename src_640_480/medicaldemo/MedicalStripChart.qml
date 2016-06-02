@@ -628,7 +628,7 @@ Canvas{
         if (scaleBgColor === "transparent")
             ctx.clearRect(dx, dy, sw, sh);
 
-        ctx.putImageData(copy, dx, dy);
+        ctx.drawImage(copy, dx, dy);
 
         if (scaleBgColor === "transparent")
             ctx.clearRect(x,y,w,h);
@@ -696,7 +696,7 @@ Canvas{
         if (scaleBgColor  === "transparent")
             ctx.clearRect(dx, dy, sw, sh);
 
-        ctx.putImageData(copy, dx, dy);
+        ctx.drawImage(copy, dx, dy);
 
         if (scaleBgColor === "transparent")
             ctx.clearRect(x,y,w,h);
@@ -758,7 +758,7 @@ Canvas{
         if (scaleBgColor  === "transparent")
             ctx.clearRect(dx, dy, sw, sh);
 
-        ctx.putImageData(copy, dx, dy);
+        ctx.drawImage(copy, dx, dy);
 
         if (scaleBgColor === "transparent")
             ctx.clearRect(x,y,w,h);
@@ -840,7 +840,7 @@ Canvas{
         if (scaleBgColor  === "transparent")
             ctx.clearRect(dx, dy, sw, sh);
 
-        ctx.putImageData(copy, dx, dy);
+        ctx.drawImage(copy, dx, dy);
 
         if (scaleBgColor === "transparent")
             ctx.clearRect(x,y,w,h);

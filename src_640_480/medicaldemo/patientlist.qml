@@ -186,7 +186,7 @@ Item {
         textColor: "#ffffff"
         imageDown: "images/patient_box_down.png"
 
-        onButtonRelease: {
+        onButtonClick: {
             load.source = "patientgraphs.qml";
         }
     }

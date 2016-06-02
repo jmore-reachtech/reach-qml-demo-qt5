@@ -52,16 +52,34 @@ Item {
             font.family: "Museo Sans Rounded 300"
         }
 
+        Text {
+            id: text2
+            x: 37
+            y: 5
+            text: qsTr("Patient List")
+            font.pixelSize: 17
+            color: "#ffffff"
+        }
+
+        Text {
+            id: text3
+            x: 494
+            y: 4
+            text: qsTr("Patient Vitals")
+            font.pixelSize: 17
+            color: "#ffffff"
+        }
+
         MouseArea{
             id: maHome
-            width: 58
+            width: 132
             height: 30
 
             onPressed: {
                 imgNameBox.source = "images/name_back_box_down.png";
             }
 
-            onReleased: {
+            onClicked: {
                 pressureTimer.stop();
                 oxygenGraphTimer.stop();
                 ekgGraphTimer.stop();
@@ -71,15 +89,14 @@ Item {
 
         MouseArea{
             id: maVitals
-            width: 58
+            width: 143
             height: 30
             anchors.right: parent.right
-
-            onPressed: {
+            onPressed:{
                 imgNameBox.source = "images/name_back_box_down.png";
             }
 
-            onReleased: {
+            onClicked: {
                 pressureTimer.stop();
                 oxygenGraphTimer.stop();
                 ekgGraphTimer.stop();
@@ -238,7 +255,7 @@ Item {
             imageOff: "images/btnPause_down.png"
             on: true
 
-            onButtonClick: {
+            onOnChanged: {
                 if (oxygenGraphTimer.running)
                     oxygenGraphTimer.stop();
                 else
@@ -263,8 +280,9 @@ Item {
             imageOff: "images/btnGraph_down.png"
             on: true
 
-            onButtonClick: {
+            onOnChanged: {
                 //o2 graph
+                btnPause.on = true;
                 oxygenGraphTimer.stop();
                 stripChart1.clearPens();
                 scopeChart1.clearPens();
@@ -288,7 +306,7 @@ Item {
             id: scopeChart1
             x: -4
             y: 2
-            width: 381
+            width: 397
             height: 130
             visible: true
             scaleLineColor: "rgba(0,0,0,0)"
@@ -326,9 +344,9 @@ Item {
 
         MedicalStripChart {
             id: stripChart1
-            x: -4
+            x: 3
             y: 1
-            width: 381
+            width: 383
             height: 130
             visible: true
             scaleLineColor: "rgba(0,0,0,0)"
@@ -589,6 +607,7 @@ Item {
 
             onButtonClick: {
                 //stop and start o2 graph
+                btnPause.on = true;
                 oxygenGraphTimer.stop();
                 stripChart1.clearPens();
                 scopeChart1.clearPens();
@@ -616,7 +635,8 @@ Item {
             imageOff: "images/btnBack_down.png"
             on: true
 
-            onButtonClick: {
+            onOnChanged: {
+                btnPause.on = true;
                 showStripCharts = !showStripCharts;
                 if (showStripCharts)
                 {
@@ -641,7 +661,7 @@ Item {
             id: scopeChart2
             x: -4
             y: 2
-            width: 383
+            width: 397
             height: 130
             scaleLineColor: "rgba(0,0,0,0)"
             scaleShowGridLines: false
@@ -660,7 +680,7 @@ Item {
             scaleFontColor: "#666"
             line1PenColor: "#00b8ff"
             scaleFontFamily: "DejaVu Sans"
-            maxYValue: 860
+            maxYValue: 870
             xPixels: 20
             scaleBgColor: "#414042"
             //scaleBgColor: "red"
@@ -678,7 +698,7 @@ Item {
 
         MedicalStripChart {
             id: stripChart2
-            x: -4
+            x: 3
             y: 1
             width: 383
             height: 130
@@ -699,7 +719,7 @@ Item {
             scaleFontColor: "#666"
             line1PenColor: "#00b8ff"
             scaleFontFamily: "DejaVu Sans"
-            maxYValue: 860
+            maxYValue: 870
             scaleBgColor: "#414042"
             //scaleBgColor: "yellow"
             maxTime: xAxisLength/2

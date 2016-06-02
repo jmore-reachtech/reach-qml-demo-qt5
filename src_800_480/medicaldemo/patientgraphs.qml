@@ -75,8 +75,10 @@ Item {
             width: 132
             height: 30
 
-            onPressed: {
-                imgNameBox.source = "images/name_back_box_down.png";
+			onPressed:{
+                imgNameBox.source = "images/name_back_box_down.png";			
+			}
+            onClicked: {
                 pressureTimer.stop();
                 oxygenGraphTimer.stop();
                 ekgGraphTimer.stop();
@@ -92,7 +94,11 @@ Item {
             height: 30
             anchors.right: parent.right
 
-            onPressed: {
+			onPressed:{
+                imgNameBox.source = "images/name_back_box_down.png";			
+			}
+
+            onClicked: {
                 imgNameBox.source = "images/name_back_box_down.png";
                 pressureTimer.stop();
                 oxygenGraphTimer.stop();
@@ -248,7 +254,7 @@ Item {
             imageOff: "images/btnPause_down.png"
             on: true
 
-            onButtonPress: {
+            onOnChanged: {
                 if (oxygenGraphTimer.running)
                     oxygenGraphTimer.stop();
                 else
@@ -273,8 +279,9 @@ Item {
             imageOff: "images/btnGraph_down.png"
             on: true
 
-            onButtonPress: {
+            onOnChanged: {
                 //o2 graph
+				btnPause.on = true;
                 oxygenGraphTimer.stop();
                 stripChart1.clearPens();
                 scopeChart1.clearPens();
@@ -594,8 +601,9 @@ Item {
             font.bold: false
             font.family: "DejaVu Sans"
 
-            onButtonPress: {
+            onButtonClick: {
                 //stop and start o2 graph
+				btnPause.on = true;
                 oxygenGraphTimer.stop();
                 stripChart1.clearPens();
                 scopeChart1.clearPens();
@@ -623,7 +631,8 @@ Item {
             imageOff: "images/btnBack_down.png"
             on: true
 
-            onButtonPress: {
+            onOnChanged: {
+			    btnPause.on = true;
                 showStripCharts = !showStripCharts;
                 if (showStripCharts)
                 {

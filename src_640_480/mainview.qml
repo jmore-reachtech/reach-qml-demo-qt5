@@ -69,6 +69,5 @@ Rectangle {
         pin2.writeToPin(0);
         pin3.writeToPin(0);
 		version = system.getSoftwareVersion();
-		console.debug(version);
     }
 }

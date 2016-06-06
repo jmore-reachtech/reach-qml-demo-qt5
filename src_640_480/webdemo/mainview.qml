@@ -65,7 +65,7 @@ Rectangle {
         font.family: "DejaVu Sans"
 
         onButtonClick: {
-            onButtonClick: root.message("../src/mainmenu.qml");
+            onButtonClick: mainView.mainLoader.source = "../mainmenu.qml";
         }
     }
 }

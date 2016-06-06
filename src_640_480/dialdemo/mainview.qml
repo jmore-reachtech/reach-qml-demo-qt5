@@ -107,7 +107,7 @@ Rectangle {
         text: ""
         imageDown: "../images/quit_down.png"
         imageUp: "../images/quit_up.png"
-        onButtonClick: rootDial.message("../src/mainmenu.qml");
+        onButtonClick: mainView.mainLoader.source = "../mainmenu.qml";
     }
 
     GeometricKnob {

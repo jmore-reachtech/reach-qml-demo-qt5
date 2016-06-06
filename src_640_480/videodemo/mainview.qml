@@ -93,7 +93,7 @@ Rectangle {
 
         onButtonClick: {
 			video.stop();
-            onButtonClick: root.message("../src/mainmenu.qml");
+            onButtonClick: mainView.mainLoader.source = "../mainmenu.qml";
         }
     }
 

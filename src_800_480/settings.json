@@ -1,5 +1,5 @@
 {
-    "main_view": "/application/src/mainview.qml",
+    "main_view": "mainview.qml",
     "full_screen": false,
     "hide_cursor": false,
     "enable_ack": false,
@@ -8,7 +8,7 @@
     "screensaver_timeout": 0,
     "screen_original_brigtness": 7,
     "screen_dim_brigtness": 5,
-    "translate_file": "/application/src/translate.txt",
+    "translate_file": "translate.txt",
 
     "serial_port_servers": [
         {

@@ -173,7 +173,7 @@ Rectangle{
         visible: false
 
         onButtonClick: {
-            onButtonClick: root.message("../src/mainmenu.qml");
+            mainView.mainLoader.source = "../mainmenu.qml";
         }
     }
 

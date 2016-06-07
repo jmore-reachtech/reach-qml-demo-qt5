@@ -3,11 +3,11 @@
 # When button1 is pushed, b=1 is sent to the serial port
 # When button2 is pushed, b=2 is sent to the serial port
 # When
-#   tc=32<return>
+#   tc=32<line feed>
 # is received on the serial port, the Celsius temperature display is updated to read 32
 #
 # When
-#   tf=70<return>
+#   tf=70<line feed>
 # is received on the serial port, the Fahrenheit temperature display is updated to read 70
 #
 # this line says translate "button_push=<digit>" from the GUI to "b=<number>" to the serial port

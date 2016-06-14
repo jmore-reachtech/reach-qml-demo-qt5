@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import com.reachtech.systemplugin 1.0
 import "../components"
 import "js/dataModel.js" as Db
 
@@ -6,7 +7,7 @@ import "js/dataModel.js" as Db
 Rectangle {
     width: 1024
     height: 768
-    id: mainView
+    id: root
     color: "#666666"
     signal message(string msg)
 
@@ -111,7 +112,7 @@ Rectangle {
         imageUp: "images/btnCancel.png"
         imageDown: "images/btnCancelOff.png"
         onButtonClick: {
-            mainView.message("../src/mainmenu.qml");
+            mainView.mainLoader.source = "../mainmenu.qml";
         }
     }
 

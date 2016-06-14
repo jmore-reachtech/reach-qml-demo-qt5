@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import com.reachtech.systemplugin 1.0
 import "../components"
 
 Rectangle {
@@ -76,7 +77,7 @@ Rectangle {
         text: ""
         imageDown: "../images/quit_down.png"
         imageUp: "../images/quit_up.png"
-        onButtonClick: root.message("../src/mainmenu.qml");
+        onButtonClick: mainView.mainLoader.source = "../mainmenu.qml";
     }
     
     function setSpeed(s)

@@ -28,6 +28,7 @@ Rectangle {
     height: button.imageHeight > innerText.height ? button.imageHeight : innerText.height
 
     signal clicked
+    signal pressed
 
     BorderImage{
         id: imgChecked
@@ -67,8 +68,11 @@ Rectangle {
     MouseArea{
         anchors.fill: button
         onClicked: {
-            checked = !checked;
             button.clicked();
+        }
+        onPressed: {
+            checked = !checked;
+            button.pressed();
         }
     }
 

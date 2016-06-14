@@ -2,7 +2,6 @@ import QtQuick 2.0
 import "components"
 
 LineChart {
-    id: lineChart
     width: 440
     height: 180
     scaleOverlay : true

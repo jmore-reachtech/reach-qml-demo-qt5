@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import com.reachtech.systemplugin 1.0
 import "../components"
 import "../js/imagedemo.js" as Jscript
 
@@ -119,7 +120,7 @@ Rectangle {
         font.family: "DejaVu Sans"
 
         onButtonClick: {
-            message("../src/mainmenu.qml");
+            mainView.mainLoader.source = "../mainmenu.qml";
         }
     }
 

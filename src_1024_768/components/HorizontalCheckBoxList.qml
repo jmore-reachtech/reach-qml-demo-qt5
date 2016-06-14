@@ -23,8 +23,33 @@ Item {
     property alias textColor: fontText.color
     property int spacing: 4
     property alias itemSpacing: row.spacing
+    property string initialValues
+    property bool completed: false
     height: row.height
     width: row.width
+
+    onInitialValuesChanged: {
+        //For the designer
+        if (completed)
+            setInitialValues(initialValues)
+    }
+
+    function setInitialValues(values)
+    {
+        var arrValues = values.split(",");
+        checkList.values.clear();
+        for (var i=0; i < listRepeater.count; i++)
+        {
+            if (arrValues.indexOf(listRepeater.itemAt(i).value) > -1)
+            {
+                listRepeater.itemAt(i).checked = true;
+                checkList.values.append({value: listRepeater.itemAt(i).value});
+                valuesChanged();
+            }
+            else
+                listRepeater.itemAt(i).checked = false;
+        }
+    }
 
     Text {
         id: fontText
@@ -57,7 +82,7 @@ Item {
                   imageWidth: checkList.imageWidth
                   spacing: checkList.spacing
 
-                  onClicked:{
+                  onPressed:{
                       if (id.checked)
                       {
                           checkList.values.append({value: value});
@@ -83,6 +108,12 @@ Item {
                   }
 
             }
+
+            Component.onCompleted: {
+                completed = true;
+                if (initialValues != null && initialValues.length > 0)
+                    setInitialValues(initialValues);
+            }
         }
 
     }
@@ -98,7 +129,7 @@ Item {
     }
 
     Component.onCompleted: {
-
     }
+
 }
 

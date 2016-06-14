@@ -2,7 +2,6 @@ import QtQuick 2.0
 import "components"
 
 HorizontalSwitchGroup {
-    id: horizontalswitchgroup1
     spacing: 4
     font.pixelSize: 16
     font.bold: false

@@ -2,9 +2,6 @@ import QtQuick 2.0
 import "components"
 
 ImageButton {
-    id: image_button1
-    x: 200
-    y: 88
     width: 60
     height: 40
     text: "Test"

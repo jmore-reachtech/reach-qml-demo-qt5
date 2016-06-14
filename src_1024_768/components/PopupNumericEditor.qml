@@ -47,10 +47,8 @@ Item {
     function show()
     {
         rootObject = popupEditor.parent;
-        while (rootObject.parent && rootObject.parent.width)
-        {
+        while (rootObject.parent)
             rootObject = rootObject.parent;
-        }
 
         //hide all child components
         //for(var i=0; i < rootObject.children.length; i++)
@@ -59,10 +57,10 @@ Item {
         popupEditor.parent = rootObject;
         popupEditor.width = rootObject.width;
         popupEditor.height = rootObject.height;
-        popupEditor.x = 0;
+        popupEditor.x = 0;//(rootObject.width - background.width)/2
         popupEditor.y = 0;
         showAnim.from = rootObject.height;
-        showAnim.to = 0;
+        showAnim.to = 0//rootObject.height-background.height;
         showAnim.start();
     }
 

@@ -13,6 +13,9 @@ Rectangle {
         id: listModel
 
         ListElement {
+            image: "images/imagedemo-icon.png"; iconheight:78; iconwidth: 130; form: "imagedemo/mainview.qml"; icontext: "    Image\n Test Demo"
+        }
+        ListElement {
             image: "images/coffee-icon.png"; iconheight:76; iconwidth: 100; form: "capacitive_coffeedemo/mainview.qml"; icontext: "  Capacitive\nCoffee Demo"
         }
         ListElement {
@@ -56,9 +59,6 @@ Rectangle {
         }
         ListElement {
             image: "images/spedometer-icon.png"; iconheight:78; iconwidth: 78; form: "persist_spedometerdemo/mainview.qml"; icontext: "        Persistent\n Spedometer Demo"
-        }
-        ListElement {
-            image: "images/imagedemo-icon.png"; iconheight:78; iconwidth: 130; form: "imagedemo/mainview.qml"; icontext: "    Image\n Test Demo"
         }
 		ListElement {
             image: "images/upgrade-icon.png"; iconheight:70; iconwidth: 75; form: "upgradedemo/mainview.qml"; icontext: "Upgrade\n  Demo"

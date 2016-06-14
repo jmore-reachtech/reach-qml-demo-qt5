@@ -8,6 +8,7 @@ Rectangle {
     height: 768
     color: "#2D2D2D"
     property int mainMenuY: 0
+    property alias mainLoader: loader
 
     Loader{
         id: loader

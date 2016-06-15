@@ -9,6 +9,15 @@ Rectangle {
     color: "#2D2D2D"
     signal message(string msg)
 
+    Text{
+        id: txtVersion
+        x: 40
+        y: 52
+        color: "#FFFFFF"
+        font.pixelSize: 18
+        text: mainView.version
+    }
+
     ListModel {
         id: listModel
 

@@ -88,7 +88,7 @@ Rectangle {
         scaleGridLineColor: "rgba(50,205,50,0.5)"
         scaleFontSize: 13
         scaleGridLineWidth: 1
-        verticalScaleLines: 10
+        verticalGridLines: 10
     }
 
 

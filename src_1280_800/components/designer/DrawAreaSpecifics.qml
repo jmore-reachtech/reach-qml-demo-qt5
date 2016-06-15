@@ -1,86 +1,91 @@
-import HelperWidgets 1.0
 import QtQuick 2.0
-import Bauhaus 1.0
+import HelperWidgets 2.0
+import QtQuick.Layouts 1.0
 
+Column {
+    anchors.left: parent.left
+    anchors.right: parent.right
 
-QWidget {
-    layout: QVBoxLayout {
-        topMargin: 0
-        bottomMargin: 0
-        leftMargin: 0
-        rightMargin: 0
-        spacing: 0
+    Section {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        caption: qsTr("Draw Area")
 
-        GroupBox {
-            caption: "Draw Area"
-            layout: VerticalLayout {
-                QWidget {
-                    layout: HorizontalLayout {
-                        ColorGroupBox {
-                            caption: "Background Color"
-                            finished: finishedNotify
-                            backendColor: backendValues.color
-                        }
-                    }
-                }
+        SectionLayout {
 
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Border Width")
-                            toolTip: qsTr("Border Width")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.borderWidth
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 100
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        ColorGroupBox {
-                            caption: "Border Color"
-                            finished: finishedNotify
-                            backendColor: backendValues.borderColor
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Pen Width")
-                            toolTip: qsTr("Pen Width")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.penWidth
-                            singleStep: 1
-                            minimum: 1
-                            maximum: 100
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        ColorGroupBox {
-                            caption: "Pen Color"
-                            finished: finishedNotify
-                            backendColor: backendValues.penColor
-                        }
-                    }}
-
-                QScrollArea {
-                }
-
+            Label {
+                text: "Border Width"
             }
+
+            SecondColumnLayout {
+
+                SpinBox {
+                    backendValue: backendValues.borderWidth
+                    minimumValue: 1
+                    maximumValue: 100
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Pen Width")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.penWidth
+                    minimumValue: 1
+                    maximumValue: 100
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+
         }
     }
+
+    Section {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            caption: qsTr("Background Color")
+
+            ColorEditor {
+                caption: qsTr("Background Color")
+                backendValue: backendValues.color
+                supportGradient: false
+            }
+    }
+
+    Section {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            caption: qsTr("Border Color")
+
+            ColorEditor {
+                caption: qsTr("Border Color")
+                backendValue: backendValues.borderColor
+                supportGradient: false
+            }
+    }
+
+    Section {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            caption: qsTr("Pen Color")
+
+            ColorEditor {
+                caption: qsTr("Pen Color")
+                backendValue: backendValues.penColor
+                supportGradient: false
+            }
+    }
+
 }

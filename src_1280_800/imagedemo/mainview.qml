@@ -119,7 +119,7 @@ Rectangle {
         font.family: "DejaVu Sans"
 
         onButtonClick: {
-            message("../src/mainmenu.qml");
+            mainView.mainLoader.source = "../mainmenu.qml";
         }
     }
 

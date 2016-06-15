@@ -49,10 +49,12 @@ Item {
     function show()
     {
         rootObject = popupEditor.parent;
-        while (rootObject.parent && rootObject.parent.width)
-        {
+        while (rootObject.parent)
             rootObject = rootObject.parent;
-        }
+
+        //hide all child components
+        //for(var i=0; i < rootObject.children.length; i++)
+        //    rootObject.children[i].visible = false;
 
         popupEditor.parent = rootObject;
         popupEditor.width = rootObject.width;
@@ -67,6 +69,9 @@ Item {
     function hide()
     {
         hideAnim.start();
+        //show all child components
+        //for(var i=0; i < rootObject.children.length; i++)
+        //    rootObject.children[i].visible = true;
     }
 
     function removeKey(keyCode)

@@ -14,6 +14,7 @@ import QtQuick 2.0
 Dial{
     id: vumeter
     value: model.get(0).value //-20.0
+    property real initialValue
     min: model.get(0).value //-20.0
     max:  model.get(model.count-1).value //3.0
     // Width and height dictated by the background image
@@ -60,6 +61,10 @@ Dial{
         ListElement{ value:   1.0; angle:  31; x: 183; y: 65}
         ListElement{ value:   2.0; angle:  42; x: 187; y: 62}
         ListElement{ value:   3.0; angle:  55; x: 187; y: 62}
+    }
+
+    onInitialValueChanged: {
+        value = initialValue;
     }
 
     onValueChanged: {
@@ -109,4 +114,9 @@ Dial{
 
     }
 
+
+    Component.onCompleted: {
+        if (typeof initialValue !== "undefined")
+            value = initialValue;
+    }
 }

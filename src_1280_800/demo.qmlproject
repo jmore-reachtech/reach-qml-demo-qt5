@@ -4,7 +4,7 @@ import QmlProject 1.1
 
 Project {
     mainFile: "mainview.qml"
-    
+
     /* Include .qml, .js, and image files from current directory and subdirectories */
     QmlFiles {
         directory: ""
@@ -12,10 +12,68 @@ Project {
     JavaScriptFiles {
         directory: "js"
     }
+
     ImageFiles {
         directory: "images"
     }
 
+    ImageFiles {
+        directory: "capacitive_coffeedemo/images"
+    }
+
+    ImageFiles {
+        directory: "capacitive_componentdemo/images"
+    }
+
+    ImageFiles {
+        directory: "gpiodemo/images"
+    }
+
+    ImageFiles {
+        directory: "imagedemo/images"
+    }
+
+    ImageFiles {
+        directory: "imagedemo/testimages"
+    }
+
+    ImageFiles {
+        directory: "medicaldemo/images"
+    }
+
+    ImageFiles {
+        directory: "persist_spedometerdemo/images"
+    }
+
+    ImageFiles {
+        directory: "resistive_coffeedemo/images"
+    }
+
+    ImageFiles {
+        directory: "resistive_componentdemo/images"
+    }
+
+    ImageFiles {
+        directory: "samegame/SamegameCore/pics"
+    }
+
+    ImageFiles {
+        directory: "spedometerdemo/images"
+    }
+
+    ImageFiles {
+        directory: "vumeterdemo/images"
+    }
+
+    Files
+    { filter: "*.json"}
+
+    Files
+    { filter: "*.txt"}
+
+    Files
+    { filter: "*.mp4"}
+
     /* List of plugin directories passed to QML runtime */
-    //importPaths: [ "opt/Qt/5.3.2/qml/com/reachtech/systemplugin" ]
+    // importPaths: [ "../exampleplugin" ]
 }

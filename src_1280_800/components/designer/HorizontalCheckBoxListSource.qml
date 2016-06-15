@@ -2,7 +2,6 @@ import QtQuick 2.0
 import "components"
 
 HorizontalCheckBoxList {
-    id: checkboxlist1
     imageHeight: 28
     imageWidth: 28
     textColor: "#000000"

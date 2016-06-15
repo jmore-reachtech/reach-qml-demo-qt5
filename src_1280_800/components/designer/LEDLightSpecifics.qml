@@ -1,178 +1,127 @@
-import HelperWidgets 1.0
-import QtQuick 1.0
-import Bauhaus 1.0
+import QtQuick 2.0
+import HelperWidgets 2.0
+import QtQuick.Layouts 1.0
 
+Column {
+    anchors.left: parent.left
+    anchors.right: parent.right
 
-QWidget {
-    layout: QVBoxLayout {
-        topMargin: 0
-        bottomMargin: 0
-        leftMargin: 0
-        rightMargin: 0
-        spacing: 0
+    Section {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        caption: qsTr("LED Light")
 
+        SectionLayout {
 
-        GroupBox {
-            caption: qsTr("LED Light")
-            layout: VerticalLayout {
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Image On")
-                            toolTip: qsTr("Image Source for On State")
-                        }
-                        UrlEdit {
-                            backendValue: backendValues.imageOn
-                            baseStateFlag: isBaseState
-                            filter: "*.png *.gif *.jpg *.bmp *.jpeg *.svg"
-                            showComboBox: true
-                            onBackendValueChanged:{
-                                backendValues.width = 200;
-                            }
-                        }
-                    }
+            Label {
+                text: qsTr("Image On")
+            }
+
+            SecondColumnLayout {
+                UrlChooser {
+                    Layout.fillWidth: true
+                    backendValue: backendValues.imageOn
                 }
 
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Image Off")
-                            toolTip: qsTr("Image Source for off State")
-                        }
-                        UrlEdit {
-                            backendValue: backendValues.imageOff
-                            baseStateFlag: isBaseState
-                            filter: "*.png *.gif *.jpg *.bmp *.jpeg *.svg"
-                            showComboBox: true
-                        }
-                    }
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Image Off")
+            }
+
+            SecondColumnLayout {
+                UrlChooser {
+                    Layout.fillWidth: true
+                    backendValue: backendValues.imageOff
                 }
 
-                QWidget {
-                    layout: HorizontalLayout {
+                ExpandingSpacer {
 
-                        Label {
-                            text: qsTr("Width")
-                            toolTip: qsTr("Width")
-                        }
+                }
+            }
 
-                        SpinBox {
-                            backendValue: backendValues.width
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 10000
-                            baseStateFlag: isBaseState
-                        }
-                    }
+            Label {
+                text: "On"
+            }
+
+            SecondColumnLayout {
+
+                CheckBox{
+                    backendValue: backendValues.on
+                }
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Field Spacing")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.fieldSpacing
+                    minimumValue: 0
+                    maximumValue: 1000
+                    decimals: 0
                 }
 
-                QWidget {
-                    layout: HorizontalLayout {
+                ExpandingSpacer {
 
-                        Label {
-                            text: qsTr("Height")
-                            toolTip: qsTr("Height")
-                        }
+                }
+            }
 
-                        SpinBox {
-                            backendValue: backendValues.height
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 10000
-                            baseStateFlag: isBaseState
-                        }
-                    }
+            Label {
+                text: qsTr("Label")
+            }
+
+            SecondColumnLayout {
+                LineEdit {
+                    backendValue: backendValues.label
                 }
 
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("On")
-                            toolTip: qsTr("Changes the image")
-                        }
-                        CheckBox {
-                            backendValue: backendValues.on
-                            baseStateFlag: isBaseState
-                            checkable: true
-                            text: qsTr("")
-                        }
+                ExpandingSpacer {
 
-                    }
                 }
+            }
 
-                QWidget {
-                    layout: HorizontalLayout {
+            Label {
+                text: qsTr("Label Position")
+            }
 
-                        Label {
-                            text: qsTr("Field Spacing")
-                            toolTip: qsTr("Field Spacing")
-                        }
+            SecondColumnLayout {
+                ReachComboBox {
+                     backendValue: backendValues.textPosition
+                     editable: false
+                     model: ["top", "bottom", "left", "right"]
+                 }
 
-                        SpinBox {
-                            backendValue: backendValues.fieldSpacing
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 20
-                            baseStateFlag: isBaseState
-                        }
-                    }
+                ExpandingSpacer {
+
                 }
+            }
 
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Label")
-                        }
-                        LineEdit {
-                            backendValue: backendValues.label
-                            baseStateFlag: isBaseState;
-                            translation: true
-                        }
-                    }
-                }
 
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Text Position")
-                            toolTip: qsTr("Text Position")
-                        }
-
-                        ComboBox {
-                            id: textPositionComboBox
-                            backendValue: backendValues.textPosition
-                            currentText: backendValues.textPosition.value
-                            baseStateFlag: isBaseState
-                            items: ["top", "bottom", "left", "right"]
-                            onItemsChanged: {
-                                currentText =  backendValues.textPosition.value;
-                            }
-                        }
-
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        ColorGroupBox{
-                            caption: "Text Color"
-                            backendColor: backendValues.textColor
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
+            FontSection{
 
             }
         }
 
-
-        FontGroupBox {
-            //finished: finishedNotify;
-        }
-
-        QScrollArea {
-        }
-
     }
+
+    Section {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            caption: qsTr("Text Color")
+
+            ColorEditor {
+                caption: qsTr("Text Color")
+                backendValue: backendValues.textColor
+                supportGradient: true
+            }
+    }
+
 }

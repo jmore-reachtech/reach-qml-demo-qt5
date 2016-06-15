@@ -13,8 +13,8 @@ import QtQuick 2.0
 
 Rectangle {
     id: root
-    property alias imageOn: border_image1.source
-    property alias imageOff: border_image2.source
+    property url imageOn: "../images/internal_button_dn.bmp"
+    property url imageOff: "../images/internal_button_up.bmp"
     property alias textOn: textOn.text
     property alias textOnFontFamily: textOn.font.family
     property alias textOnFontSize: textOn.font.pixelSize
@@ -27,6 +27,7 @@ Rectangle {
     property alias textOffBold: textOff.font.bold
     property bool on : false
     property string value : ""
+    property bool enabled: true
     color: "Transparent"
 
     width: 64
@@ -34,11 +35,11 @@ Rectangle {
 
     signal buttonClick()
     onButtonClick: {
-        on = !on;
     }
 
     signal buttonPress()
     onButtonPress: {
+        on = !on;
     }
 
     signal buttonRelease()
@@ -47,20 +48,15 @@ Rectangle {
 
     BorderImage {
         id: border_image1
-        visible: on
+        source: on ? imageOn : imageOff
         anchors.fill: parent
         opacity: !root.disabled ? 1.0 : 0.5
-    }
-
-    BorderImage {
-        id: border_image2
-        visible: !on
-        anchors.fill: parent
     }
 
     MouseArea {
         id: mouseArea
         anchors.fill: parent
+        enabled: root.enabled
         onClicked: buttonClick()
         onPressed: buttonPress()
         onReleased: buttonRelease()
@@ -70,7 +66,7 @@ Rectangle {
         id: textOn
         text: "On"
         anchors.centerIn: parent
-        font.pixelSize: 14
+        font.pixelSize: 12
         visible: on
         color: textOnColor
     }
@@ -79,7 +75,7 @@ Rectangle {
         id: textOff
         text: "Off"
         anchors.centerIn: parent
-        font.pixelSize: 14
+        font.pixelSize: 12
         visible: !on
         color: textOffColor
     }

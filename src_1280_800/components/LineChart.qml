@@ -25,9 +25,9 @@ Canvas{
     id: graph
     width: 440
     height: 180
-    property string color: "transparent"
     //Boolean - If we show the scale above the chart data
     property bool scaleOverlay : false
+    onScaleOverlayChanged: graph.requestPaint();
     //Boolean - If we want to override with a hard coded scale
     property bool scaleOverride : false
     //** Required if scaleOverride is true **
@@ -39,47 +39,66 @@ Canvas{
     property int scaleStartValue : 0
     //String - Color of the scale line
     property string scaleLineColor : "rgba(0,0,0,.1)"
+    onScaleLineColorChanged: graph.requestPaint();
     //Number - Pixel width of the scale line
     property int scaleLineWidth : 1
+    onScaleLineWidthChanged: graph.requestPaint();
     //Boolean - Whether to show labels on the scale
     property bool scaleShowLabels : true
+    onScaleShowLabelsChanged: graph.requestPaint();
     //Interpolated JS string - can access value
     property string scaleLabel : "<%=value%>"
     //String - Scale label font declaration for the scale label
-    property string  scaleFontFamily : "Arial"
+    property string  scaleFontFamily : "DejaVu Sans"
+    onScaleFontFamilyChanged: graph.requestPaint();
     //Number - Scale label font size in pixels
     property int scaleFontSize : 12
+    onScaleFontSizeChanged: graph.requestPaint();
     //String - Scale label font weight style
     property string scaleFontStyle : "normal"
+    onScaleFontStyleChanged: graph.requestPaint();
     //String - Scale label font color
     property string scaleFontColor : "#666"
+    onScaleFontColorChanged: graph.requestPaint();
     ///Boolean - Whether grid lines are shown across the chart
     property bool scaleShowGridLines : true
+    onScaleShowGridLinesChanged: graph.requestPaint();
     //String - Color of the grid lines
     property string scaleGridLineColor : "rgba(0,0,0,.05)"
+    onScaleGridLineColorChanged: graph.requestPaint();
     //Number - Width of the grid lines
     property int scaleGridLineWidth : 1
+    onScaleGridLineWidthChanged: graph.requestPaint();
     //Boolean - Whether the line is curved between points
     property bool bezierCurve : true
+    onBezierCurveChanged: graph.requestPaint();
     //Boolean - Whether to show a dot for each point
     property bool pointDot : true
+    onPointDotChanged: graph.requestPaint();
     //Number - Radius of each point dot in pixels
     property int pointDotRadius : 4
+    onPointDotRadiusChanged: graph.requestPaint();
     //Number - Pixel width of point dot stroke
     property int pointDotStrokeWidth : 2
+    onPointDotStrokeWidthChanged: graph.requestPaint();
     //Boolean - Whether to show a stroke for datasets
     property bool datasetStroke : true
+    onDatasetStrokeChanged: graph.requestPaint();
     //Number - Pixel width of dataset stroke
     property int datasetStrokeWidth : 2
+    onDatasetStrokeWidthChanged: graph.requestPaint();
     //Boolean - Whether to fill the dataset with a color
     property bool datasetFill : true
+    onDatasetFillChanged: graph.requestPaint();
     //Bool - Determines if we should show a legend
     property bool showLegend : true
+    onShowLegendChanged: graph.requestPaint();
     //Variant - The data structure for the chart
     property variant data: []
+    onDataChanged: graph.requestPaint();
 
     onPaint:{
-        if (data.length === 0)
+        if (data.length == 0)
             data = Data.lineData;
         var ctx = graph.getContext("2d");
         draw(ctx);
@@ -87,8 +106,7 @@ Canvas{
 
     function draw(ctx)
     {
-        ctx.fillStyle = color;
-        ctx.fillRect(0, 0, width, height);
+        ctx.clearRect(0, 0, width, height);
         var maxSize, scaleHop, calculatedScale, labelHeight, scaleHeight, valueBounds, labelTemplateString, valueHop,widestXLabel, xAxisLength,yAxisPosX,xAxisPosY, rotateLabels = 0;
 
         calculateDrawingSizes();
@@ -176,7 +194,7 @@ Canvas{
         function calculateDrawingSizes(){
             maxSize = height;
             //Need to check the X axis first - measure the length of each text metric, and figure out if we need to rotate by 45 degrees.
-            ctx.font = scaleFontStyle + " " + scaleFontSize+"px \"" + scaleFontFamily + "\"";
+            ctx.font = scaleFontStyle + " " + scaleFontSize+"px '" + scaleFontFamily + "'";
             widestXLabel = 1;
             for (var i=0; i<data.labels.length; i++){
                 var textLength = ctx.measureText(data.labels[i]).width;
@@ -312,7 +330,7 @@ Canvas{
             var longestText = 1;
             //if we are showing the labels
             if (scaleShowLabels){
-                ctx.font = scaleFontStyle + " " + scaleFontSize+"px \"" + scaleFontFamily + "\"";
+                ctx.font = scaleFontStyle + " " + scaleFontSize+"px '" + scaleFontFamily + "'";
                 for (var i=0; i < calculatedScale.steps; i++)
                 {
                     var measuredText = ctx.measureText(calculatedScale.labels[i]).width;
@@ -436,14 +454,14 @@ Canvas{
             var center = yAxisPosX + (xAxisLength)/2;
             var x = center - length/2;
 
-            ctx.font = scaleFontStyle + " " + scaleFontSize+"px \"" + scaleFontFamily + "\"";
+            ctx.font = scaleFontStyle + " " + scaleFontSize+"px '" + scaleFontFamily + "'";
 
             //Now lets place boxes and text at the top of the chart
             for (i=0; i < data.datasets.length; i++)
             {
                 //Draw box
                 ctx.fillStyle = dataColor[i];
-                ctx.fillRect(x - scaleFontSize, 3, scaleFontSize, scaleFontSize);
+                ctx.fillRect(x - scaleFontSize, 1, scaleFontSize, scaleFontSize);
                 ctx.fillStyle = scaleFontColor;
                 ctx.textAlign = "left"
                 ctx.fillText(dataText[i], x + 4, scaleFontSize - 3);

@@ -69,7 +69,7 @@ Rectangle {
         imageDown: "../images/internal_button_dn.bmp"
         font.family: "DejaVu Sans"
         onButtonClick: {
-            root.message("../src/mainmenu.qml");
+            mainView.mainLoader.source = "../mainmenu.qml";
         }
     }
 	

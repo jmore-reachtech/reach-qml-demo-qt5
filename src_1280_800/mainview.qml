@@ -8,6 +8,8 @@ Rectangle {
     height: 800
     color: "#2D2D2D"
     property int mainMenuY: 0
+    property alias mainLoader: loader
+    property string version: ""
 
     Loader{
         id: loader
@@ -62,6 +64,7 @@ Rectangle {
         pin1.writeToPin(0);
         pin2.writeToPin(0);
         pin3.writeToPin(0);
+        version = system.getSoftwareVersion();
     }
 }
 

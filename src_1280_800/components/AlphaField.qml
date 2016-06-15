@@ -9,7 +9,6 @@
  ** your understanding and fairness.
  **
 ****************************************************************************/
-
 import QtQuick 2.0
 import "../js/keycodes.js" as KeyCodes
 
@@ -21,13 +20,13 @@ Rectangle {
     property int fieldSpacing: 6
     property url normalKeyIcon: "../images/key_off.png"
     property url pressedKeyIcon: "../images/key_on.png"
-    property int keyWidth: 44
-    property int keyHeight: 46
+    property int keyWidth: 38
+    property int keyHeight: 40
     property url keyboardBackGroundImage: "../images/keyboardbg.png"
     property int keyboardAnimationSpeed: 100
     property string keyTextColor: "#ffffff"
     property bool keyTextBold: false
-    property int keyTextFontSize: 18
+    property int keyTextFontSize: 14
 
     property alias labelText: labelItem.text
     property alias labelColor: labelItem.color
@@ -64,6 +63,7 @@ Rectangle {
             id: labelItem
             text: "Label"
             font.pixelSize: 12
+            font.bold: labelFontBold
             anchors.verticalCenter: parent.verticalCenter
 
         }

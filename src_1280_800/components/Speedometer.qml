@@ -13,31 +13,31 @@ import QtQuick 2.0
 
 Dial{
     id: speedometer
-    value: 120
+    value: 0
     min: 0
     max:120
     // Width and height dictated by the background image
-    width: 300; height: 300
+    width: 210; height: 210
 
     // Set the images
     backgroundImage: "../images/meterbackground.png"
     needleImage: "../images/needle.png"
-    needleImageWidth:11
-    needleImageHeight: 90
+    needleImageWidth: 8
+    needleImageHeight: 63
 
     overlayImage: "../images/overlay.png"
-    overlayImageWidth: 211
-    overlayImageHeight: 150
+    overlayImageWidth: 148
+    overlayImageHeight: 105
 
     // Set the needle position
-    needleX: 140
-    needleY: 47
+    needleX: 98
+    needleY: 33
     // Set the overlay image position
-    overlayX: 30
-    overlayY: 24
+    overlayX: 21
+    overlayY: 18
     // Set the position of the needle image where the rotation moves around
-    needleRotationX: 8
-    needleRotationY: 86
+    needleRotationX: 5
+    needleRotationY: 65
 
     minAngle: -130
     maxAngle: 133

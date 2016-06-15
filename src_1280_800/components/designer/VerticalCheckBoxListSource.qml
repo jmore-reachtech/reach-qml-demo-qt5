@@ -2,7 +2,6 @@ import QtQuick 2.0
 import "components"
 
 VerticalCheckBoxList {
-    id: checkboxlist1
     imageChecked: "images/checkbox_click.png"
     imageUnChecked: "images/checkbox.png"
     imageHeight: 28

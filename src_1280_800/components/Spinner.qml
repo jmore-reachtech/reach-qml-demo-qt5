@@ -105,24 +105,31 @@ Rectangle
         view.currentIndex = initialIndex;
     }
 
-    onInitialValueChanged: setInitialValue();
+    onInitialValueChanged: setValue(initialValue);
 
-    function setInitialValue()
+
+    function setValue(newValue)
     {
         for (var i=0; i<view.count; i++)
         {
-            if (view.model.get(i).value === initialValue)
+            if (view.model.get(i).value == newValue)
             {
-                view.currentIndex = i;
-                return;
+                if (view.currentIndex != i)
+                    view.currentIndex = i;
+                else
+                    spinner.value = newValue;
+                return true;
             }
         }
+
+        return false;
     }
+
 
     Component.onCompleted:  {
         if (typeof initialValue !== "undefined")
-            setInitialValue();
-        else
+            setValue(initialValue);
+        else if (typeof initialIndex !== "undefined")
             view.currentIndex = initialIndex;
     }
 }

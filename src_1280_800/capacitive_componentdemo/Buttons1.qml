@@ -147,7 +147,7 @@ Rectangle {
         text: ""
         imageDown: "images/quit_down.png"
         imageUp: "images/quit_up.png"
-        onButtonClick: parent.parent.parent.parent.parent.message("../src/mainmenu.qml");
+        onButtonClick: mainView.mainLoader.source = "../mainmenu.qml";
     }
 
     Rectangle{

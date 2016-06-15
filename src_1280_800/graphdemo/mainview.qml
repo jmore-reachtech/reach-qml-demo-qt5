@@ -119,7 +119,7 @@ Rectangle {
                 font.bold: false
                 font.family: "Arial"
 
-                onButtonClick: menu.message("../src/mainmenu.qml");
+                onButtonClick: mainView.mainLoader.source = "../mainmenu.qml";
             }
 
         }

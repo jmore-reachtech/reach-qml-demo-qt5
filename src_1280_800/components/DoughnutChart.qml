@@ -26,27 +26,36 @@ Canvas {
     height: 200
     //Boolean - Whether we should show a stroke on each segment
     property bool segmentShowStroke : true
+    onSegmentShowStrokeChanged: graph.requestPaint();
     //String - The color of each segment stroke
     property string segmentStrokeColor : "#ffffff"
+    onSegmentStrokeColorChanged: graph.requestPaint();
     //Number - The width of each segment stroke
     property int segmentStrokeWidth : 2
+    onSegmentStrokeWidthChanged: graph.requestPaint();
     //Number - The size of the doughnut hole
     property real percentageInnerCutout: 50.0
+    onPercentageInnerCutoutChanged: graph.requestPaint();
     //String - The Inner Cutout Color
     property string innerCutoutColor: "#ffffff"
+    onInnerCutoutColorChanged: graph.requestPaint();
     //Bool: - Whether we should show a legend
     property bool showLegend: true
+    onShowLegendChanged: graph.requestPaint();
     //String - Legend label font declaration for the legend label
-    property string legendFontFamily : "'Arial'"
+    property string legendFontFamily : "DejaVu Sans"
+    onLegendFontFamilyChanged: graph.requestPaint();
     //Number - Legend label font size in pixels
     property int legendFontSize : 10
+    onLegendFontSizeChanged: graph.requestPaint();
     //Number - Legend Width
     property int legendWidth: 0
     //String - Legend label font weight style
     property string legendFontStyle : "normal"
+    onLegendFontStyleChanged: graph.requestPaint();
     //String - Legend label font colour
     property string legendFontColor : "#000"
-    property string color: ""
+    onLegendFontColorChanged: graph.requestPaint();
 
     property variant data : [
         {
@@ -83,8 +92,6 @@ Canvas {
         var ctx = getContext("2d");
 
         ctx.clearRect(0, 0, width, height);
-        ctx.fillStyle = color;
-        ctx.fillRect(0, 0, width, height);
 
         if (showLegend)
            drawLegend(ctx);
@@ -136,7 +143,7 @@ Canvas {
 
     function drawLegend(ctx)
     {
-        ctx.font = legendFontStyle + " " + legendFontSize + "px \"" + legendFontFamily + "\"";
+        ctx.font = legendFontStyle + " " + legendFontSize + "px '" + legendFontFamily + "'";
         legendWidth = 0;
 
         //first get the length of the legend

@@ -2,7 +2,6 @@ import QtQuick 2.0
 import "components"
 
 ScopeChart{
-    id: scopeChart
     width: 400
     height: 200
     scaleLineColor : "rgba(0,0,0,1.0)"

@@ -55,8 +55,8 @@ Grid {
             textColor: control.keyTextColor
             font.bold: control.keyTextBold
             font.pixelSize: control.keyTextFontSize
-            normalKeyIcon: control.normalKeyIcon
-            pressedKeyIcon: repeater.model[index].pressedKeyIcon ? repeater.model[index].pressedKeyIcon : pressedlKeyIcon//control.pressedlKeyIcon
+            normalKeyIcon: repeater.model[index].normalKeyIcon ? repeater.model[index].normalKeyIcon: control.normalKeyIcon
+            pressedKeyIcon: repeater.model[index].pressedKeyIcon ? repeater.model[index].pressedKeyIcon : control.pressedlKeyIcon
             onReleased: handleKeyPress(keyCode)
         }
     }

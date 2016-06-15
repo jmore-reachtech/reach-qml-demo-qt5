@@ -34,26 +34,36 @@ Canvas {
     property int scaleStartValue : minYValue
     //String - Color of the scale line - x and y axis lines
     property string scaleLineColor : "rgba(0,0,0,1.0)"
+    onScaleLineColorChanged: graph.requestPaint();
     //Number - Pixel width of the scale line
     property int scaleLineWidth : 1
+    onScaleLineWidthChanged: graph.requestPaint();
     //Boolean - Whether to show labels on the scale
     property bool scaleShowLabels : true
+    onScaleShowLabelsChanged: graph.requestPaint();
     //Interpolated JS string - can access value
     property string scaleLabel : "<%=value%>"
     //String - Scale label font declaration for the scale label
     property string  scaleFontFamily : "DejaVu Sans"
+    onScaleFontFamilyChanged: graph.requestPaint();
     //Number - Scale label font size in pixels
     property int scaleFontSize : 12
+    onScaleFontSizeChanged: graph.requestPaint();
     //String - Scale label font weight style
     property string scaleFontStyle : "normal"
+    onScaleFontStyleChanged: graph.requestPaint();
     //String - Scale label font color
     property string scaleFontColor : "#666"
+    onScaleFontColorChanged: graph.requestPaint();
     //Boolean - Whether grid lines are shown across the chart
     property bool scaleShowGridLines : true
+    onScaleShowGridLinesChanged: graph.requestPaint();
     //String - Color of the grid lines
     property string scaleGridLineColor : "rgba(50,205,50,0.5)"
+    onScaleGridLineColorChanged: graph.requestPaint();
     //Number - Width of the grid lines
     property int scaleGridLineWidth : 1
+    onScaleGridLineWidthChanged: graph.requestPaint();
     //Number - Pixel width of dataset stroke
     property int datasetStrokeWidth : 2
     //String - Color of the line1
@@ -67,14 +77,19 @@ Canvas {
     property variant overlay
     //Number - maximum value for the amplitude
     property int maxYValue: 10
+    onMaxYValueChanged: graph.requestPaint();
     //Number - minimum value for the amplitude
     property int minYValue: -10
+    onMinYValueChanged: graph.requestPaint();
     //String - background color of the scale
     property string scaleBgColor: "#0000000"
+    onScaleBgColorChanged: graph.requestPaint();
     //String - background color for the chart
     property string bgColor: "#EEEEEE"
+    onBgColorChanged: graph.requestPaint();
     //String - background image for the chart
     property alias bgImage: imageBackground.source
+    onBgImageChanged: graph.requestPaint();
     //Boolean - Whether to show a dot for each point
     property bool drawPoints: false
     //Number - Radius of each point dot in pixels
@@ -107,8 +122,10 @@ Canvas {
     property int lastY4
     property bool completed: false
     property int minX: 0
+    onMinXChanged: graph.requestPaint();
     property int minY: 0
     property int maxX: 0
+    onMaxXChanged: graph.requestPaint();
     property int maxY: 0
     property int scaleHeight: 0
     property int topY: 0
@@ -163,7 +180,7 @@ Canvas {
         function calculateDrawingSizes(){
             maxSize = height;
             //Need to check the X axis first - measure the length of each text metric, and figure out if we need to rotate by 45 degrees.
-            ctx.font = scaleFontStyle + " " + scaleFontSize+"px \"" + scaleFontFamily + "\"";
+            ctx.font = scaleFontStyle + " " + scaleFontSize+"px '" + scaleFontFamily + "'";
             widestXLabel = 1;
             for (var i=0; i<xLabels.length; i++){
                 /* updated */
@@ -263,7 +280,7 @@ Canvas {
             var longestText = 1;
             //if we are showing the labels
             if (scaleShowLabels){
-                ctx.font = scaleFontStyle + " " + scaleFontSize+"px \"" + scaleFontFamily + "\"";
+                ctx.font = scaleFontStyle + " " + scaleFontSize+"px '" + scaleFontFamily + "'";
                 for (var i=0; i < calculatedScale.steps; i++)
                 {
                     var measuredText = ctx.measureText(calculatedScale.labels[i]).width;

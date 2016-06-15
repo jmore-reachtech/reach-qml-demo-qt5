@@ -1,219 +1,229 @@
-import HelperWidgets 1.0
-import QtQuick 1.0
-import Bauhaus 1.0
+import QtQuick 2.0
+import HelperWidgets 2.0
+import QtQuick.Layouts 1.0
 
+Column {
+    anchors.left: parent.left
+    anchors.right: parent.right
 
-QWidget {
-    layout: QVBoxLayout {
-        topMargin: 0
-        bottomMargin: 0
-        leftMargin: 0
-        rightMargin: 0
-        spacing: 0
+    Section {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        caption: qsTr("AnimatedSwitch")
 
-        GroupBox {
-            caption: "Animated Switch"
-            layout: VerticalLayout {
+        SectionLayout {
 
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: "Text On"
-                            toolTip: qsTr("Text On")
-                        }
-                        LineEdit {
-                            backendValue: backendValues.textOn
-                            baseStateFlag: isBaseState
-                            translation: true
-                        }
-                    }
+            Label {
+                text: qsTr("Text On")
+            }
+
+            SecondColumnLayout {
+
+                LineEdit{
+                    backendValue: backendValues.textOn
                 }
 
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: "Text Off"
-                            toolTip: qsTr("Text Off")
-                        }
-                        LineEdit {
-                            backendValue: backendValues.textOff
-                            baseStateFlag: isBaseState
-                            translation: true
-                        }
-                    }
-                }
+                ExpandingSpacer {
 
-                QWidget {
-                    layout: HorizontalLayout {
-                        ColorGroupBox{
-                            caption: "Text Color"
-                            backendColor: backendValues.textColor
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Text On X")
-                            toolTip: qsTr("Text On X Position")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.textOnX
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 1000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Text Off X")
-                            toolTip: qsTr("Text Off X Position")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.textOffX
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 1000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: ""
-                        }
-                        CheckBox {
-                            text: qsTr("On")
-                            backendValue: backendValues.on
-                            baseStateFlag: isBaseState
-                            checkable: true
-                        }
-                    }
                 }
             }
-        }
 
-        GroupBox {
-            caption: qsTr("Image Information")
-            layout: VerticalLayout {
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Off")
-                            toolTip: qsTr("Image Source for Off State")
-                        }
-                        UrlEdit {
-                            backendValue: backendValues.imageOff
-                            baseStateFlag: isBaseState
-                            filter: "*.png *.gif *.jpg *.bmp *.jpeg *.svg"
-                            showComboBox: true
-                        }
-                    }
-                }
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("On")
-                            toolTip: qsTr("Image Source for On State")
-                        }
-                        UrlEdit {
-                            backendValue: backendValues.imageOn
-                            baseStateFlag: isBaseState
-                            filter: "*.png *.gif *.jpg *.bmp *."
-                            showComboBox: true
-                        }
-                    }
-                }
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Slider")
-                            toolTip: qsTr("Image Source for Slider")
-                        }
-                        UrlEdit {
-                            backendValue: backendValues.sliderImage
-                            baseStateFlag: isBaseState
-                            filter: "*.png *.gif *.jpg *.bmp *.svg"
-                            showComboBox: true
-                        }
-                    }
-                }
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Slider On X")
-                            toolTip: qsTr("Slider On X Position")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.sliderImageOnX
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 1000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Slider Off X")
-                            toolTip: qsTr("Slider Off X Position")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.sliderImageOffX
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 1000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Slider Y")
-                            toolTip: qsTr("Slider Y Position")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.sliderImageY
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 1000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-
+            Label {
+                text: qsTr("Text Off")
             }
-        }
 
-        FontGroupBox {
-            //finished: finishedNotify;
-        }
+            SecondColumnLayout {
 
-        QScrollArea {
+                LineEdit{
+                    backendValue: backendValues.textOff
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+
+            Label {
+                text: qsTr("Text On X")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.textOnX
+                    minimumValue: -2000
+                    maximumValue: 2000
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Text Off X")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.textOffX
+                    minimumValue: -2000
+                    maximumValue: 2000
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: ""
+            }
+
+            SecondColumnLayout {
+
+                CheckBox{
+                    backendValue: backendValues.on
+                }
+
+                Label {
+                    text: "On"
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
         }
 
     }
-}
 
+
+    Section {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            caption: qsTr("Text Color")
+
+            ColorEditor {
+                caption: qsTr("Text Color")
+                backendValue: backendValues.textColor
+                supportGradient: false
+            }
+    }
+
+    Section {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        caption: qsTr("Image Information")
+
+        SectionLayout {
+
+            Label {
+                text: qsTr("Image On")
+            }
+
+            SecondColumnLayout {
+                UrlChooser {
+                    Layout.fillWidth: true
+                    backendValue: backendValues.imageOn
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Image Off")
+            }
+
+            SecondColumnLayout {
+                UrlChooser {
+                    Layout.fillWidth: true
+                    backendValue: backendValues.imageOff
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Slider Image")
+            }
+
+            SecondColumnLayout {
+                UrlChooser {
+                    Layout.fillWidth: true
+                    backendValue: backendValues.sliderImage
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Slider On X")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.sliderImageOnX
+                    minimumValue: -2000
+                    maximumValue: 2000
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Slider Off X")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.sliderImageOffX
+                    minimumValue: -2000
+                    maximumValue: 2000
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Slider Y")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.sliderImageY
+                    minimumValue: -2000
+                    maximumValue: 2000
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+        }
+    }
+
+
+    FontSection{
+        caption: "Font"
+    }
+
+
+}

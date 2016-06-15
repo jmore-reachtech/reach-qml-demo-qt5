@@ -134,7 +134,7 @@ Rectangle {
 			font.family: "DejaVu Sans"
             imageDown: "../images/blue_button_dn.png"
             imageUp: "../images/blue_button_up.png"
-            onButtonClick: root.message("../src/mainmenu.qml");
+            onButtonClick: mainView.mainLoader.source = "../mainmenu.qml";
         }
 
     ImageButton {

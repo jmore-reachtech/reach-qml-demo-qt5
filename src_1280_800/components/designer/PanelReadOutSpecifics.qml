@@ -1,105 +1,100 @@
-import HelperWidgets 1.0
-import QtQuick 1.0
-import Bauhaus 1.0
+import QtQuick 2.0
+import HelperWidgets 2.0
+import QtQuick.Layouts 1.0
 
+Column {
+    anchors.left: parent.left
+    anchors.right: parent.right
 
-QWidget {
-    layout: QVBoxLayout {
-        topMargin: 0
-        bottomMargin: 0
-        leftMargin: 0
-        rightMargin: 0
-        spacing: 0
+    Section {
+        anchors.left: parent.left
+        anchors.right: parent.right
+        caption: qsTr("Panel Read")
 
+        SectionLayout {
 
-        GroupBox {
-            caption: qsTr("Panel ReadOut")
-            layout: VerticalLayout {
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Panel Image")
-                            toolTip: qsTr("Image Source for Panel")
-                        }
-                        UrlEdit {
-                            backendValue: backendValues.imagePanel
-                            baseStateFlag: isBaseState
-                            filter: "*.png *.gif *.jpg *.bmp *.jpeg *.svg"
-                            showComboBox: true
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Width")
-                            toolTip: qsTr("Width")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.width
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 10000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-
-                        Label {
-                            text: qsTr("Height")
-                            toolTip: qsTr("Height")
-                        }
-
-                        SpinBox {
-                            backendValue: backendValues.height
-                            singleStep: 1
-                            minimum: 0
-                            maximum: 10000
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        Label {
-                            text: qsTr("Text")
-                        }
-                        LineEdit {
-                            backendValue: backendValues.text
-                            baseStateFlag: isBaseState;
-                            translation: true
-                        }
-                    }
-                }
-
-                QWidget {
-                    layout: HorizontalLayout {
-                        ColorGroupBox{
-                            caption: "Text Color"
-                            backendColor: backendValues.textColor
-                            baseStateFlag: isBaseState
-                        }
-                    }
-                }
-
-
+            Label {
+                text: qsTr("Panel Image")
             }
-        }
 
+            SecondColumnLayout {
+                UrlChooser {
+                     Layout.fillWidth: true
+                     backendValue: backendValues.imagePanel
+                }
 
-        FontGroupBox {
-            //finished: finishedNotify;
-        }
+                ExpandingSpacer {
 
-        QScrollArea {
+                }
+            }
+
+            Label {
+                text: qsTr("Width")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.width
+                    minimumValue: 0
+                    maximumValue: 1000
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: qsTr("Height")
+            }
+
+            SecondColumnLayout {
+                SpinBox {
+                    backendValue: backendValues.height
+                    minimumValue: 0
+                    maximumValue: 1000
+                    decimals: 0
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
+            Label {
+                text: "Text"
+            }
+
+            SecondColumnLayout {
+                LineEdit {
+                    backendValue: backendValues.text
+                }
+
+                ExpandingSpacer {
+
+                }
+            }
+
         }
 
     }
+
+    FontSection{
+
+    }
+
+    Section {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            caption: qsTr("Text Color")
+
+            ColorEditor {
+                caption: qsTr("Text Color")
+                backendValue: backendValues.textColor
+                supportGradient: true
+            }
+    }
+
+
 }

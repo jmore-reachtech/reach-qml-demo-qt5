@@ -18,7 +18,6 @@
  ** https://github.com/nnnick/Chart.js/blob/master/LICENSE.md
  **
 ****************************************************************************/
-
 import QtQuick 2.0
 import "../js/barchart.js" as Data
 
@@ -26,7 +25,6 @@ Canvas{
     id: graph
     width: 440
     height: 180
-    property string color: "transparent"
     //Boolean - If we show the scale above the chart data
     property bool scaleOverlay : true
     //Boolean - If we want to override with a hard coded scale
@@ -73,6 +71,36 @@ Canvas{
     //Variant - The data structure for the chart
     property variant data: []
 
+    onScaleOverlayChanged: graph.requestPaint();
+
+    onShowLegendChanged: graph.requestPaint();
+
+    onBarValueSpacingChanged: graph.requestPaint();
+
+    onScaleFontColorChanged: graph.requestPaint();
+
+    onScaleFontSizeChanged: graph.requestPaint();
+
+    onScaleShowLabelsChanged: graph.requestPaint();
+
+    onBarStrokeWidthChanged: graph.requestPaint();
+
+    onScaleShowGridLinesChanged: graph.requestPaint();
+
+    onScaleGridLineColorChanged: graph.requestPaint();
+
+    onScaleFontFamilyChanged: graph.requestPaint();
+
+    onScaleLineWidthChanged: graph.requestPaint();
+
+    onScaleGridLineWidthChanged: graph.requestPaint();
+
+    onScaleFontStyleChanged: graph.requestPaint();
+
+    onBarShowStrokeChanged: graph.requestPaint();
+
+    onDataChanged: graph.requestPaint();
+
     onPaint:{
         if (data.length == 0)
             data = Data.bardata;
@@ -81,8 +109,7 @@ Canvas{
 
     function draw() {
         var ctx = getContext("2d");
-        ctx.fillStyle = color;
-        ctx.fillRect(0,0, width, height);
+        ctx.clearRect(0,0, width, height);
         var maxSize, scaleHop, calculatedScale, labelHeight, scaleHeight, valueBounds, labelTemplateString, valueHop,widestXLabel, xAxisLength,yAxisPosX,xAxisPosY,barWidth, rotateLabels = 0;
 
         calculateDrawingSizes();
@@ -149,9 +176,9 @@ Canvas{
         function calculateDrawingSizes(){
             maxSize = height;
             //Need to check the X axis first - measure the length of each text metric, and figure out if we need to rotate by 45 degrees.
-            ctx.font = scaleFontStyle + " " + scaleFontSize+"px \"" + scaleFontFamily + "\"";
+            ctx.font = scaleFontStyle + " " + scaleFontSize + "px '" + scaleFontFamily + "'";
             widestXLabel = 1;
-            for (var i=0; i<data.labels.length; i++){               
+            for (var i=0; i<data.labels.length; i++){
                 var textLength = ctx.measureText(data.labels[i]).width;
                 //If the text length is longer - make that equal to longest text!
                 widestXLabel = (textLength > widestXLabel)? textLength : widestXLabel;
@@ -284,7 +311,7 @@ Canvas{
             var longestText = 1;
             //if we are showing the labels
             if (scaleShowLabels){
-                ctx.font = scaleFontStyle + " " + scaleFontSize+"px \"" + scaleFontFamily + "\"";
+                ctx.font = scaleFontStyle + " " + scaleFontSize + "px '" + scaleFontFamily + "'";
                 for (var i=0; i<calculatedScale.labels.length; i++){
                     var measuredText = ctx.measureText(calculatedScale.labels[i]).width;
                     longestText = (measuredText > longestText)? measuredText : longestText;
@@ -381,7 +408,7 @@ Canvas{
 
         function drawLegend()
         {
-            //first get the length of the legend            
+            //first get the length of the legend
             var length = 0;
             var dataText = new Array();
             var dataLength = new Array();
@@ -399,14 +426,14 @@ Canvas{
             var center = yAxisPosX + (xAxisLength)/2;
             var x = center - length/2;
 
-            ctx.font = scaleFontStyle + " " + scaleFontSize+"px \"" + scaleFontFamily + "\"";
+            ctx.font = scaleFontStyle + " " + scaleFontSize+"px '" + scaleFontFamily + "'";
 
             //Now lets place boxes and text at the top of the chart
             for (i=0; i < data.datasets.length; i++)
             {
                 //Draw box
                 ctx.fillStyle = dataColor[i];
-                ctx.fillRect(x - scaleFontSize, 3, scaleFontSize, scaleFontSize);
+                ctx.fillRect(x - scaleFontSize, 1, scaleFontSize, scaleFontSize);
                 ctx.fillStyle = scaleFontColor;
                 ctx.textAlign = "left"
                 ctx.fillText(dataText[i], x + 4, scaleFontSize-3);
@@ -462,8 +489,6 @@ Canvas{
         // Provide some basic currying to the user
         return data ? fn( data ) : fn;
       }
-
-
 
 }
 

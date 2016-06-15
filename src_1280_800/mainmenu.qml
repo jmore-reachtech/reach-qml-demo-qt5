@@ -9,9 +9,21 @@ Rectangle {
     color: "#2D2D2D"
     signal message(string msg)
 
+    Text{
+        id: txtVersion
+        x: 50
+        y: 50
+        color: "#FFFFFF"
+        font.pixelSize: 18
+        text: mainView.version
+    }
+
     ListModel {
         id: listModel
 
+        ListElement {
+            image: "images/imagedemo-icon.png"; iconheight:78; iconwidth: 130; form: "imagedemo/mainview.qml"; icontext: "    Image\n Test Demo"
+        }
         ListElement {
             image: "images/coffee-icon.png"; iconheight:86; iconwidth: 113; form: "capacitive_coffeedemo/mainview.qml"; icontext: "  Capacitive\nCoffee Demo"
         }
@@ -56,9 +68,6 @@ Rectangle {
         }
         ListElement {
             image: "images/spedometer-icon.png"; iconheight:78; iconwidth: 78; form: "persist_spedometerdemo/mainview.qml"; icontext: "        Persistent\n Spedometer Demo"
-        }
-		ListElement {
-            image: "images/imagedemo-icon.png"; iconheight:78; iconwidth: 130; form: "imagedemo/mainview.qml"; icontext: "    Image\n Test Demo"
         }
 		ListElement {
             image: "images/upgrade-icon.png"; iconheight:75; iconwidth: 80; form: "upgradedemo/mainview.qml"; icontext: "Upgrade\n  Demo"

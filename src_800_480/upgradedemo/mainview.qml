@@ -132,8 +132,8 @@ Rectangle{
 
     ImageButton {
         id: btnUpgrade
-        x: 444
-        y: 306
+        x: 355
+        y: 304
         width: 90
         height: 42
         text: "Upgrade"
@@ -161,8 +161,8 @@ Rectangle{
 
     ImageButton {
         id: btnBack
-        x: 285
-        y: 306
+        x: 355
+        y: 369
         width: 90
         height: 42
         text: "Back"
@@ -171,10 +171,10 @@ Rectangle{
         font.bold: false
         font.family: "DejaVu Sans"
         font.pixelSize: 14
-        visible: false
+        visible: true
 
         onButtonClick: {
-            onButtonClick: root.message("../src/mainmenu.qml");
+            onButtonClick: mainView.mainLoader.source = "../mainmenu.qml";
         }
     }
 

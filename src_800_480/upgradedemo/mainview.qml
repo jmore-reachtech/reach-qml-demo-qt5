@@ -21,7 +21,7 @@ Rectangle{
         text: "Upgrade Demo"
         font.family: "DejaVu Sans"
         horizontalAlignment: Text.AlignHCenter
-        font.pixelSize: 22
+        font.pixelSize: 26
     }
 
     VerticalRadioButtonList {
@@ -149,6 +149,7 @@ Rectangle{
 			{
                 totalFiles = plugin.getTotalFileCount();
                 btnUpgrade.visible = false;
+                btnBack.visible = false;
                 radio.visible = false;
                 progress.visible = true;
                 plugin.upgrade();
@@ -173,7 +174,7 @@ Rectangle{
         visible: false
 
         onButtonClick: {
-            mainView.mainLoader.source = "../mainmenu.qml";
+            onButtonClick: root.message("../src/mainmenu.qml");
         }
     }
 
@@ -192,7 +193,7 @@ Rectangle{
     {
         var usb = system.execute("sh /application/src/upgradedemo/usb.sh");
         var values = usb.split("\n");
-        
+
         if (values.length > 0 && values[0].length > 0)
 		{
 		    btnUpgrade.visible = true;
@@ -206,9 +207,9 @@ Rectangle{
             text1.text = "No USB stick found.  Plug in a USB stick."
         }
 
-        for (var i=0; i < values.length-1; i++)
+        for (var i=1; i < values.length-1; i++)
         {
-            radio.model.append({item_value: values[i] + "/application/src", item_checked: false, item_text: "Upgrade from uSD card: " + values[i]});
+            radio.model.append({item_value: values[i] + "/application/src", item_checked: false, item_text: "Upgrade from USB Stick: " + values[i]});
         }
     }
 

@@ -9,7 +9,7 @@ Rectangle{
     height: 768
     property int totalFiles: 0
 	color: "#DDDDDD"
-
+    signal message(string msg)
 
 	Text {
         id: txtTitle
@@ -20,7 +20,7 @@ Rectangle{
         text: "Upgrade Demo"
         font.family: "DejaVu Sans"
         horizontalAlignment: Text.AlignHCenter
-        font.pixelSize: 24
+        font.pixelSize: 28
     }
 
     VerticalRadioButtonList {
@@ -77,7 +77,7 @@ Rectangle{
     HorizontalLevelIndicator {
         id: progress
         x: 300
-        y: 253
+        y: 272
         width: 400
         height: 40
         imageBase: "../images/tank.png"
@@ -120,7 +120,7 @@ Rectangle{
     Text {
         id: text1
         x: 0
-        y: 128
+        y: 160
         width: 1024
         height: 51
         text: ""
@@ -130,9 +130,28 @@ Rectangle{
     }
 
     ImageButton {
+        id: btnBack
+        x: 467
+        y: 522
+        width: 90
+        height: 42
+        text: "Back"
+        imageUp: "../images/internal_button_up.bmp"
+        imageDown: "../images/internal_button_dn.bmp"
+        font.bold: false
+        font.family: "DejaVu Sans"
+        font.pixelSize: 14
+        visible: true
+
+        onButtonClick: {
+            onButtonClick: mainView.mainLoader.source = "../mainmenu.qml";
+        }
+    }
+
+    ImageButton {
         id: btnUpgrade
-        x: 472
-        y: 454
+        x: 467
+        y: 456
         width: 90
         height: 42
         text: "Upgrade"
@@ -148,6 +167,7 @@ Rectangle{
 			{
                 totalFiles = plugin.getTotalFileCount();
                 btnUpgrade.visible = false;
+                btnBack.visible = false;
                 radio.visible = false;
                 progress.visible = true;
                 plugin.upgrade();
@@ -184,9 +204,9 @@ Rectangle{
             text1.text = "No USB stick found.  Plug in a USB stick."
         }
 
-        for (var i=0; i < values.length-1; i++)
+        for (var i=1; i < values.length-1; i++)
         {
-            radio.model.append({item_value: values[i] + "/application/src", item_checked: false, item_text: "Upgrade from uSD card: " + values[i]});
+            radio.model.append({item_value: values[i] + "/application/src", item_checked: false, item_text: "Upgrade from USB Stick: " + values[i]});
         }
     }
 

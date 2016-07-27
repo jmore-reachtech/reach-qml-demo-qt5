@@ -59,6 +59,9 @@ Rectangle {
         pin: 3
     }
 
+	System{
+	    id: system
+	}
     Component.onCompleted: {
         pin0.writeToPin(0);
         pin1.writeToPin(0);

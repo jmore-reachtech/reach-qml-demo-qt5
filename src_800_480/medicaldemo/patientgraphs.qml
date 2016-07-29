@@ -75,13 +75,12 @@ Item {
             width: 132
             height: 30
 
-			onPressed:{
-                imgNameBox.source = "images/name_back_box_down.png";			
-			}
+            onPressed:{
+                imgNameBox.source = "images/name_back_box_down.png";
+            }
             onClicked: {
                 pressureTimer.stop();
-                oxygenGraphTimer.stop();
-                ekgGraphTimer.stop();
+                timer.stop();
                 load.source = "patientlist.qml";
             }
         }
@@ -94,15 +93,14 @@ Item {
             height: 30
             anchors.right: parent.right
 
-			onPressed:{
-                imgNameBox.source = "images/name_back_box_down.png";			
-			}
+            onPressed:{
+                imgNameBox.source = "images/name_back_box_down.png";
+            }
 
             onClicked: {
                 imgNameBox.source = "images/name_back_box_down.png";
                 pressureTimer.stop();
-                oxygenGraphTimer.stop();
-                ekgGraphTimer.stop();
+                timer.stop();
                 load.source = "patientvitals.qml";
             }
         }
@@ -255,15 +253,10 @@ Item {
             on: true
 
             onOnChanged: {
-                if (oxygenGraphTimer.running)
-                    oxygenGraphTimer.stop();
+                if (timer.running)
+                    timer.stop();
                 else
-                    oxygenGraphTimer.start();
-
-                if (ekgGraphTimer.running)
-                    ekgGraphTimer.stop();
-                else
-                    ekgGraphTimer.start();
+                    timer.start();
             }
         }
 
@@ -281,71 +274,26 @@ Item {
 
             onOnChanged: {
                 //o2 graph
-				btnPause.on = true;
-                oxygenGraphTimer.stop();
-                stripChart1.clearPens();
-                scopeChart1.clearPens();
+                btnPause.on = true;
+                timer.stop();
+                chart1.clearPens();
                 i=0;
-                scopeChart1.datasetFill = !scopeChart1.datasetFill;
-                stripChart1.datasetFill = scopeChart1.datasetFill;
-                oxygenGraphTimer.start();
+                chart1.datasetFill = !chart1.datasetFill;
 
                 //ekg graph
-                ekgGraphTimer.stop();
-                stripChart2.clearPens();
-                scopeChart2.clearPens();
+                chart2.clearPens();
                 j=0;
-                scopeChart2.datasetFill = scopeChart1.datasetFill;
-                stripChart2.datasetFill = scopeChart1.datasetFill;
-                ekgGraphTimer.start();
+                chart2.datasetFill = !chart2.datasetFill;
+                timer.start();
             }
         }
 
-        MedicalScopeChart {
-            id: scopeChart1
+        MedicalChart {
+            id: chart1
             x: -4
             y: 2
             width: 408
             height: 130
-            scaleLineColor: "rgba(0,0,0,0)"
-            scaleShowGridLines: false
-            scaleFontSize: 12
-            scaleGridLineColor: "rgba(0,0,0,0)"
-            bgColor: "transparent"
-            bezierCurve: false
-            minYValue: 15
-            datasetStrokeWidth: 3
-            scaleLineWidth: 1
-            scaleShowLabels: false
-            scaleGridLineWidth: 1
-            scaleLabel: "<%=value%>"
-            scaleFontStyle: "normal"
-            minTime: 0
-            scaleFontColor: "#666"
-            line1PenColor: "#00b8ff"
-            scaleFontFamily: "DejaVu Sans"
-            maxYValue: 60
-            xPixels: 20
-            scaleBgColor: "#414042"
-            //scaleBgColor: "red"
-            maxTime: xAxisLength/2
-            showDot: true
-            datasetFill: false
-
-            onCompletedChanged: {
-                if (completed)
-                {
-                    startOxygenChart();
-                }
-            }
-        }
-
-        MedicalStripChart {
-            id: stripChart1
-            x: 3
-            y: 1
-            width: 394
-            height: 131
             visible: true
             scaleLineColor: "rgba(0,0,0,0)"
             scaleShowGridLines: false
@@ -365,9 +313,8 @@ Item {
             scaleFontFamily: "DejaVu Sans"
             maxYValue: 60
             scaleBgColor: "#414042"
-            //scaleBgColor: "yellow"
             maxTime: xAxisLength/2
-            opacity: 0
+            opacity: 1
             drawBlock: false
             datasetFill: false
         }
@@ -563,20 +510,23 @@ Item {
         col[179] = "58";
         col[180] = "60";
         col[181] = "61";
-
-        oxygenGraphTimer.start();
-
     }
 
     Timer{
-        id: oxygenGraphTimer
-        interval: 10; running: false; repeat: true
+        id: timer
+        interval: 20; running: false; repeat: true
         onTriggered: {
-            scopeChart1.currentValue1 = col[i];
-            stripChart1.currentValue1 = col[i];
+            chart1.currentValue1 = col[i];
+            chart2.currentValue1 = col1[j];
+
             i ++;
+            j ++;
+
             if (i == 182)
                 i = 0;
+
+            if (j == 182)
+                j = 0;
         }
     }
 
@@ -603,19 +553,15 @@ Item {
 
             onButtonClick: {
                 //stop and start o2 graph
-				btnPause.on = true;
-                oxygenGraphTimer.stop();
-                stripChart1.clearPens();
-                scopeChart1.clearPens();
+                btnPause.on = true;
+                timer.stop();
+                chart1.clearPens();
                 i=0;
-                oxygenGraphTimer.start();
 
                 //stop and start ekg graph
-                ekgGraphTimer.stop();
-                stripChart2.clearPens();
-                scopeChart2.clearPens();
+                chart2.clearPens();
                 j=0;
-                ekgGraphTimer.start();
+                timer.start();
             }
         }
 
@@ -632,29 +578,23 @@ Item {
             on: true
 
             onOnChanged: {
-			    btnPause.on = true;
+                btnPause.on = true;
                 showStripCharts = !showStripCharts;
                 if (showStripCharts)
                 {
-                    stripChart1.opacity = 1.0;
-                    scopeChart1.opacity = 0;
-
-                    stripChart2.opacity = 1.0;
-                    scopeChart2.opacity = 0;
+                    chart1.showScopeChart = false;
+                    chart2.showScopeChart = false;
                 }
                 else
                 {
-                    stripChart1.opacity = 0;
-                    scopeChart1.opacity = 1.0;
-
-                    stripChart2.opacity = 0;
-                    scopeChart2.opacity = 1.0;
+                    chart1.showScopeChart = true;
+                    chart2.showScopeChart = true;
                 }
             }
         }
 
-        MedicalScopeChart {
-            id: scopeChart2
+        MedicalChart {
+            id: chart2
             x: -4
             y: 2
             width: 408
@@ -679,7 +619,6 @@ Item {
             maxYValue: 870
             xPixels: 20
             scaleBgColor: "#414042"
-            //scaleBgColor: "red"
             maxTime: xAxisLength/2
             showDot: true
             datasetFill: false
@@ -691,39 +630,6 @@ Item {
                 }
             }
         }
-
-        MedicalStripChart {
-            id: stripChart2
-            x: 3
-            y: 1
-            width: 394
-            height: 130
-            visible: true
-            scaleLineColor: "rgba(0,0,0,0)"
-            scaleShowGridLines: false
-            scaleFontSize: 12
-            scaleGridLineColor: "rgba(0,0,0,0)"
-            bgColor: "transparent"
-            minYValue: 820
-            datasetStrokeWidth: 3
-            scaleLineWidth: 1
-            scaleShowLabels: false
-            scaleGridLineWidth: 1
-            scaleLabel: "<%=value%>"
-            scaleFontStyle: "normal"
-            minTime: 0
-            scaleFontColor: "#666"
-            line1PenColor: "#00b8ff"
-            scaleFontFamily: "DejaVu Sans"
-            maxYValue: 870
-            scaleBgColor: "#414042"
-            //scaleBgColor: "yellow"
-            maxTime: xAxisLength/2
-            opacity: 0
-            drawBlock: false
-            datasetFill: false
-        }
-
     }
 
     function startEKGChart(){
@@ -911,24 +817,17 @@ Item {
         col1[179] = "871";
         col1[180] = "866";
         col1[181] = "857.3333333";
-
-        ekgGraphTimer.start();
     }
 
-    Timer{
-        id: ekgGraphTimer
-        interval: 10; running: false; repeat: true
-        onTriggered: {
-            scopeChart2.currentValue1 = col1[i];
-            stripChart2.currentValue1 = col1[i];
-            j ++;
-            if (j == 182)
-                j = 0;
-        }
-    }
 
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
+    Component.onCompleted: {
+        startOxygenChart();
+        startEKGChart();
+
+        timer.start();
+    }
 }

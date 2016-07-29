@@ -625,6 +625,7 @@ Canvas{
                                         drawBlock)
     {
         var copy = ctx.getImageData(sx, sy, sw, sh);
+
         if (scaleBgColor === "transparent")
             ctx.clearRect(dx, dy, sw, sh);
 

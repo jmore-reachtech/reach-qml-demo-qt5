@@ -1,6 +1,5 @@
 import QtQuick 2.0
 import "../components"
-import QtMultimedia 5.0
 
 Rectangle {
     id: button1
@@ -9,11 +8,6 @@ Rectangle {
     height: 800
     color: "#666666"
     signal message(string msg)
-
-    SoundEffect{
-        id: sound
-        source: "../audio/beep.wav"
-    }
 
     Text {
         id: txtTitle
@@ -41,7 +35,6 @@ Rectangle {
         font.family: "Arial"
 
         onButtonPress: {
-            sound.play();
             console.debug("Button Pressed.");
         }
     }
@@ -68,7 +61,6 @@ Rectangle {
         textOffBold: false
 
         onOnChanged: {
-            sound.play();
             console.debug(on)
         }
     }
@@ -94,7 +86,6 @@ Rectangle {
         textOffBold: false
 
         onOnChanged: {
-            sound.play();
             console.debug(on)
         }
     }
@@ -144,7 +135,6 @@ Rectangle {
         textOffColor: "#000000"
 
         onValueChanged: {
-            sound.play();
             console.debug(value);
         }
     }

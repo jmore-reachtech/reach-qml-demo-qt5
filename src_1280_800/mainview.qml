@@ -62,6 +62,9 @@ Rectangle {
         pin1.writeToPin(0);
         pin2.writeToPin(0);
         pin3.writeToPin(0);
+        //Load wav file for the beeper
+        beeper.init();
+        beeper.openwave("/application/src/audio/beep.wav");
     }
 }
 

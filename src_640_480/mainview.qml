@@ -62,5 +62,14 @@ Rectangle {
         pin1.writeToPin(0);
         pin2.writeToPin(0);
         pin3.writeToPin(0);
+		//set beeper for frequency and duration if no sound card 
+		if (!beeper.isSoundCard())
+		    beeper.init(2000, 50);
+		else
+		{
+		    beeper.init();
+		    beeper.openwave("/application/src/audio/beep.wav");
+		}
+
     }
 }

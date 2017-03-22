@@ -131,6 +131,7 @@ Rectangle {
                         }
 
                         onReleased: {
+						    beeper.play();
                             textIcon.color = "yellow";
                             imgIcon.opacity = 0.7;
                             textIcon.opacity = 0.7;

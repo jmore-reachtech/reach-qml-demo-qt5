@@ -127,11 +127,11 @@ Rectangle {
                             textIcon.color = "yellow";
                             imgIcon.opacity = 0.7;
                             textIcon.opacity = 0.7;
+						    beeper.play();
                             timer1.start();
                         }
 
                         onReleased: {
-						    beeper.play();
                             textIcon.color = "yellow";
                             imgIcon.opacity = 0.7;
                             textIcon.opacity = 0.7;
@@ -147,7 +147,7 @@ Rectangle {
 
                     Timer{
                         id: timer1
-                        interval: 200;
+                        interval: 100;
                         running: false;
                         repeat: false
                         onTriggered: root.message(form);

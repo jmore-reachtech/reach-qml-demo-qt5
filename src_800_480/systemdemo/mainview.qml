@@ -159,7 +159,7 @@ Rectangle {
     }
 
 	Text {
-        id: txtTime
+        id: txtVersion
         x: 0
         y: 130
         width: 800
@@ -173,7 +173,7 @@ Rectangle {
     Component.onCompleted: {
         textMsg.visible = false;
         brightness.value = backLight.brightness();
-        txtTime.text = "Current Date Time: " + system.currentDateTime();
+        txtVersion.text = "Software version: " + system.getSoftwareVersion();
     }
 
 
